@@ -6,16 +6,15 @@ public class BeeCollision : MonoBehaviour {
 
     public AudioClip deathsound;
     private AudioSource source;
+    public GameObject This;
 
-    private void Awake()
-    {
-
+    private void Awake(){
         source = GetComponent<AudioSource>();
     }
 
     // Use this for initialization
     void Start () {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -31,7 +30,8 @@ public class BeeCollision : MonoBehaviour {
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             //TODO: Death Animation plus promoting new bee
-            Destroy(gameObject, 1);
+            This.GetComponent<ControlHealth>().setHealth(-1);
+            //Destroy(gameObject, 1);
         }
     }
 }
