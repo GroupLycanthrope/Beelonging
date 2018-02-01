@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58481813651991962}
   m_Layer: 0
   m_Name: HoneycombPickUp
-  m_TagString: HonecombPickUp
+  m_TagString: HoneycombPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

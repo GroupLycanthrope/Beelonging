@@ -24,7 +24,7 @@ public class BeeCollision : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        if (p_xOtherCollider.gameObject.CompareTag("Enemy"))
+        if (p_xOtherCollider.gameObject.CompareTag("Enemy") && !BeeManager.bIsInvincible)
         {
             source.PlayOneShot(deathsound, 1F);
             GetComponent<SpriteRenderer>().enabled = false;

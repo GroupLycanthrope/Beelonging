@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BeeManager : MonoBehaviour {
 
@@ -10,9 +11,12 @@ public class BeeManager : MonoBehaviour {
 
     public static int iPowerUpCounter;
 
+    public static bool bIsInvincible;
+
     // Use this for initialization
     void Start() {
         Swarm = GameObject.FindGameObjectsWithTag("Bee");
+        bIsInvincible = false;
     }
 
     // Update is called once per frame
@@ -25,6 +29,19 @@ public class BeeManager : MonoBehaviour {
             }
         }
         Swarm = GameObject.FindGameObjectsWithTag("Bee");
+
+        if (iPowerUpCounter == 3)
+        {
+            bIsInvincible = true;
+            InvincibilityCounter.fInvincibilityTimer -= Time.deltaTime;
+        }
+
+        if (InvincibilityCounter.fInvincibilityTimer <= 0)
+        {
+            bIsInvincible = false;
+            InvincibilityCounter.fInvincibilityTimer = 5.0f;
+            iPowerUpCounter = 0;
+        }
     }
 
     void Formation() {
