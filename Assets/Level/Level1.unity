@@ -775,15 +775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e77879de5904e4da9aaa596e00a98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xPlayerBullet: {fileID: 1639238614990132, guid: 5af2eeb631614074ea3061271d9c77f8,
-    type: 2}
-  m_xBulletPosition: {fileID: 707035340}
   m_xPlayer: {fileID: 170156168}
-  xGameOverScreen: {fileID: 1032796556}
-  xScoreText: {fileID: 78838689}
-  shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
-  m_fSpeed: 0
-  fFireRate: 0.3
+  Swarm: []
 --- !u!4 &687373453
 Transform:
   m_ObjectHideFlags: 0
@@ -877,11 +870,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1 &707035340 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1427367247438906, guid: 10631bf6a5ea96147b9585799116f030,
-    type: 2}
-  m_PrefabInternal: {fileID: 1840292224}
 --- !u!1 &814357454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,6 +1583,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 114459269774664192, guid: 10631bf6a5ea96147b9585799116f030,
+        type: 2}
+      propertyPath: This
+      value: 
+      objectReference: {fileID: 170156168}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
   m_IsPrefabParent: 0
