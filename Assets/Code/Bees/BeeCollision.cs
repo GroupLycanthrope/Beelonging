@@ -36,8 +36,16 @@ public class BeeCollision : MonoBehaviour {
 
         if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp"))
         {
-            BeeManager.iPowerUpCounter++;
-            Destroy(p_xOtherCollider.gameObject);
+            if (BeeManager.iPowerUpCounter >= 3)
+            {
+                InvincibilityCounter.fInvincibilityTimer += 1;
+                Destroy(p_xOtherCollider.gameObject);
+            }
+            else
+            {
+                BeeManager.iPowerUpCounter++;
+                Destroy(p_xOtherCollider.gameObject);
+            }
         }
     }
 }
