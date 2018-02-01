@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3d0863459ce0e7c40ac5a25ffc2d2364
-timeCreated: 1517488832
+timeCreated: 1517518315
 licenseType: Free
 MonoImporter:
   externalObjects: {}
@@ -8,7 +8,8 @@ MonoImporter:
   defaultReferences:
   - m_xPlayerBullet: {fileID: 1639238614990132, guid: 5af2eeb631614074ea3061271d9c77f8,
       type: 2}
-  - m_xBulletPosition: {instanceID: 0}
+  - m_xBulletPosition: {fileID: 1639238614990132, guid: 5af2eeb631614074ea3061271d9c77f8,
+      type: 2}
   - shootsound: {instanceID: 0}
   - xGameOverScreen: {instanceID: 0}
   executionOrder: 0
