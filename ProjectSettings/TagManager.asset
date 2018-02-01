@@ -9,6 +9,10 @@ TagManager:
   - BeeBullet
   - HoneycombPickUp
   - HonecombPickUp
+  - LowPrioPlayer
+  - Border
+  - BeeBorder
+  - Formation
   layers:
   - Default
   - TransparentFX

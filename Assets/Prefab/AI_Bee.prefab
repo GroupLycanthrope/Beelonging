@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50042906737941270}
   m_Layer: 9
   m_Name: Find_Move
-  m_TagString: Untagged
+  m_TagString: BeeBorder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699745099751994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.9805107, y: 4.429426, z: 0}
+  m_LocalPosition: {x: -7.85, y: -1.9067765, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4002608987520496}
@@ -160,7 +160,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 6
 --- !u!70 &70527894777255984
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -299,6 +299,10 @@ MonoBehaviour:
   bLeft: 0
   fSpeed: 0.01
   fAcceleration: 0
+  bBorderUp: 0
+  bBorderDown: 0
+  bBorderRight: 0
+  bBorderLeft: 0
 --- !u!212 &212777093517092238
 SpriteRenderer:
   m_ObjectHideFlags: 1
