@@ -33,5 +33,11 @@ public class BeeCollision : MonoBehaviour {
             This.GetComponent<ControlHealth>().setHealth(-1);
             //Destroy(gameObject, 1);
         }
+
+        if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp"))
+        {
+            BeeManager.iPowerUpCounter++;
+            Destroy(p_xOtherCollider.gameObject);
+        }
     }
 }

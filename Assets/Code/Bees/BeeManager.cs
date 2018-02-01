@@ -8,6 +8,8 @@ public class BeeManager : MonoBehaviour {
 
     public GameObject[] Swarm;
 
+    public static int iPowerUpCounter;
+
     // Use this for initialization
     void Start() {
         Swarm = GameObject.FindGameObjectsWithTag("Bee");
