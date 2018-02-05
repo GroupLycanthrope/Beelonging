@@ -40,11 +40,7 @@ public class Fly : MonoBehaviour
         {
             //TODO: Death animation (maybe with state for dying)
             Destroy(gameObject);
+            ScoreManager.iScore += iScoreValue;
         }
-    }
-
-    void OnDestroy()
-    {
-        ScoreManager.iScore += iScoreValue;
     }
 }
