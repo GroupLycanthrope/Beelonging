@@ -2,31 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class SpawnData
+{
+    public float fSpawnY;
+    public float fSpawnTime;
+    public GameObject xSpawnObject;
+}
+
 public class EnemySpawner : MonoBehaviour
 {
     private float fCounter;
 
-    public float fTimer;
+    private float fTimer;
+
+    private int i;
 
     public GameObject xFly;
     public GameObject xHoneyCombPickUp;
 
+    public List<SpawnData> aSpawnData;
 
 	// Use this for initialization
 	void Start ()
 	{
-	    SpawnFlies();
+	    i = 0;
+	    fTimer = 0;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    fCounter += Time.deltaTime;
-	    if (fCounter > fTimer)
+	    //fCounter += Time.deltaTime;
+	    //if (fCounter > fTimer)
+	    //{
+     //       SpawnFlies();
+     //       SpawnPickUp();
+	    //    fCounter = 0;
+	    //}
+	    fTimer += Time.deltaTime;
+	    if (i < aSpawnData.Count)
 	    {
-            SpawnFlies();
-            SpawnPickUp();
-	        fCounter = 0;
+	        if (aSpawnData[i].fSpawnTime <= fTimer)
+	        {
+	            GameObject Spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+	            Spawn.transform.Translate(0, aSpawnData[i].fSpawnY, 0);
+	            i++;
+	        }
 	    }
 	}
 

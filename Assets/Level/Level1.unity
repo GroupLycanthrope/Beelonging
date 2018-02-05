@@ -1171,10 +1171,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fb25b0f1a1fd544942fe25f9de162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fTimer: 3
   xFly: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3, type: 2}
   xHoneyCombPickUp: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
     type: 2}
+  aSpawnData:
+  - fSpawnY: 0
+    fSpawnTime: 5
+    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 10
+    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
+      type: 2}
 --- !u!4 &814357456
 Transform:
   m_ObjectHideFlags: 0
