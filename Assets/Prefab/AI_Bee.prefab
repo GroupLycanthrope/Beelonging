@@ -186,7 +186,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0df054d8adb094046a95b0cfce3a0dd3, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -280,6 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathsound: {fileID: 8300000, guid: 0df054d8adb094046a95b0cfce3a0dd3, type: 3}
+  honeycomb_pickup: {fileID: 0}
+  honeycomb_activate: {fileID: 0}
   This: {fileID: 1699745099751994}
 --- !u!114 &114946959637748662
 MonoBehaviour:

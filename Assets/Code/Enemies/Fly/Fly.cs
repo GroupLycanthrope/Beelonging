@@ -12,6 +12,15 @@ public class Fly : MonoBehaviour
 
     public int iScoreValue;
 
+    public AudioClip fly_dead;
+
+    private AudioSource source;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -38,9 +47,18 @@ public class Fly : MonoBehaviour
     {
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
         {
+            source.PlayOneShot(fly_dead, 1F);
+            GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;
             //TODO: Death animation (maybe with state for dying)
-            Destroy(gameObject);
-            ScoreManager.iScore += iScoreValue;
+            Destroy(gameObject, 1);
+
+
         }
+    }
+
+    void OnDestroy()
+    {
+        ScoreManager.iScore += iScoreValue;
     }
 }
