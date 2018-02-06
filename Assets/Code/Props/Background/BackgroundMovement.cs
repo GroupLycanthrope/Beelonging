@@ -12,18 +12,18 @@ public class BackgroundMovement : MonoBehaviour
     private Vector2 v2TextureOffset;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         v2TextureOffset.x = 0;
     }
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	    v2TextureOffset = mMaterial.GetTextureOffset("_MainTex");
-	    v2TextureOffset.x += fScrollingSpeed * Time.deltaTime;
+
+    // Update is called once per frame
+    void Update()
+    {
+        v2TextureOffset = mMaterial.GetTextureOffset("_MainTex");
+        v2TextureOffset.x += fScrollingSpeed * Time.deltaTime;
         mMaterial.SetTextureOffset("_MainTex", v2TextureOffset);
-	}
+    }
 
     void OnDestroy()
     {

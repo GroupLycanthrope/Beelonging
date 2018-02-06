@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699745099751994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.85, y: -1.9067765, z: 0}
+  m_LocalPosition: {x: -10.65, y: 2.12, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4002608987520496}
@@ -280,8 +280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathsound: {fileID: 8300000, guid: 0df054d8adb094046a95b0cfce3a0dd3, type: 3}
-  honeycomb_pickup: {fileID: 0}
-  honeycomb_activate: {fileID: 0}
+  honeycomb_pickup: {fileID: 8300000, guid: 90079b61430b9fb458d8716f4860408e, type: 3}
+  honeycomb_activate: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
   This: {fileID: 1699745099751994}
 --- !u!114 &114946959637748662
 MonoBehaviour:

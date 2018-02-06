@@ -8,6 +8,7 @@ public class BeeManager : MonoBehaviour {
     public GameObject m_xPlayer;
 
     public GameObject[] Swarm;
+    public bool HoneyFormation = false;
 
     public static int iPowerUpCounter;
 
@@ -21,6 +22,7 @@ public class BeeManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        Formation();
         for (int i = 0; i < Swarm.Length; i++) { 
             if (Swarm[i] != null){
                 if (Swarm[i].GetComponent<ControlHealth>().getHealth() == 0){
@@ -45,7 +47,7 @@ public class BeeManager : MonoBehaviour {
     }
 
     void Formation() {
-
+        
     }
 
 

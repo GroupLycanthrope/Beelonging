@@ -52,13 +52,8 @@ public class Fly : MonoBehaviour
             GetComponent<CapsuleCollider2D>().enabled = false;
             //TODO: Death animation (maybe with state for dying)
             Destroy(gameObject, 1);
-
+            ScoreManager.iScore += iScoreValue;
 
         }
-    }
-
-    void OnDestroy()
-    {
-        ScoreManager.iScore += iScoreValue;
     }
 }
