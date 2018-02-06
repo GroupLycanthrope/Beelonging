@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour {
 
-    float fSpeed;
+    public float fSpeed;
+
+    public float fDamage;
+
     public AudioClip hitsound;
     private AudioSource source;
 
@@ -16,7 +19,6 @@ public class PlayerBullet : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        fSpeed = 8;
 
     }
 	

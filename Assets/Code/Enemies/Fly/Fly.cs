@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fly : MonoBehaviour
-{
-    public GameObject xFly;
-
-    public float iHealth;
-
+{ 
     public float fFlyingSpeed;
 
     public int iScoreValue;
