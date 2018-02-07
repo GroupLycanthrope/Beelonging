@@ -24,7 +24,7 @@ public class BeeManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+        Formation();
         for (int i = 0; i < Swarm.Length; i++) { 
             if (Swarm[i] != null){
                 if (Swarm[i].GetComponent<ControlHealth>().getHealth() == 0){
@@ -33,7 +33,7 @@ public class BeeManager : MonoBehaviour {
             }
         }
         Swarm = GameObject.FindGameObjectsWithTag("Bee");
-        Formation();
+ 
         if (iPowerUpCounter == 3)
         {
             bIsInvincible = true;
@@ -50,6 +50,11 @@ public class BeeManager : MonoBehaviour {
     int i = 0;
 
     void Formation() {
+        // make that the AI bees have a destination to move to
+        if (Swarm[i].name != "Player" && HoneyFormation == true && Swarm[i] != null){
+            Swarm[i].GetComponentInChildren<Find_Move>().v3PlayerPos = goPlayer.transform.position;
+        }
+
         // Sets the honeyFormation to true and calls for all of the bees
         if (Input.GetKey("z") && Swarm[i].name != "Player" && Swarm[i] != null && i < Swarm.Length) {
             HoneyFormation = true;
@@ -60,10 +65,12 @@ public class BeeManager : MonoBehaviour {
             Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = false;
         }
         // The Player collider gets smaller here
-        if (i == 0 && HoneyFormation == true && Swarm[i] != null && i < Swarm.Length){
+        if (i == 0 && HoneyFormation == true && Swarm[i] != null && i < Swarm.Length)
+        {
             PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2f;
         }
-        else if (i == 1 && HoneyFormation == true && Swarm[i] != null && i < Swarm.Length){
+        else if (i == 1 && HoneyFormation == true && Swarm[i] != null && i < Swarm.Length)
+        {
             PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2;
         }
         // Sets the detection for AI bees to one
@@ -78,10 +85,8 @@ public class BeeManager : MonoBehaviour {
         if(i >= Swarm.Length) {
             i = 0;
         }
-        // make that the AI bees have a destination to move to
-        if (Swarm[i].name != "Player" && HoneyFormation == true && Swarm[i].GetComponentInChildren<Find_Move>().InFormation == false && Swarm[i] != null && i < Swarm.Length) {
-            Swarm[i].GetComponentInChildren<Find_Move>().v3PlayerPos = goPlayer.transform.position;
-        }
+        
+        
         // revert back the player collider to normal
         if (HoneyFormation == false && i == 0) {
             PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 4;
