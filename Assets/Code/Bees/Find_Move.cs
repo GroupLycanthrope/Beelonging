@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Find_Move : MonoBehaviour {
 
-    public GameObject goParent;
-    public bool bUp,bDown,bRight,bLeft;
+   public GameObject goParent;
+   bool bUp,bDown,bRight,bLeft;
+   bool bBorderUp, bBorderDown, bBorderRight, bBorderLeft;
+   public bool BeeCallerFormation;
+   public bool InFormation;
+   public Vector3 v3PlayerPos;
+
     Vector3 v3Pos;
     public float fSpeed = 0.01f;
     public float fAcceleration;
-    public bool bBorderUp, bBorderDown, bBorderRight, bBorderLeft;
+
 	// Use this for initialization
 	void Start () {
         fAcceleration = fSpeed;
@@ -42,7 +47,26 @@ public class Find_Move : MonoBehaviour {
         else {
             v3Pos.y += fAcceleration;
         }
-
+        if(BeeCallerFormation == true && InFormation == false) {
+            if(fAcceleration == fSpeed){
+                fAcceleration *= 10;
+            }
+            if(goParent.transform.position.x < v3PlayerPos.x) {
+                v3Pos.x += fAcceleration;
+            }
+            else if (goParent.transform.position.x > v3PlayerPos.x){
+                v3Pos.x -= fAcceleration;
+            }
+            if (goParent.transform.position.y < v3PlayerPos.y){
+                v3Pos.y += fAcceleration;
+            }
+            else if (goParent.transform.position.y > v3PlayerPos.y){
+                v3Pos.y -= fAcceleration;
+            }
+        }
+        else {
+            fAcceleration = fSpeed;
+        }
 
         goParent.transform.position = v3Pos;
 	}
@@ -84,7 +108,11 @@ public class Find_Move : MonoBehaviour {
                 bBorderRight = false;
             }
         }
+        if(other.name == "Formation") {
+            InFormation = true;
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D other){
         if (other.tag == "Player"){
             fAcceleration *= 5;
@@ -105,5 +133,9 @@ public class Find_Move : MonoBehaviour {
             bUp = false;
         }
         fAcceleration = fSpeed;
+        if (other.name == "Formation")
+        {
+            InFormation = false;
+        }
     }
 }

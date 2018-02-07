@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4888331711499504}
   m_Layer: 0
-  m_Name: Borders
+  m_Name: AI_Borders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
