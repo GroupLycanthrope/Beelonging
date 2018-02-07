@@ -17,10 +17,7 @@ public class EnemySpawner : MonoBehaviour
     private float fTimer;
 
     private int i;
-
-    //public GameObject xFly;
-    //public GameObject xHoneyCombPickUp;
-
+    
     public List<SpawnData> aSpawnData;
 
     // Use this for initialization
