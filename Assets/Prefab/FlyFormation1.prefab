@@ -173,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071215088893028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.3207363, y: -0.6656513, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4153839113074094}
@@ -369,8 +369,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07334794, y: -0.014671913}
-  m_Size: {x: 3.2716382, y: 1.6873263}
+  m_Offset: {x: -0.033011623, y: -0.27685884}
+  m_Size: {x: 4.804444, y: 2.9377751}
   m_Direction: 1
 --- !u!70 &70064758543384408
 CapsuleCollider2D:
@@ -384,8 +384,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07334794, y: -0.014671913}
-  m_Size: {x: 3.2716382, y: 1.6873263}
+  m_Offset: {x: -0.0128424615, y: -0.35753492}
+  m_Size: {x: 4.9254565, y: 2.937776}
   m_Direction: 1
 --- !u!70 &70144406201606254
 CapsuleCollider2D:
@@ -399,8 +399,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07334794, y: -0.014671913}
-  m_Size: {x: 3.2716382, y: 1.6873263}
+  m_Offset: {x: 0.1686707, y: -0.2970279}
+  m_Size: {x: 5.369163, y: 2.7361035}
   m_Direction: 1
 --- !u!70 &70303367629674296
 CapsuleCollider2D:
@@ -414,8 +414,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07334794, y: -0.014671913}
-  m_Size: {x: 3.2716382, y: 1.6873263}
+  m_Offset: {x: 0.027492011, y: -0.31719777}
+  m_Size: {x: 5.0868044, y: 3.0184526}
   m_Direction: 1
 --- !u!70 &70325514367292138
 CapsuleCollider2D:
@@ -429,8 +429,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07334794, y: -0.014671913}
-  m_Size: {x: 3.2716382, y: 1.6873263}
+  m_Offset: {x: 0.1081675, y: -0.35753313}
+  m_Size: {x: 5.2481537, y: 2.7764297}
   m_Direction: 1
 --- !u!70 &70690000143281296
 CapsuleCollider2D:
@@ -444,8 +444,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07334794, y: -0.014671913}
-  m_Size: {x: 3.2716382, y: 1.6873263}
+  m_Offset: {x: -0.053180497, y: -0.31719643}
+  m_Size: {x: 5.0868063, y: 2.6957588}
   m_Direction: 1
 --- !u!114 &114071821959989954
 MonoBehaviour:
