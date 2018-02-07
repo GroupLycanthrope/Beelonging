@@ -13,7 +13,7 @@ public class DragonflyMovement : MonoBehaviour
 
     private float fNextZoom;
 
-    private Vector3 v3ZoomDirection;
+    private Vector3 v3ZoomDestination;
 	// Use this for initialization
 	void Start ()
 	{
@@ -33,14 +33,14 @@ public class DragonflyMovement : MonoBehaviour
 	        fNextZoom = Time.time + fZoomCooldown;
 	        float fRandomX = Random.Range(v2RandomMinInterval.x, v2RandomMaxInterval.x);
 	        float fRandomY = Random.Range(v2RandomMinInterval.y, v2RandomMaxInterval.y);
-	        v3ZoomDirection.x = transform.position.x - fRandomX;
-	        v3ZoomDirection.y = transform.position.y - fRandomY;
-	        v3ZoomDirection.Normalize();
-	    }
+	        v3ZoomDestination.x = transform.position.x + fRandomX;
+	        v3ZoomDestination.y = transform.position.y + fRandomY;
+            v3ZoomDestination.Normalize();
+        }
 
-	    if (transform.position.x > v3ZoomDirection.x)
+	    if (transform.position.x > v3ZoomDestination.x)
 	    {
-            transform.Translate(v3ZoomDirection * fZoomSpeed * Time.deltaTime);
+            transform.Translate(v3ZoomDestination * fZoomSpeed * Time.deltaTime);
 	    }
 	}
 }
