@@ -758,6 +758,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 364431804}
+--- !u!1001 &467009214
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &574630720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1217,7 @@ MonoBehaviour:
   aSpawnData:
   - fSpawnY: 0
     fSpawnTime: 1
-    xSpawnObject: {fileID: 1071215088893028, guid: 0b6555b748116da4cbedc8d5b634f912,
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
   - fSpawnY: 1
     fSpawnTime: 2
@@ -1183,7 +1225,7 @@ MonoBehaviour:
       type: 2}
   - fSpawnY: -1
     fSpawnTime: 3
-    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
       type: 2}
   - fSpawnY: 2
     fSpawnTime: 4
@@ -1191,11 +1233,11 @@ MonoBehaviour:
       type: 2}
   - fSpawnY: -2
     fSpawnTime: 5
-    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
       type: 2}
   - fSpawnY: 0
     fSpawnTime: 6
-    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+    xSpawnObject: {fileID: 1071215088893028, guid: 0b6555b748116da4cbedc8d5b634f912,
       type: 2}
 --- !u!4 &814357456
 Transform:
