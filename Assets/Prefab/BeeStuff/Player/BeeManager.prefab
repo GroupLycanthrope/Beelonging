@@ -132,9 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e77879de5904e4da9aaa596e00a98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goPlayer: {fileID: 0}
+  goPlayer: {fileID: 1467338762861618, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
   PlayerHitBoxes:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1056492152237360, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
+  - {fileID: 1006817733636076, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
   Swarm: []
   HoneyFormation: 0
