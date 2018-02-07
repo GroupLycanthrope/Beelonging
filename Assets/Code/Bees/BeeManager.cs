@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class BeeManager : MonoBehaviour {
 
-    public GameObject m_xPlayer;
+    public GameObject goPlayer;
+
+    public GameObject[] PlayerHitBoxes;
 
     public GameObject[] Swarm;
     public bool HoneyFormation = false;
@@ -45,10 +47,46 @@ public class BeeManager : MonoBehaviour {
             iPowerUpCounter = 0;
         }
     }
+    int i = 0;
 
     void Formation() {
-        
+        // Sets the honeyFormation to true and calls for all of the bees
+        if (Input.GetKey("z") && Swarm[i].name != "Player") {
+            HoneyFormation = true;
+            Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = true;
+        }
+        else if(Swarm[i].name != "Player") {
+            HoneyFormation = false;
+            Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = false;
+        }
+        // The Player collider gets smaller here
+        if (i == 0 && HoneyFormation == true){
+            PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2f;
+        }
+        else if (i == 1 && HoneyFormation == true){
+            PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2;
+        }
+        // Sets the detection for AI bees to one
+        if (Swarm[i].name != "Player" && HoneyFormation == true){
+            
+            Swarm[i].GetComponentInChildren<CircleCollider2D>().radius = 2;
+        }
+        else if (Swarm[i].name != "Player" && HoneyFormation == false){
+            Swarm[i].GetComponentInChildren<CircleCollider2D>().radius = 6;
+        }
+        i++;
+        if(i >= Swarm.Length) {
+            i = 0;
+        }
+        // make that the AI bees have a destination to move to
+        if (Swarm[i].name != "Player" && HoneyFormation == true && Swarm[i].GetComponentInChildren<Find_Move>().InFormation == false) {
+            Swarm[i].GetComponentInChildren<Find_Move>().v3PlayerPos = goPlayer.transform.position;
+        }
+        // revert back the player collider to normal
+        if (HoneyFormation == false && i == 0) {
+            PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 4;
+            PlayerHitBoxes[i+1].GetComponent<CircleCollider2D>().radius = 3;
+        }
+
     }
-
-
 }

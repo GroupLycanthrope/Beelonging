@@ -758,48 +758,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 364431804}
---- !u!1001 &467009214
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4736797763599888, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 371c07b5adbeef84e8c48442d7d17e01, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &574630720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,9 +1185,9 @@ MonoBehaviour:
     fSpawnTime: 3
     xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
       type: 2}
-  - fSpawnY: 2
+  - fSpawnY: 0
     fSpawnTime: 4
-    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+    xSpawnObject: {fileID: 1521263716047048, guid: f5d8199a81a6c964c869424de56faddf,
       type: 2}
   - fSpawnY: -2
     fSpawnTime: 5

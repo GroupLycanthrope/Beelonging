@@ -54,10 +54,11 @@ GameObject:
   - component: {fileID: 4825982459357378}
   - component: {fileID: 212777093517092238}
   - component: {fileID: 50568241348623890}
-  - component: {fileID: 114686123026210598}
   - component: {fileID: 70527894777255984}
-  - component: {fileID: 114456942076778226}
   - component: {fileID: 82077155793040952}
+  - component: {fileID: 114513103540486474}
+  - component: {fileID: 114288642178986330}
+  - component: {fileID: 114743338687181044}
   m_Layer: 9
   m_Name: AI_Bee
   m_TagString: Bee
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093452687009992}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.57, y: 0.18799996, z: -1}
+  m_LocalPosition: {x: 2.37, y: 0.18799996, z: -1}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4825982459357378}
@@ -98,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1699745099751994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10.65, y: 2.12, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4002608987520496}
@@ -256,7 +257,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114456942076778226
+--- !u!114 &114288642178986330
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -264,11 +265,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699745099751994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ef9c0f060b71f4cb3280cd5bc2f496, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c3a4da1a4500f64fa25a60a68754d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iHealth: 1
---- !u!114 &114686123026210598
+  goBulletStartPos: {fileID: 1093452687009992}
+  goBullet: {fileID: 1639238614990132, guid: 5af2eeb631614074ea3061271d9c77f8, type: 2}
+--- !u!114 &114513103540486474
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -283,6 +285,18 @@ MonoBehaviour:
   honeycomb_pickup: {fileID: 8300000, guid: 90079b61430b9fb458d8716f4860408e, type: 3}
   honeycomb_activate: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
   This: {fileID: 1699745099751994}
+--- !u!114 &114743338687181044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1699745099751994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ef9c0f060b71f4cb3280cd5bc2f496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iHealth: 1
 --- !u!114 &114946959637748662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,16 +309,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goParent: {fileID: 1699745099751994}
-  bUp: 0
-  bDown: 0
-  bRight: 0
-  bLeft: 0
+  BeeCallerFormation: 0
+  InFormation: 0
+  v3PlayerPos: {x: 0, y: 0, z: 0}
   fSpeed: 0.01
   fAcceleration: 0
-  bBorderUp: 0
-  bBorderDown: 0
-  bBorderRight: 0
-  bBorderLeft: 0
 --- !u!212 &212777093517092238
 SpriteRenderer:
   m_ObjectHideFlags: 1
