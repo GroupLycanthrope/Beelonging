@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
-
-
     public GameObject m_xPlayerBullet;
     public GameObject m_xBulletPosition;
 
-    public float m_fSpeed = 4;
+    public float m_fSpeed;
     public float fFireRate;
     private float fNextShot;
 
