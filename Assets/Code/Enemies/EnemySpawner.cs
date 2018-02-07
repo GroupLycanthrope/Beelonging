@@ -44,8 +44,11 @@ public class EnemySpawner : MonoBehaviour
         {
             if (aSpawnData[i].fSpawnTime <= fTimer)
             {
-                GameObject Spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
-                Spawn.transform.Translate(0, aSpawnData[i].fSpawnY, 0);
+                if (aSpawnData[i].xSpawnObject != null)
+                {
+                    GameObject Spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+                    Spawn.transform.Translate(0, aSpawnData[i].fSpawnY, 0);
+                }
                 i++;
             }
         }

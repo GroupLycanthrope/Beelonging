@@ -983,6 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_xPlayer: {fileID: 170156168}
   Swarm: []
+  HoneyFormation: 0
 --- !u!4 &687373453
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,27 +1175,27 @@ MonoBehaviour:
   aSpawnData:
   - fSpawnY: 0
     fSpawnTime: 1
-    xSpawnObject: {fileID: 1071215088893028, guid: 0b6555b748116da4cbedc8d5b634f912,
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
   - fSpawnY: 1
     fSpawnTime: 2
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
   - fSpawnY: -1
     fSpawnTime: 3
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
       type: 2}
-  - fSpawnY: 2
+  - fSpawnY: 0
     fSpawnTime: 4
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+    xSpawnObject: {fileID: 1521263716047048, guid: f5d8199a81a6c964c869424de56faddf,
       type: 2}
   - fSpawnY: -2
     fSpawnTime: 5
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
       type: 2}
   - fSpawnY: 0
     fSpawnTime: 6
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+    xSpawnObject: {fileID: 1071215088893028, guid: 0b6555b748116da4cbedc8d5b634f912,
       type: 2}
 --- !u!4 &814357456
 Transform:
@@ -1913,7 +1914,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4888331711499504, guid: 6024339ee223fa646aa86998ffa32ae4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -9.4
       objectReference: {fileID: 0}
     - target: {fileID: 4888331711499504, guid: 6024339ee223fa646aa86998ffa32ae4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1942,6 +1943,34 @@ Prefab:
     - target: {fileID: 4888331711499504, guid: 6024339ee223fa646aa86998ffa32ae4, type: 2}
       propertyPath: m_RootOrder
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 61371600321830304, guid: 6024339ee223fa646aa86998ffa32ae4,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.046266556
+      objectReference: {fileID: 0}
+    - target: {fileID: 61371600321830304, guid: 6024339ee223fa646aa86998ffa32ae4,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 12.469721
+      objectReference: {fileID: 0}
+    - target: {fileID: 61329750644793454, guid: 6024339ee223fa646aa86998ffa32ae4,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.014055729
+      objectReference: {fileID: 0}
+    - target: {fileID: 61329750644793454, guid: 6024339ee223fa646aa86998ffa32ae4,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 12.421691
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843740559467176, guid: 6024339ee223fa646aa86998ffa32ae4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892543239888526, guid: 6024339ee223fa646aa86998ffa32ae4, type: 2}
+      propertyPath: m_Name
+      value: Borders (AI Bees)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6024339ee223fa646aa86998ffa32ae4, type: 2}
