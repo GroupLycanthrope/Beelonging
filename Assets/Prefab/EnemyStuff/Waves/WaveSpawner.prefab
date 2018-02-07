@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4066157275204938}
   - component: {fileID: 114480601831726890}
   m_Layer: 0
-  m_Name: FlyFormation
+  m_Name: WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,10 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17ddecc5d13fb04c8c95d9e0e97134c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xFly: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6, type: 2}
-  aFlySpawnCoordinates:
-  - v2DeltaPosition: {x: -0.5, y: 0.5}
-  - v2DeltaPosition: {x: 0.5, y: -0.5}
-  - v2DeltaPosition: {x: 0.5, y: 0.5}
-  - v2DeltaPosition: {x: -0.5, y: -0.5}
+  aWaveSpawnData:
   - v2DeltaPosition: {x: 0, y: 0}
+    xSpawnObject: {fileID: 0}
+  - v2DeltaPosition: {x: 0, y: 0}
+    xSpawnObject: {fileID: 0}

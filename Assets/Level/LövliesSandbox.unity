@@ -981,7 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e77879de5904e4da9aaa596e00a98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xPlayer: {fileID: 170156168}
+  goPlayer: {fileID: 0}
+  PlayerHitBoxes: []
   Swarm: []
   HoneyFormation: 0
 --- !u!4 &687373453
