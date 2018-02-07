@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragonFlyMovement : MonoBehaviour
+public class DragonflyMovement : MonoBehaviour
 {
     public float fFlyingSpeed;
 	// Use this for initialization

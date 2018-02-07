@@ -10,7 +10,7 @@ public class SpawnData
     public GameObject xSpawnObject;
 }
 
-public class EnemySpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     //private float fCounter;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragonFlyCollision : MonoBehaviour
+public class DragonflyCollision : MonoBehaviour
 {
     public float fHitPoints;
 
