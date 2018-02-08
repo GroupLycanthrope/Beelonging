@@ -12,9 +12,11 @@ public class SpiderProjectileMovement : MonoBehaviour
 	void Start ()
 	{
         var xPlayer = GameObject.Find("Player");
+        if(xPlayer != null) { 
 	    v3Direction = xPlayer.transform.position - transform.position;
         v3Direction.Normalize();
-	}
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()
