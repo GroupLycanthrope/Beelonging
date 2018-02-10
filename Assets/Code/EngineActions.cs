@@ -9,6 +9,11 @@ public class EngineActions : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
 
+    public void SetGameSpeed(float p_fTimeScale)
+    {
+        Time.timeScale = p_fTimeScale;
+    }
+
     public void QuitGame()
     {
         Application.Quit();

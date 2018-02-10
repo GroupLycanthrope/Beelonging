@@ -44,7 +44,9 @@ public class PlayerController : MonoBehaviour {
         m_v2Direction = new Vector2(fX, fY).normalized;
         Move(m_v2Direction);
 
-        if(this.GetComponent<ControlHealth>().getHealth() == 0) {
+        if(this.GetComponent<ControlHealth>().getHealth() == 0)
+        {
+            Time.timeScale = 0;
             xGameOverScreen.SetActive(true);
         }
 
