@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114835721375187076}
   - component: {fileID: 50221703020569548}
   - component: {fileID: 70135663423704936}
+  - component: {fileID: 95570587505127624}
+  - component: {fileID: 111177987594624416}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Enemy
@@ -78,6 +80,37 @@ CapsuleCollider2D:
   m_Offset: {x: -0.20650929, y: -0.2810055}
   m_Size: {x: 4.7808943, y: 2.6639051}
   m_Direction: 1
+--- !u!95 &95570587505127624
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866655339274010}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a45d051546a11446b6c5b3ab47867bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111177987594624416
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866655339274010}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: af776c5b65a736246946fa480e6d5882, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114835721375187076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e70dddff54e92194c9606b2f23c3fef3, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,5 +167,5 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
