@@ -12,15 +12,20 @@ public class SpiderProjectileMovement : MonoBehaviour
 	void Start ()
 	{
         var xPlayer = GameObject.Find("Player");
-        if(xPlayer != null) { 
-	    v3Direction = xPlayer.transform.position - transform.position;
-        v3Direction.Normalize();
+        if (xPlayer != null)
+        { 
+	        v3Direction = xPlayer.transform.position - transform.position;
+            v3Direction.Normalize();
         }
     }
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		transform.Translate(v3Direction * fSpeed * Time.deltaTime);
+	    if (transform.position.x < -20 || transform.position.x > 20)
+	    {
+	        Destroy(gameObject);
+	    }
+        transform.Translate(v3Direction * fSpeed * Time.deltaTime);
 	}
 }

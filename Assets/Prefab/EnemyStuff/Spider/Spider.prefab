@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iScoreValue: 20
   fHitPoints: 3
+  bIsDead: 0
 --- !u!114 &114721769459949424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,10 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af8e70d1766b904eb0b28d5deb256a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpiderProjectile: {fileID: 1486684537550890, guid: c3465c1b105f3fe48ba58d548fb18c3b,
+  xProjectile: {fileID: 1486684537550890, guid: c3465c1b105f3fe48ba58d548fb18c3b,
     type: 2}
-  xSpiderProjectileOrigin: {fileID: 1317297524708282}
-  fFireRate: 4
+  xProjectileOrigin: {fileID: 1317297524708282}
+  fFireRate: 5
+  fAggroRange: 10
 --- !u!114 &114897122261025164
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,25 +5,28 @@ using UnityEngine;
 
 public class SpiderShooting : MonoBehaviour
 {
-    public GameObject xSpiderProjectile;
-    public GameObject xSpiderProjectileOrigin;
+    public GameObject xProjectile;
+    public GameObject xProjectileOrigin;
 
     public float fFireRate;
+    public float fAggroRange;
     private float fNextShot;
+    private float fDeltaX;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
 	{
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (Time.time > fNextShot)
+	    var xPlayer = GameObject.Find("Player");
+        if (xPlayer != null && Time.time > fNextShot && transform.position.x - xPlayer.transform.position.x < fAggroRange)
 	    {
-	        GameObject web = Instantiate(xSpiderProjectile);
-	        web.transform.position = xSpiderProjectileOrigin.transform.position;
+	        GameObject web = Instantiate(xProjectile);
+	        web.transform.position = xProjectileOrigin.transform.position;
 	        fNextShot = Time.time + fFireRate;
         }
     }

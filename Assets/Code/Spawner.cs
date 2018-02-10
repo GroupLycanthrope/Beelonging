@@ -20,6 +20,7 @@ public class Spawner : MonoBehaviour
     
     public List<SpawnData> aSpawnData;
 
+    public GameObject xWinningScreen;
     // Use this for initialization
     void Start()
     {
@@ -43,11 +44,16 @@ public class Spawner : MonoBehaviour
             {
                 if (aSpawnData[i].xSpawnObject != null)
                 {
-                    GameObject Spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
-                    Spawn.transform.Translate(0, aSpawnData[i].fSpawnY, 0);
+                    GameObject spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+                    spawn.transform.Translate(0, aSpawnData[i].fSpawnY, 0);
                 }
                 i++;
             }
+        }
+
+        if (!GameObject.FindGameObjectWithTag("Enemy") && i >= aSpawnData.Count)
+        { 
+            xWinningScreen.SetActive(true);
         }
     }
 

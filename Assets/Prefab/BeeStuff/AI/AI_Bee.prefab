@@ -172,7 +172,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.4376428, y: -0.33664617}
@@ -349,7 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3a4da1a4500f64fa25a60a68754d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fFireRate: 5
+  fFireRate: 10
+  fNextShot: 0
   acShootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
   goBulletStartPos: {fileID: 1093452687009992}
   goBullet: {fileID: 1639238614990132, guid: 5af2eeb631614074ea3061271d9c77f8, type: 2}

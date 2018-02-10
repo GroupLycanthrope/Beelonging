@@ -13,6 +13,8 @@ TagManager:
   - Border
   - BeeBorder
   - Formation
+  - EnemyProjectile
+  - WinningScreen
   layers:
   - Default
   - TransparentFX

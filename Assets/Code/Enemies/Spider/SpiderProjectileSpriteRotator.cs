@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderMovement : MonoBehaviour
+public class SpiderProjectileSpriteRotator : MonoBehaviour
 {
-    public float fScrollingSpeed;
+    public float fRotationSpeed;
 
     // Use this for initialization
     void Start ()
@@ -15,6 +15,6 @@ public class SpiderMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		transform.Translate(-fScrollingSpeed * Time.fixedDeltaTime, 0, 0);
-	}
+	    transform.Rotate(0, 0, fRotationSpeed * Time.deltaTime);
+    }
 }

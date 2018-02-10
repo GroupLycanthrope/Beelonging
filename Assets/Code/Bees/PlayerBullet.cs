@@ -35,8 +35,6 @@ public class PlayerBullet : MonoBehaviour {
         //    m_v2Position.x += m_v2Position.x * m_fSpeed * Time.deltaTime;
         //}
 
-        
-
         transform.position = v2Position;
 
         if(v2Position.x > 9) {
