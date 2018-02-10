@@ -1,34 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class SpiderCollision : MonoBehaviour
+public class Spider : MonoBehaviour
 {
+    public GameObject xProjectile;
+    public GameObject xProjectileOrigin;
+
+
     public int iScoreValue;
 
     public float fHitPoints;
 
-    public bool bIsDead = false;
-    
+
+    public float fFireRate;
+    public float fAggroRange;
+    private float fNextShot;
+    private float fDeltaX;
+
+    private bool bIsDead;
+
+
     // Use this for initialization
-	void Start ()
-	{
-		
-	}
+    void Start ()
+    {
+        bIsDead = false;
+    }
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        if (transform.position.x < -20)
+	{
+	    GameObject xPlayer = GameObject.Find("Player");
+        if (xPlayer != null 
+            && Time.time > fNextShot 
+            && transform.position.x - xPlayer.transform.position.x < fAggroRange
+            && !bIsDead)
         {
-            Destroy(gameObject);
+	        GameObject web = Instantiate(xProjectile);
+	        web.transform.position = xProjectileOrigin.transform.position;
+	        fNextShot = Time.time + fFireRate;
         }
+	    if (transform.position.x < -20)
+	    {
+	        Destroy(gameObject);
+	    }
     }
-
-    //public void TakeDamage(float p_fDamage)
-    //{
-        
-    //}
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {

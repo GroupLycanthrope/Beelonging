@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 61098504771785858}
   - component: {fileID: 50656577370769242}
   - component: {fileID: 114897122261025164}
-  - component: {fileID: 114643016553460480}
   - component: {fileID: 114721769459949424}
   m_Layer: 0
   m_Name: Spider
@@ -149,20 +148,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9218483, y: 2.3287864}
   m_EdgeRadius: 0
---- !u!114 &114643016553460480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1521263716047048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a94ef04f649f62b4499d7975898632b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iScoreValue: 20
-  fHitPoints: 3
-  bIsDead: 0
 --- !u!114 &114721769459949424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,6 +162,8 @@ MonoBehaviour:
   xProjectile: {fileID: 1486684537550890, guid: c3465c1b105f3fe48ba58d548fb18c3b,
     type: 2}
   xProjectileOrigin: {fileID: 1317297524708282}
+  iScoreValue: 50
+  fHitPoints: 5
   fFireRate: 5
   fAggroRange: 10
 --- !u!114 &114897122261025164
