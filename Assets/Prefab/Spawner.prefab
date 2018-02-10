@@ -54,7 +54,7 @@ MonoBehaviour:
   aSpawnData:
   - fSpawnY: 0
     fSpawnTime: 1
-    xSpawnObject: {fileID: 1071215088893028, guid: 0b6555b748116da4cbedc8d5b634f912,
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
   - fSpawnY: 1
     fSpawnTime: 2
@@ -76,3 +76,4 @@ MonoBehaviour:
     fSpawnTime: 6
     xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
       type: 2}
+  xWinningScreen: {fileID: 0}

@@ -32,14 +32,18 @@ public class BeeCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        if (p_xOtherCollider.gameObject.CompareTag("Enemy") || p_xOtherCollider.gameObject.CompareTag("EnemyProjectile") && !BeeManager.bIsInvincible)
+        if (!BeeManager.bIsInvincible)
         {
-            source.PlayOneShot(deathsound, 1F);
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<CapsuleCollider2D>().enabled = false;
-            //TODO: Death Animation plus promoting new bee
-            This.GetComponent<ControlHealth>().setHealth(-1);
-            //Destroy(gameObject, 1);
+            if (p_xOtherCollider.gameObject.CompareTag("Enemy") ||
+                p_xOtherCollider.gameObject.CompareTag("EnemyProjectile"))
+            {
+                source.PlayOneShot(deathsound, 1F);
+                GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<CapsuleCollider2D>().enabled = false;
+                //TODO: Death Animation plus promoting new bee
+                This.GetComponent<ControlHealth>().setHealth(-1);
+                //Destroy(gameObject, 1);
+            }
         }
 
         if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp"))
@@ -52,13 +56,13 @@ public class BeeCollision : MonoBehaviour
             }
             else
             {
-
                 BeeManager.iPowerUpCounter++;
                 Destroy(p_xOtherCollider.gameObject);
                 if (BeeManager.iPowerUpCounter == 3)
                 {
                     source.PlayOneShot(honeycomb_activate, 1F);
                 }
+
                 else
                 {
                     source.PlayOneShot(honeycomb_pickup, 1F);

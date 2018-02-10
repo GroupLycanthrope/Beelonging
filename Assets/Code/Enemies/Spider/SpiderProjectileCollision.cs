@@ -17,7 +17,7 @@ public class SpiderProjectileCollision : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D p_xOtherCollider)
+    void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
         if (p_xOtherCollider.gameObject.CompareTag("Bee"))
         {

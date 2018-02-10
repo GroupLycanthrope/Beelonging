@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 114751207738600036}
   - component: {fileID: 82090127263610330}
   - component: {fileID: 82679754889951444}
+  - component: {fileID: 50563444352908192}
   m_Layer: 8
   m_Name: Player
   m_TagString: Bee
@@ -107,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467338762861618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1077169, y: 0.053090334, z: 0}
+  m_LocalPosition: {x: -1.38, y: 0.053090334, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4992404600844840}
@@ -209,6 +210,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50563444352908192
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467338762861618}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50762408800200636
 Rigidbody2D:
   serializedVersion: 4
@@ -299,7 +320,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90079b61430b9fb458d8716f4860408e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -459,7 +480,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -571,7 +592,7 @@ MonoBehaviour:
     type: 2}
   m_xBulletPosition: {fileID: 1427367247438906}
   m_fSpeed: 4
-  fFireRate: 0.3
+  fFireRate: 0.6
   shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
   xGameOverScreen: {fileID: 0}
 --- !u!212 &212900586767449472
