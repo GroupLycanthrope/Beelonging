@@ -17,8 +17,11 @@ public class DragonflyCollision : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
-	}
+	    if (transform.position.x < -20)
+	    {
+	        Destroy(gameObject);
+	    }
+    }
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
