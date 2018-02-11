@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour {
     public AudioClip shootsound;
     private AudioSource source;
 
-    public GameObject xGameOverScreen;
-
     Vector2 m_v2Direction;
 
     Vector2 m_v2Pos;
@@ -43,14 +41,6 @@ public class PlayerController : MonoBehaviour {
 
         m_v2Direction = new Vector2(fX, fY).normalized;
         Move(m_v2Direction);
-
-        if(this.GetComponent<ControlHealth>().getHealth() == 0)
-        {
-            Time.timeScale = 0;
-            xGameOverScreen.SetActive(true);
-        }
-
-
     }
 
     void Move(Vector2 p_v2Direction)
