@@ -165,7 +165,7 @@ MonoBehaviour:
   iScoreValue: 50
   fHitPoints: 5
   fFireRate: 5
-  fAggroRange: 10
+  fAggroRange: 20.25
 --- !u!114 &114897122261025164
 MonoBehaviour:
   m_ObjectHideFlags: 1
