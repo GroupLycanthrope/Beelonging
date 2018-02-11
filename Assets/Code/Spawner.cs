@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
             }
         }
 
-        if (!GameObject.FindGameObjectWithTag("Enemy") && i >= aSpawnData.Count)
+        if (!GameObject.FindGameObjectWithTag("Enemy") && i >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee"))
         { 
             xWinningScreen.SetActive(true);
         }
