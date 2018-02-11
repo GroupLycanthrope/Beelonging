@@ -1169,7 +1169,7 @@ MonoBehaviour:
       type: 2}
   - fSpawnY: -1
     fSpawnTime: 3
-    xSpawnObject: {fileID: 1715813357586956, guid: 2a32d14ce408ffe4ead1d6563c7bb7c7,
+    xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
       type: 2}
   - fSpawnY: 0
     fSpawnTime: 4
@@ -1178,6 +1178,22 @@ MonoBehaviour:
   - fSpawnY: -2
     fSpawnTime: 5
     xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 8
+    xSpawnObject: {fileID: 1853002291290948, guid: b3cd536fb434939478bcc4af8ae93d38,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 10
+    xSpawnObject: {fileID: 1521263716047048, guid: f5d8199a81a6c964c869424de56faddf,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 14
+    xSpawnObject: {fileID: 1853002291290948, guid: b3cd536fb434939478bcc4af8ae93d38,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 6
+    xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
       type: 2}
   - fSpawnY: 0
     fSpawnTime: 6
@@ -2168,7 +2184,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You've Done Fucked Up! xd
+  m_Text: 'You Lost!
+
+'
 --- !u!222 &1871136376
 CanvasRenderer:
   m_ObjectHideFlags: 0
