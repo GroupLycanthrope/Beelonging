@@ -378,6 +378,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114019514924673688, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: goPlayer
+      value: 
+      objectReference: {fileID: 170156168}
+    - target: {fileID: 114019514924673688, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: PlayerHitBoxes.Array.data[0]
+      value: 
+      objectReference: {fileID: 1899673135}
+    - target: {fileID: 114019514924673688, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: PlayerHitBoxes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1783993620}
+    - target: {fileID: 114019514924673688, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: goPrefabPlayer
+      value: 
+      objectReference: {fileID: 1467338762861618, guid: 10631bf6a5ea96147b9585799116f030,
+        type: 2}
+    - target: {fileID: 114019514924673688, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: xGameOverScreen
+      value: 
+      objectReference: {fileID: 1032796556}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cacba71c1d3219f49bd89879f44ace68, type: 2}
   m_IsPrefabParent: 0
@@ -2014,6 +2040,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6024339ee223fa646aa86998ffa32ae4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1783993620 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1006817733636076, guid: 10631bf6a5ea96147b9585799116f030,
+    type: 2}
+  m_PrefabInternal: {fileID: 1840292224}
 --- !u!1001 &1840292224
 Prefab:
   m_ObjectHideFlags: 0
@@ -2190,6 +2221,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcc7a8c012fa9934f8ba8d8aed121fa5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1899673135 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1056492152237360, guid: 10631bf6a5ea96147b9585799116f030,
+    type: 2}
+  m_PrefabInternal: {fileID: 1840292224}
 --- !u!1 &1937680538
 GameObject:
   m_ObjectHideFlags: 0
