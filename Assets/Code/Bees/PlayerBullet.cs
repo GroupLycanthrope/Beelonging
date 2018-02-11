@@ -8,15 +8,8 @@ public class PlayerBullet : MonoBehaviour {
 
     public float fDamage;
 
-    public AudioClip hitsound;
-    private AudioSource source;
-
     Vector2 v2Position;
-
-    private void Awake()
-    {
-        source = GetComponent<AudioSource>();
-    }
+    
     // Use this for initialization
     void Start () {
 
@@ -44,8 +37,7 @@ public class PlayerBullet : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
         if (p_xOtherCollider.gameObject.CompareTag("Enemy"))
-        {
-            source.PlayOneShot(hitsound, 1F);
+        {            
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<CapsuleCollider2D>().enabled = false;
             //TODO: Add splash of bullet exploding before dissapearing?

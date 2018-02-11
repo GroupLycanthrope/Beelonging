@@ -16,12 +16,22 @@ public class Spider : MonoBehaviour
 
     public float fFireRate;
     public float fAggroRange;
+
+    public AudioClip spider_dead;
+    public AudioClip spider_hit;
+
+    private AudioSource source;
+
+    
     private float fNextShot;
     private float fDeltaX;
 
     private bool bIsDead;
 
-
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
     // Use this for initialization
     void Start ()
     {
@@ -53,6 +63,7 @@ public class Spider : MonoBehaviour
         {
             if (fHitPoints <= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage)
             {
+                source.PlayOneShot(spider_dead, 1F);
                 GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
                 GetComponentInChildren<SpriteRenderer>().enabled = false;
@@ -63,6 +74,7 @@ public class Spider : MonoBehaviour
             }
             else
             {
+                source.PlayOneShot(spider_hit, 1F);
                 //TODO: Spider Hit Sound?       
                 fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
             }
