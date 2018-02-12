@@ -607,6 +607,33 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114760571957493734, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 114359803902510346, guid: 6eccc76b3ae975d448851d9113917075,
+        type: 2}
+    - target: {fileID: 114760571957493734, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 114760571957493734, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114760571957493734, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetGameSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114760571957493734, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 114359803902510346, guid: 6eccc76b3ae975d448851d9113917075,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 499157e9208560c44997ba8fc5cea43f, type: 2}
   m_IsPrefabParent: 0
@@ -910,7 +937,8 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 114359803902510346, guid: 6eccc76b3ae975d448851d9113917075,
+        type: 2}
     - target: {fileID: 114821381895598132, guid: cd8fa9e478c5230468c48bd7e10310fe,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -925,7 +953,8 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 114359803902510346, guid: 6eccc76b3ae975d448851d9113917075,
+        type: 2}
     - target: {fileID: 114821381895598132, guid: cd8fa9e478c5230468c48bd7e10310fe,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName

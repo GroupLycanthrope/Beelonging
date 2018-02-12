@@ -24,6 +24,7 @@ public class BeeManager : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        iPowerUpCounter = 0;
         Swarm = GameObject.FindGameObjectsWithTag("Bee");
         bIsInvincible = false;
     }
@@ -61,7 +62,7 @@ public class BeeManager : MonoBehaviour {
         }
 
         if(Swarm.Length == 0) {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             xGameOverScreen.SetActive(true);
         }
 
