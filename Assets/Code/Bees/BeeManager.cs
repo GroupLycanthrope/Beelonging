@@ -102,20 +102,20 @@ public class BeeManager : MonoBehaviour {
             }
 
             // Sets the honeyFormation to true and calls for all of the bees
-            if (Swarm[i] != null && Input.GetKey("z") && Swarm[i].layer != 8 && i < Swarm.Length){
-                HoneyFormation = true;
-                Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = true;
-            }
-            else if (Swarm[i] != null && Swarm[i].layer != 8 && i < Swarm.Length){
-                HoneyFormation = false;
-                Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = false;
-            }
+            //if (Swarm[i] != null && Swarm[i].layer != 8 && i < Swarm.Length){
+            //    HoneyFormation = true;
+            //    Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = true;
+            //}
+            //else if (Swarm[i] != null && Swarm[i].layer != 8 && i < Swarm.Length){
+            //    HoneyFormation = false;
+            //    Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = false;
+            //}
             // The Player collider gets smaller here
-            if (Swarm[i] != null && i == 0 && HoneyFormation == true && i < Swarm.Length)
+            if (Swarm[i] != null && Swarm[i].name == "Player" && i == 0 && HoneyFormation == true && i < Swarm.Length)
             {
                 PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2f;
             }
-            else if (Swarm[i] != null && i == 1 && HoneyFormation == true && i < Swarm.Length)
+            else if (Swarm[i] != null && i == 1 && Swarm[i].name == "Player" && HoneyFormation == true && i < Swarm.Length)
             {
                 PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2;
             }
