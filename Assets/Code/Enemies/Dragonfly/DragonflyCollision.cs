@@ -21,23 +21,26 @@ public class DragonflyCollision : MonoBehaviour
 	    {
 	        Destroy(gameObject);
 	    }
+
+	    if (fHitPoints <= 0)
+	    {
+	        GetComponent<SpriteRenderer>().enabled = false;
+	        GetComponent<PolygonCollider2D>().enabled = false;
+	        Destroy(gameObject, 1);
+	        ScoreManager.iScore += iScoreValue;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
         {
-            if (fHitPoints <= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage)
-            {
-                GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<PolygonCollider2D>().enabled = false;
-                Destroy(gameObject, 1);
-                ScoreManager.iScore += iScoreValue;
-            }
-            else
-            {
-                fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
-            }
+            fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
+        }
+
+        if (p_xOtherCollider.gameObject.CompareTag("Bee"))
+        {
+            fHitPoints -= 1;
         }
     }
 }
