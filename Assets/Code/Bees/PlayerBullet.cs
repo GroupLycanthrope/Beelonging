@@ -9,10 +9,15 @@ public class PlayerBullet : MonoBehaviour {
     public float fDamage;
 
     Vector2 v2Position;
+
+    private Animator aAnimator;
+
+
     
     // Use this for initialization
-    void Start () {
-
+    void Start ()
+    {
+        aAnimator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -37,12 +42,19 @@ public class PlayerBullet : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
         if (p_xOtherCollider.gameObject.CompareTag("Enemy"))
-        {            
-            GetComponent<SpriteRenderer>().enabled = false;
+        {
             GetComponent<CapsuleCollider2D>().enabled = false;
+            fSpeed = 0;
+            aAnimator.SetBool("bHasHit", true);
+            Invoke("StopAnimation", 0.25f);    
             //TODO: Add splash of bullet exploding before dissapearing?
             Destroy(gameObject, 1);
         }
+    }
+
+    void StopAnimation()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
     }
     
 }
