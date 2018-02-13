@@ -16,6 +16,7 @@ public class Spider : MonoBehaviour
 
     public float fFireRate;
     public float fAggroRange;
+    public float fDespawnX;
 
     public AudioClip spider_dead;
     public AudioClip spider_hit;
@@ -51,7 +52,7 @@ public class Spider : MonoBehaviour
 	        web.transform.position = xProjectileOrigin.transform.position;
 	        fNextShot = Time.time + fFireRate;
         }
-	    if (transform.position.x < -20)
+	    if (transform.position.x <= fDespawnX)
 	    {
 	        Destroy(gameObject);
 	    }
