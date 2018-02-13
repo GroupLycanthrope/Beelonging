@@ -8,6 +8,8 @@ public class DragonflyCollision : MonoBehaviour
 
     public int iScoreValue;
 
+    private bool bIsDead = false;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -21,23 +23,27 @@ public class DragonflyCollision : MonoBehaviour
 	    {
 	        Destroy(gameObject);
 	    }
+
+	    if (fHitPoints <= 0 && !bIsDead)
+	    {
+	        GetComponent<SpriteRenderer>().enabled = false;
+	        GetComponent<PolygonCollider2D>().enabled = false;
+	        Destroy(gameObject, 1);
+	        bIsDead = true;
+	        ScoreManager.iScore += iScoreValue;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
         {
-            if (fHitPoints <= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage)
-            {
-                GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<PolygonCollider2D>().enabled = false;
-                Destroy(gameObject, 1);
-                ScoreManager.iScore += iScoreValue;
-            }
-            else
-            {
-                fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
-            }
+            fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
+        }
+
+        if (p_xOtherCollider.gameObject.CompareTag("Bee"))
+        {
+            fHitPoints -= 1;
         }
     }
 }

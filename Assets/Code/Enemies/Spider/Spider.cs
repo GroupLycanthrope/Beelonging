@@ -16,6 +16,7 @@ public class Spider : MonoBehaviour
 
     public float fFireRate;
     public float fAggroRange;
+    public float fDespawnX;
 
     public AudioClip spider_dead;
     public AudioClip spider_hit;
@@ -51,33 +52,35 @@ public class Spider : MonoBehaviour
 	        web.transform.position = xProjectileOrigin.transform.position;
 	        fNextShot = Time.time + fFireRate;
         }
-	    if (transform.position.x < -20)
+	    if (transform.position.x <= fDespawnX)
 	    {
 	        Destroy(gameObject);
 	    }
+
+	    if (fHitPoints <= 0 && !bIsDead)
+	    {
+	        source.PlayOneShot(spider_dead, 1F);
+	        GetComponent<SpriteRenderer>().enabled = false;
+	        GetComponent<BoxCollider2D>().enabled = false;
+	        GetComponentInChildren<SpriteRenderer>().enabled = false;
+	        bIsDead = true;
+	        //TODO: Death animation (maybe with state for dying)
+	        Destroy(gameObject, 1);
+	        ScoreManager.iScore += iScoreValue;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
         {
-            if (fHitPoints <= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage)
-            {
-                source.PlayOneShot(spider_dead, 1F);
-                GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<BoxCollider2D>().enabled = false;
-                GetComponentInChildren<SpriteRenderer>().enabled = false;
-                bIsDead = true;
-                //TODO: Death animation (maybe with state for dying)
-                Destroy(gameObject, 1);
-                ScoreManager.iScore += iScoreValue;
-            }
-            else
-            {
-                source.PlayOneShot(spider_hit, 1F);
-                //TODO: Spider Hit Sound?       
-                fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
-            }
+            source.PlayOneShot(spider_hit, 1F);    
+            fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
+        }
+
+        if (p_xOtherCollider.gameObject.CompareTag("Bee"))
+        {
+            fHitPoints -= 1;
         }
     }
 }

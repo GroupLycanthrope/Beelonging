@@ -26,6 +26,7 @@ public class BeeManager : MonoBehaviour {
     void Start() {
         iPowerUpCounter = 0;
         Swarm = GameObject.FindGameObjectsWithTag("Bee");
+        iPowerUpCounter = 0;
         bIsInvincible = false;
     }
 

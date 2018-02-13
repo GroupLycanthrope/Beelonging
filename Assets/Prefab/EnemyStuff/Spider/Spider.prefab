@@ -328,6 +328,7 @@ MonoBehaviour:
   fHitPoints: 5
   fFireRate: 5
   fAggroRange: 20.25
+  fDespawnX: -13
   spider_dead: {fileID: 8300000, guid: 22e11a50b6436ff41a54247c58624bc5, type: 3}
   spider_hit: {fileID: 8300000, guid: 600ae1da3d9e1a14f97bc049f1b406f2, type: 3}
 --- !u!114 &114897122261025164

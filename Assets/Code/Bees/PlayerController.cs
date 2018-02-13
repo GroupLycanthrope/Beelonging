@@ -2,13 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//[System.Serializable]
+//public class Boundary
+//{
+//    public float fMinX, fMaxX, fMinY, fMaxY;
+//}
+
 public class PlayerController : MonoBehaviour {
     public GameObject m_xPlayerBullet;
     public GameObject m_xBulletPosition;
+    private Rigidbody2D xRigidbody2D;
 
     public float m_fSpeed;
     public float fFireRate;
     private float fNextShot;
+
+    public float fAcceleration;
+    public float fDeceleration;
+    public float fMaxVelocity;
+    private float fVelocityX;
+    private float fVelocityY;
+
+    //public float fShotSlowDown;
+    //public float fSlowDownDuration;
+
+    //private float fSlowDownTimer;
 
     public AudioClip shootsound;
     private AudioSource source;
@@ -23,8 +41,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-	}
+    void Start ()
+    {
+        xRigidbody2D = GetComponent<Rigidbody2D>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -33,14 +53,70 @@ public class PlayerController : MonoBehaviour {
             fNextShot = Time.time + fFireRate;
             GameObject bullet = Instantiate(m_xPlayerBullet);
             bullet.transform.position = m_xBulletPosition.transform.position;
+            //fVelocityY *= fShotSlowDown;
+            //fVelocityX *= fShotSlowDown;
+            //fMaxVelocity *= fShotSlowDown;
+            //fSlowDownTimer = fSlowDownDuration;
         }
 
+        //if (fSlowDownTimer > 0)
+        //{
+        //    fSlowDownTimer -= Time.deltaTime;
+        //}
+        //else
+        //{
+        //    fVelocityY /= fShotSlowDown;
+        //    fVelocityX /= fShotSlowDown;
+        //    fMaxVelocity /= fShotSlowDown;
+        //}
 
-        float fX = Input.GetAxisRaw("Horizontal"); //is this really a parameter? kinda is
-        float fY = Input.GetAxisRaw("Vertical"); //   -||-
+        if (Input.GetKey(KeyCode.UpArrow) && fVelocityY < fMaxVelocity)
+        {
+            fVelocityY += fAcceleration;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) && fVelocityY > -fMaxVelocity)
+        {
+            fVelocityY -= fAcceleration;
+        }
+        else
+        {
+            if (fVelocityY > 0)
+            {
+                fVelocityY -= fDeceleration;
+            }
+            else if (fVelocityY < 0)
+            {
+                fVelocityY += fDeceleration;
+            }
+        }
+        if (Input.GetKey(KeyCode.RightArrow) && fVelocityX < fMaxVelocity)
+        {
+            fVelocityX += fAcceleration;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) && fVelocityX > -fMaxVelocity)
+        {
+            fVelocityX -= fAcceleration;
+        }
+        else
+        {
+            {
+                if (fVelocityX > 0)
+                {
+                    fVelocityX -= fDeceleration;
+                }
+                else if (fVelocityX < 0)
+                {
+                    fVelocityX += fDeceleration;
+                }
+            }
+        }
+        transform.Translate(fVelocityX * Time.deltaTime, fVelocityY * Time.deltaTime, 0);
+        //float fX = Input.GetAxisRaw("Horizontal");
+        //float fY = Input.GetAxisRaw("Vertical");
 
-        m_v2Direction = new Vector2(fX, fY).normalized;
-        Move(m_v2Direction);
+        //m_v2Direction = new Vector2(fX, fY).normalized;
+        //xRigidbody2D.AddForce(m_v2Direction);
+        //Move(m_v2Direction);
     }
 
     void Move(Vector2 p_v2Direction)
@@ -55,7 +131,8 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            transform.position = m_v2Pos;
+            //xRigidbody2D.velocity = transform.forward * m_fSpeed;
+            //transform.position = m_v2Pos;
         }
     }
 
