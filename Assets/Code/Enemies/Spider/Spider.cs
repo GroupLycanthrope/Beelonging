@@ -57,7 +57,7 @@ public class Spider : MonoBehaviour
 	        Destroy(gameObject);
 	    }
 
-	    if (fHitPoints <= 0)
+	    if (fHitPoints <= 0 && !bIsDead)
 	    {
 	        source.PlayOneShot(spider_dead, 1F);
 	        GetComponent<SpriteRenderer>().enabled = false;
