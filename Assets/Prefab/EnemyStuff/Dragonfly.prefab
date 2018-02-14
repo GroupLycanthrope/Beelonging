@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fHitPoints: 3
   fHitFlashSpeed: 0.1
-  iScoreValue: 40
+  iScoreValue: 200
 --- !u!212 &212969330185041656
 SpriteRenderer:
   m_ObjectHideFlags: 1

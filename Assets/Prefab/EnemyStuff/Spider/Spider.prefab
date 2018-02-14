@@ -324,7 +324,7 @@ MonoBehaviour:
   xProjectile: {fileID: 1486684537550890, guid: c3465c1b105f3fe48ba58d548fb18c3b,
     type: 2}
   xProjectileOrigin: {fileID: 1317297524708282}
-  iScoreValue: 50
+  iScoreValue: 400
   fHitPoints: 5
   fFireRate: 5
   fAggroRange: 20.25
