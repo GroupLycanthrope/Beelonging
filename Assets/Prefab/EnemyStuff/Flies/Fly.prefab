@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fFlyingSpeed: 2
-  iScoreValue: 10
+  iScoreValue: 100
   fly_dead: {fileID: 8300000, guid: f84d5ddf782085e4dbec597509cffe08, type: 3}
 --- !u!212 &212270150789525426
 SpriteRenderer:
