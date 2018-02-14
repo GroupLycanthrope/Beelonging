@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09b135fafe79504e833e2cb173ec175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fFlyingSpeed: 5
+  fFlyingSpeed: 4.5
 --- !u!114 &114910365387456582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03115caa6bf48540b43ce777a92f173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHitPoints: 4
+  fHitPoints: 3
   fHitFlashSpeed: 0.1
   iScoreValue: 40
 --- !u!212 &212969330185041656
