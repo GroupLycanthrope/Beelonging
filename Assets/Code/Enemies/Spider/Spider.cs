@@ -85,10 +85,10 @@ public class Spider : MonoBehaviour
         }
     }
 
-    void TakeDamage(float p_xDamage)
+    void TakeDamage(float p_fDamage)
     {
         source.PlayOneShot(spider_hit, 1F);
-        fHitPoints -= 1;
+        fHitPoints -= p_fDamage;
         StartCoroutine(SpriteFlasher());
     }
 

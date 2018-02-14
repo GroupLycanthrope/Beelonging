@@ -6,6 +6,8 @@ public class DragonflyCollision : MonoBehaviour
 {
     public float fHitPoints;
 
+    public float fHitFlashSpeed;
+
     public int iScoreValue;
 
     private bool bIsDead = false;
@@ -38,12 +40,38 @@ public class DragonflyCollision : MonoBehaviour
     {
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
         {
-            fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
+            TakeDamage(p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage);
         }
 
         if (p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
-            fHitPoints -= 1;
+            TakeDamage(1);
+        }
+    }
+
+    void TakeDamage(float p_fDamage)
+    {
+        fHitPoints -= p_fDamage;
+        StartCoroutine(SpriteFlasher());
+    }
+
+    IEnumerator SpriteFlasher()
+    {
+        for (float f = 1f; f >= 0; f -= fHitFlashSpeed)
+        {
+            Color temp = GetComponent<SpriteRenderer>().color;
+            temp.b = f;
+            temp.g = f;
+            GetComponent<SpriteRenderer>().color = temp;
+            yield return null;
+        }
+        for (float f = 0f; f <= 1; f += fHitFlashSpeed)
+        {
+            Color temp = GetComponent<SpriteRenderer>().color;
+            temp.b = f;
+            temp.g = f;
+            GetComponent<SpriteRenderer>().color = temp;
+            yield return null;
         }
     }
 }
