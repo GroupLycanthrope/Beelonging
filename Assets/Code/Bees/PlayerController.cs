@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
     private float fVelocityY;
 
     public float fShotSlowDown;
-
+	public bool bShootFired;
     public AudioClip shootsound;
     private AudioSource source;
 
@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour {
             fVelocityY *= fShotSlowDown;
             fVelocityX *= fShotSlowDown;
             fCurrentMaxVelocity = fShootingMaxVelocity;
+			            bShootFired = true;
+        }
+		else {
+            bShootFired = false;
         }
 
 	    if (Input.GetKeyUp("space"))

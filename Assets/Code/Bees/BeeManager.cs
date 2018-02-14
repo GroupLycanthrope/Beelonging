@@ -9,11 +9,10 @@ public class BeeManager : MonoBehaviour {
 
     public GameObject goPlayer;
 
-    public GameObject[] PlayerHitBoxes;
-
     public GameObject[] Swarm;
     public bool HoneyFormation = false;
     public bool bNoPlayer = false;
+	bool bPlayerShootFired;
 
     public static int iPowerUpCounter;
 
@@ -92,61 +91,17 @@ public class BeeManager : MonoBehaviour {
         }
     }
 
-    int i = 0;
-
-    void Formation() {
-        // make that the AI bees have a destination to move to
-        if (Swarm.Length != 0)
-        {
-            if (Swarm[i] != null && Swarm[i].layer != 8 && HoneyFormation == true && i < Swarm.Length)
-            {
-                Swarm[i].GetComponentInChildren<Find_Move>().v3PlayerPos = goPlayer.transform.position;
+        void Formation() {
+        for (int i = 0; i < Swarm.Length; i++){
+            if (Input.GetKey("x") && Swarm[i].name != "Player"){
+                Swarm[i].GetComponent<AIBee>().bCallFormation = true;
+                Swarm[i].GetComponent<AIBee>().bPlayerFireShoot = bPlayerShootFired;
             }
-
-            // Sets the honeyFormation to true and calls for all of the bees
-            //if (Swarm[i] != null && Swarm[i].layer != 8 && i < Swarm.Length){
-            //    HoneyFormation = true;
-            //    Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = true;
-            //}
-            //else if (Swarm[i] != null && Swarm[i].layer != 8 && i < Swarm.Length){
-            //    HoneyFormation = false;
-            //    Swarm[i].GetComponentInChildren<Find_Move>().BeeCallerFormation = false;
-            //}
-            // The Player collider gets smaller here
-            if (Swarm[i] != null && Swarm[i].name == "Player" && i == 0 && HoneyFormation == true && i < Swarm.Length)
-            {
-                PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2f;
+            else if (Swarm[i].name != "Player"){
+                Swarm[i].GetComponent<AIBee>().bCallFormation = false;
             }
-            else if (Swarm[i] != null && i == 1 && Swarm[i].name == "Player" && HoneyFormation == true && i < Swarm.Length)
-            {
-                PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 2;
-            }
-            // Sets the detection for AI bees to one
-            if (Swarm[i] != null && Swarm[i].layer != 8 && HoneyFormation == true && i < Swarm.Length)
-            {
-
-                Swarm[i].GetComponentInChildren<CircleCollider2D>().radius = 2;
-            }
-            else if (Swarm[i] != null && Swarm[i].layer != 8 && HoneyFormation == false && i < Swarm.Length)
-            {
-                Swarm[i].GetComponentInChildren<CircleCollider2D>().radius = 6;
-            }
-            i++;
-            if (i >= Swarm.Length)
-            {
-                i = 0;
-            }
-
-
-            // revert back the player collider to normal
-            if (Swarm[i] != null && HoneyFormation == false && i < Swarm.Length)
-            {
-                i = 0;
-                if (PlayerHitBoxes[i] != null && PlayerHitBoxes[i + 1] != null)
-                {
-                    PlayerHitBoxes[i].GetComponent<CircleCollider2D>().radius = 4;
-                    PlayerHitBoxes[i + 1].GetComponent<CircleCollider2D>().radius = 3;
-                }
+            if (Swarm[i].name == "Player"){
+                bPlayerShootFired = Swarm[i].GetComponent<PlayerController>().bShootFired;
             }
         }
     }
