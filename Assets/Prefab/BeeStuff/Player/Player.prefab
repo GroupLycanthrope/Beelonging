@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 82679754889951444}
   - component: {fileID: 50563444352908192}
   - component: {fileID: 82951446511333672}
+  - component: {fileID: 95158837119252988}
   m_Layer: 8
   m_Name: Player
   m_TagString: Bee
@@ -631,6 +632,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95158837119252988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467338762861618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92df26ba0b57a8a47962a496a2dc56f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114459269774664192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -677,7 +695,6 @@ MonoBehaviour:
   fDeceleration: 0.5
   fMaxVelocity: 6
   fShotSlowDown: 0.3
-  fSlowDownDuration: 0.3
   shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
 --- !u!212 &212900586767449472
 SpriteRenderer:
@@ -713,12 +730,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 933796811fcbec64c9d6fbea3aae16f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cf22f489d12c044482263ba95475990, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
