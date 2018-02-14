@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey("space") && Time.time > fNextShot){
+            GetComponent<Animator>().SetTrigger("tShot");
             source.PlayOneShot(shootsound, 1F);
             fNextShot = Time.time + fFireRate;
             GameObject bullet = Instantiate(m_xPlayerBullet);
