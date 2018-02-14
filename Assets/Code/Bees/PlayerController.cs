@@ -109,14 +109,22 @@ public class PlayerController : MonoBehaviour {
                 }
             }
         }
-        transform.Translate(fVelocityX * Time.deltaTime, fVelocityY * Time.deltaTime, 0);
-        //float fX = Input.GetAxisRaw("Horizontal");
-        //float fY = Input.GetAxisRaw("Vertical");
 
-        //m_v2Direction = new Vector2(fX, fY).normalized;
-        //xRigidbody2D.AddForce(m_v2Direction);
-        //Move(m_v2Direction);
-    }
+        Vector3 v3NewPosition;
+        v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, -11.55f, 8.75f);
+	    v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -5.7f, 5.7f);
+	    v3NewPosition.z = 0;
+	    transform.position = v3NewPosition;
+
+        //transform.Translate(Mathf.Clamp(fVelocityX * Time.deltaTime, -11.55f, 8.75f), Mathf.Clamp(fVelocityY * Time.deltaTime, -5.7f, 5.7f), 0);
+
+	    //float fX = Input.GetAxisRaw("Horizontal");
+	    //float fY = Input.GetAxisRaw("Vertical");
+
+	    //m_v2Direction = new Vector2(fX, fY).normalized;
+	    //xRigidbody2D.AddForce(m_v2Direction);
+	    //Move(m_v2Direction);
+	}
 
     void ResetVelocity()
     {
