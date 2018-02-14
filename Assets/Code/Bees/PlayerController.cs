@@ -20,11 +20,12 @@ public class PlayerController : MonoBehaviour {
     public float fAcceleration;
     public float fDeceleration;
     public float fMaxVelocity;
+    private float fCurrentMaxVelocity;
+    private float fShootingMaxVelocity;
     private float fVelocityX;
     private float fVelocityY;
 
     public float fShotSlowDown;
-    public float fSlowDownDuration;
 
     public AudioClip shootsound;
     private AudioSource source;
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        fCurrentMaxVelocity = fMaxVelocity;
+        fShootingMaxVelocity = fMaxVelocity * fShotSlowDown;
         //xRigidbody2D = GetComponent<Rigidbody2D>();
     }
 	
@@ -53,15 +56,19 @@ public class PlayerController : MonoBehaviour {
             bullet.transform.position = m_xBulletPosition.transform.position;
             fVelocityY *= fShotSlowDown;
             fVelocityX *= fShotSlowDown;
-            fMaxVelocity *= fShotSlowDown;
-            Invoke("ResetVelocity", fSlowDownDuration);
+            fCurrentMaxVelocity = fShootingMaxVelocity;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow) && fVelocityY < fMaxVelocity)
+	    if (Input.GetKeyUp("space"))
+	    {
+	        ResetVelocity();
+	    }
+
+        if (Input.GetKey(KeyCode.UpArrow) && fVelocityY < fCurrentMaxVelocity)
         {
             fVelocityY += fAcceleration;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) && fVelocityY > -fMaxVelocity)
+        else if (Input.GetKey(KeyCode.DownArrow) && fVelocityY > -fCurrentMaxVelocity)
         {
             fVelocityY -= fAcceleration;
         }
@@ -76,11 +83,11 @@ public class PlayerController : MonoBehaviour {
                 fVelocityY += fDeceleration;
             }
         }
-        if (Input.GetKey(KeyCode.RightArrow) && fVelocityX < fMaxVelocity)
+        if (Input.GetKey(KeyCode.RightArrow) && fVelocityX < fCurrentMaxVelocity)
         {
             fVelocityX += fAcceleration;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) && fVelocityX > -fMaxVelocity)
+        else if (Input.GetKey(KeyCode.LeftArrow) && fVelocityX > -fCurrentMaxVelocity)
         {
             fVelocityX -= fAcceleration;
         }
@@ -108,7 +115,7 @@ public class PlayerController : MonoBehaviour {
 
     void ResetVelocity()
     {
-        fMaxVelocity /= fShotSlowDown;
+        fCurrentMaxVelocity = fMaxVelocity;
     }
     //void Move(Vector2 p_v2Direction)
     //{
