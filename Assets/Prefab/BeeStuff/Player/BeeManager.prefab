@@ -51,9 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e77879de5904e4da9aaa596e00a98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goPrefabPlayer: {fileID: 1467338762861618, guid: 10631bf6a5ea96147b9585799116f030,
+    type: 2}
   goPlayer: {fileID: 0}
-  PlayerHitBoxes:
-  - {fileID: 0}
-  - {fileID: 0}
   Swarm: []
   HoneyFormation: 0
+  bNoPlayer: 0
+  xGameOverScreen: {fileID: 0}

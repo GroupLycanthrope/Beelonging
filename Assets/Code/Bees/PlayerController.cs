@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
+       // v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         fCurrentMaxVelocity = fMaxVelocity;
         fShootingMaxVelocity = fMaxVelocity * fShotSlowDown;
-        GetComponent<Animator>().SetFloat("fAnimationOffset", Random.Range(0, 1));
+       // GetComponent<Animator>().SetFloat("fAnimationOffset", Random.Range(0, 1));
         //xRigidbody2D = GetComponent<Rigidbody2D>();
     }
 	
