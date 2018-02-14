@@ -677,7 +677,7 @@ MonoBehaviour:
   fDeceleration: 0.5
   fMaxVelocity: 6
   fShotSlowDown: 0.3
-  fSlowDownDuration: 0.6
+  fSlowDownDuration: 0.3
   shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
 --- !u!212 &212900586767449472
 SpriteRenderer:
