@@ -11,9 +11,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public GameObject m_xPlayerBullet;
     public GameObject m_xBulletPosition;
-    private Rigidbody2D xRigidbody2D;
+    //private Rigidbody2D xRigidbody2D;
 
-    public float m_fSpeed;
+    //public float m_fSpeed;
     public float fFireRate;
     private float fNextShot;
 
@@ -23,10 +23,8 @@ public class PlayerController : MonoBehaviour {
     private float fVelocityX;
     private float fVelocityY;
 
-    //public float fShotSlowDown;
-    //public float fSlowDownDuration;
-
-    //private float fSlowDownTimer;
+    public float fShotSlowDown;
+    public float fSlowDownDuration;
 
     public AudioClip shootsound;
     private AudioSource source;
@@ -43,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        xRigidbody2D = GetComponent<Rigidbody2D>();
+        //xRigidbody2D = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -53,22 +51,11 @@ public class PlayerController : MonoBehaviour {
             fNextShot = Time.time + fFireRate;
             GameObject bullet = Instantiate(m_xPlayerBullet);
             bullet.transform.position = m_xBulletPosition.transform.position;
-            //fVelocityY *= fShotSlowDown;
-            //fVelocityX *= fShotSlowDown;
-            //fMaxVelocity *= fShotSlowDown;
-            //fSlowDownTimer = fSlowDownDuration;
+            fVelocityY *= fShotSlowDown;
+            fVelocityX *= fShotSlowDown;
+            fMaxVelocity *= fShotSlowDown;
+            Invoke("ResetVelocity", fSlowDownDuration);
         }
-
-        //if (fSlowDownTimer > 0)
-        //{
-        //    fSlowDownTimer -= Time.deltaTime;
-        //}
-        //else
-        //{
-        //    fVelocityY /= fShotSlowDown;
-        //    fVelocityX /= fShotSlowDown;
-        //    fMaxVelocity /= fShotSlowDown;
-        //}
 
         if (Input.GetKey(KeyCode.UpArrow) && fVelocityY < fMaxVelocity)
         {
@@ -119,21 +106,24 @@ public class PlayerController : MonoBehaviour {
         //Move(m_v2Direction);
     }
 
-    void Move(Vector2 p_v2Direction)
+    void ResetVelocity()
     {
-        m_v2Pos = transform.position;
-
-        m_v2Pos += p_v2Direction * m_fSpeed * Time.deltaTime;
-
-        if (m_v2Pos.x < -11.55 || m_v2Pos.x > 8.75F || m_v2Pos.y < -5.7F || m_v2Pos.y > 5.7F)
-        {
-            return;
-        }
-        else
-        {
-            //xRigidbody2D.velocity = transform.forward * m_fSpeed;
-            //transform.position = m_v2Pos;
-        }
+        fMaxVelocity /= fShotSlowDown;
     }
+    //void Move(Vector2 p_v2Direction)
+    //{
+    //    m_v2Pos = transform.position;
 
+    //    m_v2Pos += p_v2Direction * m_fSpeed * Time.deltaTime;
+
+    //    if (m_v2Pos.x < -11.55 || m_v2Pos.x > 8.75F || m_v2Pos.y < -5.7F || m_v2Pos.y > 5.7F)
+    //    {
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        xRigidbody2D.velocity = transform.forward * m_fSpeed;
+    //        transform.position = m_v2Pos;
+    //    }
+    //}
 }
