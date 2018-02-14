@@ -18,6 +18,8 @@ public class Spider : MonoBehaviour
     public float fAggroRange;
     public float fDespawnX;
 
+    public float fHitFlashSpeed;
+
     public AudioClip spider_dead;
     public AudioClip spider_hit;
 
@@ -74,13 +76,50 @@ public class Spider : MonoBehaviour
     {
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
         {
-            source.PlayOneShot(spider_hit, 1F);    
-            fHitPoints -= p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage;
+            TakeDamage(p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage);
         }
 
         if (p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
-            fHitPoints -= 1;
+            TakeDamage(1);
         }
     }
+
+    void TakeDamage(float p_xDamage)
+    {
+        source.PlayOneShot(spider_hit, 1F);
+        fHitPoints -= 1;
+        StartCoroutine(SpriteFlasher());
+    }
+
+    IEnumerator SpriteFlasher()
+    {
+        for (float f = 1f; f >= 0; f -= fHitFlashSpeed)
+        {
+            Color temp = GetComponent<SpriteRenderer>().color;
+            temp.b = f;
+            temp.g = f;
+            GetComponent<SpriteRenderer>().color = temp;
+            yield return null;
+        }
+        for (float f = 0f; f <= 1; f += fHitFlashSpeed)
+        {
+            Color temp = GetComponent<SpriteRenderer>().color;
+            temp.b = f;
+            temp.g = f;
+            GetComponent<SpriteRenderer>().color = temp;
+            yield return null;
+        }
+    }
+
+    //IEnumerator Fade()
+    //{
+    //    for (float f = 1f; f >= 0; f -= 0.1f)
+    //    {
+    //        Color c = renderer.material.color;
+    //        c.a = f;
+    //        renderer.material.color = c;
+    //        yield return null;
+    //    }
+    //}
 }
