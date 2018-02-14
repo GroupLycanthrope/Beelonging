@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 197853531}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1253,8 +1253,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114751207738600036, guid: 10631bf6a5ea96147b9585799116f030,
         type: 2}
-      propertyPath: fSlowDownDuration
-      value: 5
+      propertyPath: fShotSlowDown
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10631bf6a5ea96147b9585799116f030, type: 2}

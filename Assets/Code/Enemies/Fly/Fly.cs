@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Fly : MonoBehaviour
@@ -15,6 +16,7 @@ public class Fly : MonoBehaviour
     private void Awake()
     {
         source = GetComponent<AudioSource>();
+        GetComponent<Animator>().SetFloat("fAnimationOffset", Random.Range(0, 1));
     }
 
     // Use this for initialization

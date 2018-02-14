@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[System.Serializable]
-//public class Boundary
-//{
-//    public float fMinX, fMaxX, fMinY, fMaxY;
-//}
+[System.Serializable]
+public class Boundary
+{
+    public Vector2 v2Min;
+    public Vector2 v2Max;
+}
 
 public class PlayerController : MonoBehaviour {
     public GameObject m_xPlayerBullet;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     Vector2 m_v2Pos;
 
+    private Vector3 v3PlayerBounds;
     private void Awake()
     {
         source = GetComponent<AudioSource>();
@@ -42,8 +44,10 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         fCurrentMaxVelocity = fMaxVelocity;
         fShootingMaxVelocity = fMaxVelocity * fShotSlowDown;
+        GetComponent<Animator>().SetFloat("fAnimationOffset", Random.Range(0, 1));
         //xRigidbody2D = GetComponent<Rigidbody2D>();
     }
 	
