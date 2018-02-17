@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4480600350391046}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FormationParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 82090127263610330}
   - component: {fileID: 82679754889951444}
   - component: {fileID: 50563444352908192}
+  - component: {fileID: 95972805458495122}
   m_Layer: 8
   m_Name: Player
   m_TagString: Bee
@@ -200,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467338762861618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.38, y: 0.053090334, z: 0}
+  m_LocalPosition: {x: -4.77, y: 0.49, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4992404600844840}
@@ -657,6 +658,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95972805458495122
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1467338762861618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114172617593654824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -776,12 +794,12 @@ MonoBehaviour:
   m_xPlayerBullet: {fileID: 1639238614990132, guid: 5af2eeb631614074ea3061271d9c77f8,
     type: 2}
   m_xBulletPosition: {fileID: 1427367247438906}
-  m_fSpeed: 4
   fFireRate: 1
-  bShootFired: 0
   fAcceleration: 2
   fDeceleration: 2
   fMaxVelocity: 5
+  fShotSlowDown: 0
+  bShootFired: 0
   shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
 --- !u!212 &212900586767449472
 SpriteRenderer:
@@ -817,7 +835,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 933796811fcbec64c9d6fbea3aae16f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6cf22f489d12c044482263ba95475990, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

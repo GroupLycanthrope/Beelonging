@@ -7,8 +7,8 @@ public class AIBee : MonoBehaviour {
     private GameObject goPlayer;
 
     //Formation variables
-    GameObject goFormationPosition;
-    GameObject[] goListOfFormationPos;
+    public GameObject goFormationPosition;
+    public GameObject[] goListOfFormationPos;
     //Position without formation;
     GameObject[] goListPositions;
     GameObject goPosition;
@@ -77,6 +77,8 @@ public class AIBee : MonoBehaviour {
             rhCheckPosition = Physics2D.Linecast(transform.position, goFormationPosition.transform.position);
             Debug.DrawLine(transform.position, goFormationPosition.transform.position, Color.red);
 
+            if(rhCheckPosition == true) {
+            
             if (rhCheckPosition.collider.tag == "Formation"){
                 if (pifFormation == null){
                     pifFormation = rhCheckPosition.collider.GetComponent<PositionInFormation>();
@@ -105,6 +107,7 @@ public class AIBee : MonoBehaviour {
                     
                 }
 
+            }
             }
         }
     }

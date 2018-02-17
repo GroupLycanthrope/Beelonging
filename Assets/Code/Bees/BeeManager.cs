@@ -98,7 +98,7 @@ public class BeeManager : MonoBehaviour {
                 Swarm[i].GetComponent<AIBee>().bPlayerFireShoot = bPlayerShootFired;
             }
             else if (Swarm[i].name != "Player"){
-                Swarm[i].GetComponent<AIBee>().bCallFormation = false;
+ //               Swarm[i].GetComponent<AIBee>().bCallFormation = false;
             }
             if (Swarm[i].name == "Player"){
                 bPlayerShootFired = Swarm[i].GetComponent<PlayerController>().bShootFired;
