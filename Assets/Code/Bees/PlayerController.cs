@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     Vector2 m_v2Pos;
 
-    private Vector3 v3PlayerBounds;
+    //private Vector3 v3PlayerBounds;
     private void Awake()
     {
         source = GetComponent<AudioSource>();
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-       // v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
+        //v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         fCurrentMaxVelocity = fMaxVelocity;
         fShootingMaxVelocity = fMaxVelocity * fShotSlowDown;
        // GetComponent<Animator>().SetFloat("fAnimationOffset", Random.Range(0, 1));
@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 v3NewPosition;
         v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, -11.55f, 8.75f);
-	    v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -5.7f, 5.7f);
+	    v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -5.5f, 5.5f);
 	    v3NewPosition.z = 0;
 	    transform.position = v3NewPosition;
 
