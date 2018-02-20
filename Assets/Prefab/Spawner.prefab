@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600488738981950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,27 +53,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aSpawnData:
   - fSpawnY: 0
-    fSpawnTime: 1
-    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
-      type: 2}
-  - fSpawnY: 1
-    fSpawnTime: 2
-    xSpawnObject: {fileID: 1521263716047048, guid: f5d8199a81a6c964c869424de56faddf,
-      type: 2}
-  - fSpawnY: -1
-    fSpawnTime: 3
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
-      type: 2}
-  - fSpawnY: 2
-    fSpawnTime: 4
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
-      type: 2}
-  - fSpawnY: -2
     fSpawnTime: 5
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+    xSpawnObject: {fileID: 1355402064659364, guid: d57864b01dbbaca4faf350db3b0d7a9a,
       type: 2}
   - fSpawnY: 0
-    fSpawnTime: 6
-    xSpawnObject: {fileID: 1809082211418138, guid: e1953df4b405eeb49b8af1dc8629fde3,
+    fSpawnTime: 8
+    xSpawnObject: {fileID: 1837272229422470, guid: 738597494f90b2a408f425e43ca28f35,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 18
+    xSpawnObject: {fileID: 1477412031216336, guid: 8e0e40ff23827644daf554552879c7a5,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 28
+    xSpawnObject: {fileID: 1893416079524744, guid: 8fc0eb741ce9ec14b8b7fafc94072a0e,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 30
+    xSpawnObject: {fileID: 1355402064659364, guid: 33f7bf52309a69a4a8ad1490326f1be6,
+      type: 2}
+  - fSpawnY: 0
+    fSpawnTime: 38
+    xSpawnObject: {fileID: 1355402064659364, guid: cecfc2655a7af154e882ba0c56118de1,
       type: 2}
   xWinningScreen: {fileID: 0}
