@@ -5,8 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SpawnData
 {
-    public float fSpawnY;
-    public float fSpawnTime;
+    public float fWaitTime;
     public GameObject xSpawnObject;
 }
 
@@ -17,7 +16,9 @@ public class Spawner : MonoBehaviour
     private float fTimer;
 
     private int i;
-    
+    private bool bHasSpawned;
+
+
     public List<SpawnData> aSpawnData;
 
     public GameObject xWinningScreen;
@@ -30,58 +31,63 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //fCounter += Time.deltaTime;
-        //if (fCounter > fTimer)
-        //{
-        //       SpawnFlies();
-        //       SpawnPickUp();
-        //    fCounter = 0;
-        //}
-        fTimer += Time.deltaTime;
-        if (i < aSpawnData.Count)
-        {
-            if (aSpawnData[i].fSpawnTime <= fTimer)
-            {
-                if (aSpawnData[i].xSpawnObject != null)
-                {
-                    GameObject spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
-                    spawn.transform.Translate(0, aSpawnData[i].fSpawnY, 0);
+        if(i < aSpawnData.Count) { 
+            if (i != 0 && aSpawnData[i-1].xSpawnObject == null) {
+                print("test123543");
+                fTimer -= Time.deltaTime;
+                if(fTimer <= 0) {
+                    print("test5");
+                    
+                    if (aSpawnData[i].xSpawnObject != null) {
+                        print("test");
+                        GameObject spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+                        spawn.transform.Translate(0, transform.position.y, 0);
+                        bHasSpawned = true;
+                    }
+                    fTimer = aSpawnData[i].fWaitTime;
+                    i++;
                 }
-                i++;
+            }
+            else {
+                if (fTimer <= 0){
+                    print("test5");
+                    if (aSpawnData[i].xSpawnObject != null)
+                    {
+                        print("test");
+                        GameObject spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+                        spawn.transform.Translate(0, transform.position.y, 0);
+                        bHasSpawned = true;
+                    }
+                    fTimer = aSpawnData[i].fWaitTime;
+                    i++;
+                }
+            }
+            if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true)
+            {
+                print("is this called??");
+                aSpawnData[i - 1].xSpawnObject = null;
+                bHasSpawned = false;
             }
         }
+
+       
+        //if (i < aSpawnData.Count)
+        //{
+        //    if (fTimer <= 0)
+        //    {
+        //        if (aSpawnData[i].xSpawnObject != null)
+        //        {
+        //            GameObject spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+        //            spawn.transform.Translate(0, transform.position.y, 0);
+        //        }
+        //        i++;
+        //        fTimer = aSpawnData[i].fSpawnTime;
+        //    }
+        //}
 
         if (!GameObject.FindGameObjectWithTag("Enemy") && i >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee"))
         { 
             xWinningScreen.SetActive(true);
         }
     }
-
-    //void SpawnFlies()
-    //{
-    //    Vector2 v2SwarmCenter = this.transform.position;
-    //    v2SwarmCenter.y = Random.Range(-4, 4);
-    //    GameObject fly1 = Instantiate(xFly);
-    //    fly1.transform.position = v2SwarmCenter;
-    //    GameObject fly2 = Instantiate(xFly);
-    //    fly2.transform.position = v2SwarmCenter;
-    //    fly2.transform.Translate(1, 0, 0);
-    //    GameObject fly3 = Instantiate(xFly);
-    //    fly3.transform.position = v2SwarmCenter;
-    //    fly3.transform.Translate(0, 1, 0);
-    //    GameObject fly4 = Instantiate(xFly);
-    //    fly4.transform.position = v2SwarmCenter;
-    //    fly4.transform.Translate(0, -1, 0);
-    //    GameObject fly5 = Instantiate(xFly);
-    //    fly5.transform.position = v2SwarmCenter;
-    //    fly5.transform.Translate(-1, 0, 0);
-    //}
-
-    //void SpawnPickUp()
-    //{
-    //    GameObject honeyCombPickUp = Instantiate(xHoneyCombPickUp);
-    //    Vector2 v2SpawnLocation = this.transform.position;
-    //    v2SpawnLocation.y = Random.Range(-4, 4);
-    //    honeyCombPickUp.transform.position = v2SpawnLocation;
-    //}
 }
