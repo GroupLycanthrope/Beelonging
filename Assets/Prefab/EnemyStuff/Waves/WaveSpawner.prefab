@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1355402064659364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,6 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aWaveSpawnData:
   - v2DeltaPosition: {x: 0, y: 0}
-    xSpawnObject: {fileID: 0}
-  - v2DeltaPosition: {x: 0, y: 0}
-    xSpawnObject: {fileID: 0}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}

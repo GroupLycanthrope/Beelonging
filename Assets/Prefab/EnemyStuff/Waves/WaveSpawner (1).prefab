@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aWaveSpawnData:
-  - v2DeltaPosition: {x: 1, y: 4}
+  - v2DeltaPosition: {x: 0, y: 4}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
   - v2DeltaPosition: {x: 0, y: -3}
