@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 
     Vector2 m_v2Pos;
 
+    private Vector3 v3PlayerBounds;
     //private Vector3 v3PlayerBounds;
     private void Awake()
     {
