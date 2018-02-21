@@ -162,6 +162,11 @@ Prefab:
       propertyPath: xGameOverScreen
       value: 
       objectReference: {fileID: 401515668}
+    - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: goGameOverScreen
+      value: 
+      objectReference: {fileID: 401515668}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cacba71c1d3219f49bd89879f44ace68, type: 2}
   m_IsPrefabParent: 0
@@ -203,6 +208,11 @@ Prefab:
     - target: {fileID: 4178032688951658, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751207738600036, guid: 10631bf6a5ea96147b9585799116f030,
+        type: 2}
+      propertyPath: fShotSlowDown
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
