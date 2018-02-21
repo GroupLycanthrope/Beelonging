@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4630668026837774}
-  - component: {fileID: 114019514924673688}
+  - component: {fileID: 114042496177578064}
   m_Layer: 0
   m_Name: BeeManager
   m_TagString: Untagged
@@ -34,13 +34,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934612695898470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114019514924673688
+--- !u!114 &114042496177578064
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,12 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1934612695898470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e77879de5904e4da9aaa596e00a98c, type: 3}
+  m_Script: {fileID: 11500000, guid: f8790549d9786854fb08348bf81b8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goPlayer: {fileID: 0}
-  PlayerHitBoxes:
-  - {fileID: 0}
-  - {fileID: 0}
-  Swarm: []
-  HoneyFormation: 0
+  goGameOverScreen: {fileID: 0}

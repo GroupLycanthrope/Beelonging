@@ -9,12 +9,14 @@ public class BeeCollision : MonoBehaviour
     public AudioClip honeycomb_pickup;
     public AudioClip honeycomb_activate;
 
-    public GameObject This;
-
     private AudioSource source;
+
+    [HideInInspector]
+    public bool bIsDead;
 
     private void Awake()
     {
+        bIsDead = false;
         source = GetComponent<AudioSource>();
     }
 
@@ -38,11 +40,8 @@ public class BeeCollision : MonoBehaviour
                 p_xOtherCollider.gameObject.CompareTag("EnemyProjectile"))
             {
                 source.PlayOneShot(deathsound, 1F);
-                GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<CapsuleCollider2D>().enabled = false;
-                //TODO: Death Animation plus promoting new bee
-                This.GetComponent<ControlHealth>().setHealth(-1);
-                //Destroy(gameObject, 1);
+                //TODO: Death Animation
+                BeeManager.KillBeell(gameObject);
             }
         }
 
