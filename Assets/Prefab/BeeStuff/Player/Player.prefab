@@ -201,7 +201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467338762861618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.77, y: 0.49, z: 0}
+  m_LocalPosition: {x: -6.44, y: 0.02, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4992404600844840}
@@ -794,11 +794,11 @@ MonoBehaviour:
   m_xPlayerBullet: {fileID: 1639238614990132, guid: 5af2eeb631614074ea3061271d9c77f8,
     type: 2}
   m_xBulletPosition: {fileID: 1427367247438906}
-  fFireRate: 1
+  fFireRate: 0.5
   fAcceleration: 2
   fDeceleration: 2
   fMaxVelocity: 5
-  fShotSlowDown: 0
+  fShotSlowDown: 0.4
   bShootFired: 0
   shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
 --- !u!212 &212900586767449472
