@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4066157275204938}
   - component: {fileID: 114480601831726890}
   m_Layer: 0
-  m_Name: WaveSpawner 1
+  m_Name: WaveSpawner 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,15 +52,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aWaveSpawnData:
-  - v2DeltaPosition: {x: 9, y: -4}
-    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
+  - v2DeltaPosition: {x: 9, y: 1}
+    xSpawnObject: {fileID: 1715813357586956, guid: 2a32d14ce408ffe4ead1d6563c7bb7c7,
       type: 2}
-  - v2DeltaPosition: {x: 10, y: -4}
-    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
+  - v2DeltaPosition: {x: 12, y: -1}
+    xSpawnObject: {fileID: 1853002291290948, guid: b3cd536fb434939478bcc4af8ae93d38,
       type: 2}
-  - v2DeltaPosition: {x: 9.5, y: -4.5}
-    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
+  - v2DeltaPosition: {x: 15, y: 0}
+    xSpawnObject: {fileID: 1715813357586956, guid: 2a32d14ce408ffe4ead1d6563c7bb7c7,
       type: 2}
-  - v2DeltaPosition: {x: 9.5, y: -3.5}
-    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
+  - v2DeltaPosition: {x: 16, y: 2}
+    xSpawnObject: {fileID: 1853002291290948, guid: b3cd536fb434939478bcc4af8ae93d38,
       type: 2}
