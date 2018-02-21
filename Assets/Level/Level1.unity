@@ -162,6 +162,11 @@ Prefab:
       propertyPath: xGameOverScreen
       value: 
       objectReference: {fileID: 401515668}
+    - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: goGameOverScreen
+      value: 
+      objectReference: {fileID: 401515668}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cacba71c1d3219f49bd89879f44ace68, type: 2}
   m_IsPrefabParent: 0
