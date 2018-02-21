@@ -173,11 +173,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcc7a8c012fa9934f8ba8d8aed121fa5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &401515668 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1667144326826666, guid: 499157e9208560c44997ba8fc5cea43f,
-    type: 2}
-  m_PrefabInternal: {fileID: 663423356}
 --- !u!1001 &416481515
 Prefab:
   m_ObjectHideFlags: 0
@@ -216,6 +211,76 @@ Prefab:
     - target: {fileID: 4742685729984202, guid: 6eca4b28b36f5674c9d41a70c58d70e6, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600488738981950, guid: 6eca4b28b36f5674c9d41a70c58d70e6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[0].fSortID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[0].xSpawnObject
+      value: 
+      objectReference: {fileID: 1355402064659364, guid: 33f7bf52309a69a4a8ad1490326f1be6,
+        type: 2}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[1].xSpawnObject
+      value: 
+      objectReference: {fileID: 1355402064659364, guid: d57864b01dbbaca4faf350db3b0d7a9a,
+        type: 2}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[2].xSpawnObject
+      value: 
+      objectReference: {fileID: 1893416079524744, guid: 8fc0eb741ce9ec14b8b7fafc94072a0e,
+        type: 2}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[3].xSpawnObject
+      value: 
+      objectReference: {fileID: 1837272229422470, guid: 738597494f90b2a408f425e43ca28f35,
+        type: 2}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[4].xSpawnObject
+      value: 
+      objectReference: {fileID: 1355402064659364, guid: cecfc2655a7af154e882ba0c56118de1,
+        type: 2}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[5].fSortID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[5].xSpawnObject
+      value: 
+      objectReference: {fileID: 1477412031216336, guid: 8e0e40ff23827644daf554552879c7a5,
+        type: 2}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[2].fSortID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[4].fSortID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[3].fSortID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
+        type: 2}
+      propertyPath: aSpawnData.Array.data[1].fSortID
+      value: 1.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6eca4b28b36f5674c9d41a70c58d70e6, type: 2}
@@ -913,16 +978,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
-        type: 2}
-      propertyPath: orthographic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
-        type: 2}
-      propertyPath: orthographic size
-      value: 4.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2af12f4462cc3bd43a5ce3a3d1696133, type: 2}
   m_IsPrefabParent: 0
@@ -969,7 +1024,8 @@ Prefab:
         type: 2}
       propertyPath: goGameOverScreen
       value: 
-      objectReference: {fileID: 401515668}
+      objectReference: {fileID: 1667144326826666, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cacba71c1d3219f49bd89879f44ace68, type: 2}
   m_IsPrefabParent: 0

@@ -61,7 +61,7 @@ public class AIMovement : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyUp("x"))
+        if (Input.GetKeyUp("x"))
 	    {
 	        ChangeDestination(v3SpreadPosition);
         }

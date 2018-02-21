@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
     
         Vector3 v3NewPosition;
         v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, -7.5f, 7.5f);
-        v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -4.5f, 4.5f);
+        v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -4.0f, 4.0f);
         v3NewPosition.z = 0;
         transform.position = v3NewPosition;
         v3Direction.x = fVelocityX;
