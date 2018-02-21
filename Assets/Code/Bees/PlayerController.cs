@@ -2,21 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Boundary
+public class PlayerController : MonoBehaviour
 {
-    public Vector2 v2Min;
-    public Vector2 v2Max;
-}
+    //public GameObject goPlayerBullet;
+    //public GameObject goBulletPosition;
 
-public class PlayerController : MonoBehaviour {
-    public GameObject m_xPlayerBullet;
-    public GameObject m_xBulletPosition;
-    //private Rigidbody2D xRigidbody2D;
-
-    //public float m_fSpeed;
     public float fFireRate;
-    private float fNextShot;
+    public float fNextShot;
 
     public float fAcceleration;
     public float fDeceleration;
@@ -27,51 +19,69 @@ public class PlayerController : MonoBehaviour {
     private float fVelocityY;
 
     public float fShotSlowDown;
-	public bool bShootFired;
+
     public AudioClip shootsound;
     private AudioSource source;
 
-    Vector2 m_v2Direction;
+    private Animator aAnimator;
 
-    Vector2 m_v2Pos;
+    [HideInInspector]
+    public Vector3 v3Direction;
 
-    private Vector3 v3PlayerBounds;
+    private BeeCollision sBeeCollision;
+
+    private GameObject goBulletStartPosition;
     private void Awake()
     {
+        goBulletStartPosition = transform.GetChild(0).gameObject;
+        sBeeCollision = GetComponent<BeeCollision>();
         source = GetComponent<AudioSource>();
+        aAnimator = GetComponent<Animator>();
     }
 
     // Use this for initialization
     void Start ()
     {
-       // v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         fCurrentMaxVelocity = fMaxVelocity;
         fShootingMaxVelocity = fMaxVelocity * fShotSlowDown;
-       // GetComponent<Animator>().SetFloat("fAnimationOffset", Random.Range(0, 1));
-        //xRigidbody2D = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetKey("space") && Time.time > fNextShot){
-            GetComponent<Animator>().SetTrigger("tShot");
-            source.PlayOneShot(shootsound, 1F);
-            fNextShot = Time.time + fFireRate;
-            GameObject bullet = Instantiate(m_xPlayerBullet);
-            bullet.transform.position = m_xBulletPosition.transform.position;
-            fVelocityY *= fShotSlowDown;
-            fVelocityX *= fShotSlowDown;
-            fCurrentMaxVelocity = fShootingMaxVelocity;
-			            bShootFired = true;
-        }
-		else {
-            bShootFired = false;
+    void Update()
+    {
+        if (Input.GetKey("space")
+            && !sBeeCollision.bIsDead
+            && Time.time > fNextShot)
+        {
+            if (BeeManager.bFormationActive)
+            {
+                foreach (GameObject Bee in BeeManager.aSwarm)
+                {
+                    Bee.SendMessage("Shoot");
+                }
+            }
+            else
+            {
+                Shoot();
+            }
         }
 
-	    if (Input.GetKeyUp("space"))
-	    {
-	        ResetVelocity();
-	    }
+        if (Input.GetKeyUp("space"))
+        {
+            ResetVelocity();
+        }
+
+        if (Input.GetKeyDown("x"))
+        {
+            Debug.Log("FormationActivate");
+            BeeManager.bFormationActive = true;
+        }
+        else if (Input.GetKeyUp("x"))
+        {
+            Debug.Log("FormationDeactivate");
+            BeeManager.bFormationActive = false;
+            BeeManager.UnOccupyPositions();
+        }
 
         if (Input.GetKey(KeyCode.UpArrow) && fVelocityY < fCurrentMaxVelocity)
         {
@@ -93,7 +103,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
         if (Input.GetKey(KeyCode.RightArrow) && fVelocityX < fCurrentMaxVelocity)
-        {
+        { 
             fVelocityX += fAcceleration;
         }
         else if (Input.GetKey(KeyCode.LeftArrow) && fVelocityX > -fCurrentMaxVelocity)
@@ -102,52 +112,40 @@ public class PlayerController : MonoBehaviour {
         }
         else
         {
-            {
-                if (fVelocityX > 0)
-                {
-                    fVelocityX -= fDeceleration;
-                }
-                else if (fVelocityX < 0)
-                {
-                    fVelocityX += fDeceleration;
-                }
-            }
+             if (fVelocityX > 0)
+             {
+                 fVelocityX -= fDeceleration;
+             }
+             else if (fVelocityX < 0)
+             {
+                 fVelocityX += fDeceleration;
+             }
         }
-
+    
         Vector3 v3NewPosition;
-        v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, -11.55f, 8.75f);
-	    v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -5.7f, 5.7f);
-	    v3NewPosition.z = 0;
-	    transform.position = v3NewPosition;
-
-        //transform.Translate(Mathf.Clamp(fVelocityX * Time.deltaTime, -11.55f, 8.75f), Mathf.Clamp(fVelocityY * Time.deltaTime, -5.7f, 5.7f), 0);
-
-	    //float fX = Input.GetAxisRaw("Horizontal");
-	    //float fY = Input.GetAxisRaw("Vertical");
-
-	    //m_v2Direction = new Vector2(fX, fY).normalized;
-	    //xRigidbody2D.AddForce(m_v2Direction);
-	    //Move(m_v2Direction);
-	}
-
+        v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, -7.5f, 7.5f);
+        v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -4.5f, 4.5f);
+        v3NewPosition.z = 0;
+        transform.position = v3NewPosition;
+        v3Direction.x = fVelocityX;
+        v3Direction.y = fVelocityY;
+        v3Direction.Normalize();
+        
+    }
     void ResetVelocity()
     {
         fCurrentMaxVelocity = fMaxVelocity;
     }
-    //void Move(Vector2 p_v2Direction)
-    //{
-    //    m_v2Pos = transform.position;
 
-    //    m_v2Pos += p_v2Direction * m_fSpeed * Time.deltaTime;
-
-    //    if (m_v2Pos.x < -11.55 || m_v2Pos.x > 8.75F || m_v2Pos.y < -5.7F || m_v2Pos.y > 5.7F)
-    //    {
-    //        return;
-    //    }
-    //    else
-    //    {
-    //        xRigidbody2D.velocity = transform.forward * m_fSpeed;
-    //        transform.position = m_v2Pos;
-    //    }
-    //}
+    void Shoot()
+    {     
+         aAnimator.SetTrigger("tShot");
+         source.PlayOneShot(shootsound, 1F);
+         fNextShot = Time.time + fFireRate;
+         GameObject newBullet = Instantiate(Resources.Load("BeeStuff/Player/PlayerBullet")) as GameObject;
+         newBullet.transform.position = goBulletStartPosition.transform.position; //Gets the first child of this gameobject and returns the position of its tranform (I know it looks weird but this way we don't have to link the bulletposition)
+         fVelocityY *= fShotSlowDown;
+         fVelocityX *= fShotSlowDown;
+         fCurrentMaxVelocity = fShootingMaxVelocity;
+    }
 }

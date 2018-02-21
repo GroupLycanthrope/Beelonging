@@ -1,107 +1,115 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class BeeManager : MonoBehaviour {
-
-    public GameObject goPrefabPlayer;
-
-    public GameObject goPlayer;
-
-    public GameObject[] Swarm;
-    public bool HoneyFormation = false;
-    public bool bNoPlayer = false;
-	bool bPlayerShootFired;
-
+public class BeeManager : MonoBehaviour
+{
     public static int iPowerUpCounter;
 
     public static bool bIsInvincible;
+    public static bool bPlayerDead;
 
-    public GameObject xGameOverScreen;
+    public static bool bFormationActive;
 
+    public GameObject goGameOverScreen;
 
-    // Use this for initialization
-    void Start() {
-        iPowerUpCounter = 0;
-        Swarm = GameObject.FindGameObjectsWithTag("Bee");
-        iPowerUpCounter = 0;
+    private static List<GameObject> FormationPositions;
+    private GameObject goPlayer;
+
+    public static List<GameObject> aSwarm;
+    //private GameObject[] aSwarm;
+
+	// Use this for initialization
+	void Start ()
+	{
+	    iPowerUpCounter = 0;
+	    aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
         bIsInvincible = false;
+	    bPlayerDead = false;
+	    goPlayer = GameObject.Find("Player");
+	}
+	
+	// Update is called once per frame
+	void Update ()
+	{
+	    if (iPowerUpCounter == 3)
+	    {
+	        bIsInvincible = true;
+	        InvincibilityCounter.fInvincibilityTimer -= Time.deltaTime;
+	    }
+	    if (InvincibilityCounter.fInvincibilityTimer <= 0)
+	    {
+	        bIsInvincible = false;
+	        InvincibilityCounter.fInvincibilityTimer = 5.0f;
+	        iPowerUpCounter = 0;
+	    }
+
+	    if (aSwarm.Count == 0 
+	        && bPlayerDead)
+	    {
+	        //Time.timeScale = 0;
+	        goGameOverScreen.SetActive(true);
+	    }
+	    else if (bPlayerDead == true)
+	    {
+            Respawn();
+	    }
     }
 
-    // Update is called once per frame
-    void Update() {
+    void Respawn()
+    {
+        //GameObject.Find("Player").GetComponent<BeeCollision>().bIsDead = false;
+        int random = Random.Range(1, aSwarm.Count);
+        GameObject newPlayer = Instantiate(Resources.Load("BeeStuff/Player/Player")) as GameObject;
+        goPlayer = newPlayer;
+        goPlayer.transform.position = aSwarm[random - 1].transform.position;
+        goPlayer.name = "Player";
+        KillBeell(aSwarm[random - 1]);
+        bPlayerDead = false;
+    }
 
-        for (int i = 0; i < Swarm.Length; i++) { 
-            if (Swarm[i] != null){
-                if (Swarm[i].GetComponent<ControlHealth>().getHealth() == 0){
-                    Destroy(Swarm[i]);
-                }
-            }
-        }
-        Swarm = GameObject.FindGameObjectsWithTag("Bee");
-
-        Formation();
-
-        // respawn of player
-        Respawn();
+    public static void KillBeell(GameObject p_goDeadBee)
+    {
         
-
-
-
-
-        if (iPowerUpCounter == 3){
-            bIsInvincible = true;
-            InvincibilityCounter.fInvincibilityTimer -= Time.deltaTime;
+        p_goDeadBee.GetComponent<SpriteRenderer>().enabled = false;
+        p_goDeadBee.GetComponent<CapsuleCollider2D>().enabled = false;
+        p_goDeadBee.GetComponent<BeeCollision>().bIsDead = true;
+        aSwarm.Remove(p_goDeadBee);
+        if (p_goDeadBee.name == "Player")
+        {
+            bPlayerDead = true;
         }
-
-        if (InvincibilityCounter.fInvincibilityTimer <= 0){
-            bIsInvincible = false;
-            InvincibilityCounter.fInvincibilityTimer = 5.0f;
-            iPowerUpCounter = 0;
-        }
-
-        if(Swarm.Length == 0) {
-            //Time.timeScale = 0;
-            xGameOverScreen.SetActive(true);
-        }
-
+        Destroy(p_goDeadBee, 1);
     }
 
-    void Respawn() {
-        for (int i = 0; i < Swarm.Length; i++){
-            if (Swarm[i].layer == 8){
-                bNoPlayer = false;
-                break;
-            }
-            else{
-                bNoPlayer = true;
-            }
-        }
-        if (bNoPlayer == true) {
-            int rand = Random.Range(1,Swarm.Length);
-            // Save cordinates of old AIbee
-            Vector3 cordinates = Swarm[rand - 1].transform.position;
-            // destroy the AI bee
-            Destroy(Swarm[rand - 1]);
-            // Create a player
-            GameObject newPlayer = Instantiate(goPrefabPlayer);
-            newPlayer.name = "Player";
-            newPlayer.transform.position = cordinates;
-        }
+    public static void AddBee(GameObject p_goNewBee)
+    {
+        aSwarm.Add(p_goNewBee);
     }
 
-        void Formation() {
-        for (int i = 0; i < Swarm.Length; i++){
-            if (Input.GetKey("x") && Swarm[i].name != "Player"){
-                Swarm[i].GetComponent<AIBee>().bCallFormation = true;
-                Swarm[i].GetComponent<AIBee>().bPlayerFireShoot = bPlayerShootFired;
+    public static GameObject GetFormationPosition()
+    {
+        FormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
+        
+        for (int i = 0; i < FormationPositions.Count; i++)
+        {
+            if (FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied == false)
+            {
+                FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = true;
+                return FormationPositions[i];
             }
-            else if (Swarm[i].name != "Player"){
- //               Swarm[i].GetComponent<AIBee>().bCallFormation = false;
-            }
-            if (Swarm[i].name == "Player"){
-                bPlayerShootFired = Swarm[i].GetComponent<PlayerController>().bShootFired;
+        }
+        return FormationPositions[0]; //Fallback if things go wrong
+    }
+
+    public static void UnOccupyPositions()
+    {
+        if (aSwarm.Count > 0)
+        {
+            for (int i = 0; i < FormationPositions.Count; i++)
+            {
+                FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
             }
         }
     }
