@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //public GameObject goPlayerBullet;
-    //public GameObject goBulletPosition;
-
     public float fFireRate;
     public float fNextShot;
 
@@ -42,11 +39,6 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-<<<<<<< Temporary merge branch 1
-        //v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-=======
-       // v3PlayerBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
->>>>>>> Temporary merge branch 2
         fCurrentMaxVelocity = fMaxVelocity;
         fShootingMaxVelocity = fMaxVelocity * fShotSlowDown;
     }
