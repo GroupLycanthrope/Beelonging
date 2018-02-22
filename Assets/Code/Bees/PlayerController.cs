@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private GameObject goBulletStartPosition;
     private void Awake()
     {
+        fNextShot = Time.time;
         goBulletStartPosition = transform.GetChild(0).gameObject;
         sBeeCollision = GetComponent<BeeCollision>();
         source = GetComponent<AudioSource>();
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
                 foreach (GameObject Bee in BeeManager.aSwarm)
                 {
                     Bee.SendMessage("Shoot");
+                    Shoot();
                 }
             }
             else
