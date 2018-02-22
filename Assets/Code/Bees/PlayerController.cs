@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private BeeCollision sBeeCollision;
 
     private GameObject goBulletStartPosition;
+    private GameObject goPauseMenu;
     private void Awake()
     {
         v2PlayerBoundariesMin = v2PlayerSpreadBoundariesMin;
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey("space")
             && !sBeeCollision.bIsDead
             && Time.time > fNextShot)
