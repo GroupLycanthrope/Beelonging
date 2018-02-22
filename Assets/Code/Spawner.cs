@@ -74,7 +74,7 @@ public class Spawner : MonoBehaviour{
                 }
             }
 
-            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("HoneycombPickup") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee"))
+            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("HoneycombPickUp") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee"))
             {
                 xWinningScreen.SetActive(true);
             }
