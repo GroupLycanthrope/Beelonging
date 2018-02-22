@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundMovement : MonoBehaviour
 {
 
-    public Material mMaterial;
+    private MeshRenderer mMeshRenderer;
 
     public float fScrollingSpeed;
 
@@ -14,6 +14,7 @@ public class BackgroundMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        mMeshRenderer = GetComponent<MeshRenderer>();
         v2TextureOffset.x = 0;
     }
 
@@ -21,14 +22,14 @@ public class BackgroundMovement : MonoBehaviour
     void Update()
     {
 
-        v2TextureOffset = mMaterial.GetTextureOffset("_MainTex");
+        v2TextureOffset = mMeshRenderer.sharedMaterial.GetTextureOffset("_MainTex");
         v2TextureOffset.x += fScrollingSpeed * Time.deltaTime;
-        mMaterial.SetTextureOffset("_MainTex", v2TextureOffset);
+        mMeshRenderer.sharedMaterial.SetTextureOffset("_MainTex", v2TextureOffset);
     }
 
     void OnDestroy()
     {
         v2TextureOffset.x = 0;
-        mMaterial.SetTextureOffset("_MainTex", v2TextureOffset);
+        mMeshRenderer.sharedMaterial.SetTextureOffset("_MainTex", v2TextureOffset);
     }
 }
