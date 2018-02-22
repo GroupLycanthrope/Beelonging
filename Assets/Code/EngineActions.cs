@@ -4,17 +4,17 @@ using System.Collections;
 
 public class EngineActions : MonoBehaviour
 {
-    public void RestartGame()
+    public static void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
 
-    public void SetGameSpeed(float p_fTimeScale)
+    public static void SetGameSpeed(float p_fTimeScale)
     {
         Time.timeScale = p_fTimeScale;
     }
 
-    public void QuitGame()
+    public static void QuitGame()
     {
         Application.Quit();
     }

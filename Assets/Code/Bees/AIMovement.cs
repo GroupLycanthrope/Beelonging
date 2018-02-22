@@ -61,18 +61,19 @@ public class AIMovement : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyUp("x"))
+	    else
+	    {
+	        if (Vector3.Distance(transform.position, v3Destination) <= 0.2)
+	        {
+	            v3SpreadPosition = FindDriftDestination();
+	            ChangeDestination(v3SpreadPosition);
+	        }
+	    }
+        if (Input.GetKeyUp("x"))
 	    {
 	        ChangeDestination(v3SpreadPosition);
         }
-        else
-	    {
-            if (Vector3.Distance(transform.position, v3Destination) <= 0.2)
-            {
-                v3SpreadPosition = FindDriftDestination();
-                ChangeDestination(v3SpreadPosition);
-            }
-        }
+       
 
 	    if (Vector3.Distance(transform.position, v3Destination) >= 0.2)
 	    {

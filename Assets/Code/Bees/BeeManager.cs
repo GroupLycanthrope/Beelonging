@@ -13,6 +13,7 @@ public class BeeManager : MonoBehaviour
     public static bool bFormationActive;
 
     public GameObject goGameOverScreen;
+    public GameObject goPauseMenu;
 
     private static List<GameObject> FormationPositions;
     private GameObject goPlayer;
@@ -33,7 +34,20 @@ public class BeeManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (iPowerUpCounter == 3)
+	    if (Input.GetKeyDown(KeyCode.Escape))
+	    {
+	        if (!goPauseMenu.activeSelf)
+	        {
+	            goPauseMenu.SetActive(true);
+	            Time.timeScale = 0;
+	        }
+	        else
+	        {
+	            goPauseMenu.SetActive(false);
+	            Time.timeScale = 1;
+	        }
+	    }
+        if (iPowerUpCounter == 3)
 	    {
 	        bIsInvincible = true;
 	        InvincibilityCounter.fInvincibilityTimer -= Time.deltaTime;
@@ -48,9 +62,10 @@ public class BeeManager : MonoBehaviour
 	    if (aSwarm.Count == 0 
 	        && bPlayerDead)
 	    {
-	        //Time.timeScale = 0;
-	        goGameOverScreen.SetActive(true);
-	    }
+
+            goGameOverScreen.SetActive(true);
+            //EngineActions.SetGameSpeed(0); 
+        }
 	    else if (bPlayerDead == true)
 	    {
             Respawn();
