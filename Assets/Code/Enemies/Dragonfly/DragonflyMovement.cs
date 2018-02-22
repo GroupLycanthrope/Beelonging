@@ -4,84 +4,135 @@ using UnityEngine;
 
 public class DragonflyMovement : MonoBehaviour
 {
+    int iZoomCount;
+
     public float fFlyingSpeed;
     public float fZoomSpeed;
-
-    public Vector2 v2RandomMinInterval;
-    public Vector2 v2RandomMaxInterval;
-
     public float fZoomCooldown;
+    public float fRangeX;
+    public float fRangeY;
 
-    private float fNextZoom;
-
+    private float fTimer;
     private float fRandomX;
     private float fRandomY;
+    private float fPointX;
+    private float fPointY;
 
-    private Vector3 v3ZoomDestination;
-    private Vector3 v3ZoomDirection;
+    Vector3 v3ZoomDestination;
+    Vector3 v3OriginalYPosition;
+    Vector3 v3NormalMoveSpeed;
+
+    bool bIsAtTarget;
+    bool bRestartTimer;
+    bool bHasTarget;
+    bool bStartMoveToScreen;
+
 
     // Use this for initialization
-    void Start()
-    {
-        StartCoroutine(Zoom(fZoomCooldown));
+    void Start(){
+        v3OriginalYPosition.y = transform.position.y;
+        fTimer = fZoomCooldown;
+        bStartMoveToScreen = true;
+        v3NormalMoveSpeed.x = -fFlyingSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -20)
-        {
+        if (transform.position.x < -20){
             Destroy(gameObject);
         }
-        //transform.Translate(-fFlyingSpeed * Time.deltaTime, 0, 0);
+        fTimer -= Time.deltaTime;
 
-        if (transform.position.x > v3ZoomDestination.x)
-        {
-            transform.Translate(v3ZoomDirection * (fZoomSpeed * Time.deltaTime));
+        if(transform.position.x > 8) {
+            transform.position += v3NormalMoveSpeed;
+        }
+        else {
+            bStartMoveToScreen = false;
+        }
+
+        if(!bStartMoveToScreen) {
+            Zoom();
+        }
+        if (bHasTarget) {
+            MoveDragonFly();
+        }
+
+
+        if (fTimer <= 0){
+            print("check");
+            bRestartTimer = true;
+        }
+    }
+    
+    void Zoom() {
+        
+        if (iZoomCount == 0 && fTimer <= 0) {
+            v3ZoomDestination = SetZoomPos();
+
+            if(v3ZoomDestination.y >= 5.4F) {
+                v3ZoomDestination.y -= 1;
+            }
+            if(v3ZoomDestination.y <= -5.4) {
+                v3ZoomDestination.y += 1;
+            }
+            bHasTarget = true;
+            iZoomCount += 1;
+        }
+        else if(iZoomCount == 1 && fTimer <= 0 && bIsAtTarget == true) {
+            Vector3 v3SaveDesti = v3ZoomDestination;
+            v3ZoomDestination = SetZoomPos();
+            v3ZoomDestination.y = v3SaveDesti.y * -1;
+            if (v3ZoomDestination.y >= 5.4F){
+                v3ZoomDestination.y -= 1;
+            }
+            if (v3ZoomDestination.y <= -5.4){
+                v3ZoomDestination.y += 1;
+            }
+            bHasTarget = true;
+            iZoomCount += 1;
+        }
+        else if (iZoomCount == 2 && fTimer <= 0 && bIsAtTarget == true) {
+            v3ZoomDestination = SetZoomPos();
+            v3ZoomDestination.y = v3OriginalYPosition.y;
+            bHasTarget = true;
+            iZoomCount += 1;
         }
     }
 
-    IEnumerator Zoom(float p_fZoomCooldown)
-    {
-        ////RandomizeDestination();
-        float fRandomX = Random.Range(v2RandomMinInterval.x, v2RandomMaxInterval.x);
-        float fRandomY = Random.Range(v2RandomMinInterval.y, v2RandomMaxInterval.y);
-        float fClampedDestinationY = Mathf.Clamp(fRandomY + transform.position.y, -5.5f, 5.5f); //TODO: Make less hard coded
-        v3ZoomDestination.x = transform.position.x + fRandomX;
-        v3ZoomDestination.y = fClampedDestinationY;
-        v3ZoomDirection = v3ZoomDestination.normalized;
+    Vector2 SetZoomPos() {
+        Vector2 v2ZoomPos;
 
-        yield return new WaitWhile(() => transform.position.x >= v3ZoomDestination.x);
-        //Vector3 v3LastZoomDestination = v3ZoomDestination;
-        yield return new WaitForSeconds(p_fZoomCooldown);
-        fClampedDestinationY = Mathf.Clamp(transform.position.y + fRandomY * -2, -5.5f, 5.5f); //TODO: Make less hard coded
-        v3ZoomDestination.y = fClampedDestinationY; //Reversed and doubled
-        v3ZoomDestination.x = transform.position.x + fRandomX;
-        v3ZoomDirection = v3ZoomDestination.normalized;
-        Debug.Log("New Destination");
-        yield return null;
+        // fPoint decide how large each jump is;
+        fPointX = transform.position.x - fRangeX;
+        fPointY = transform.position.y - fRangeY;
 
-        yield return new WaitWhile(() => transform.position.x >= v3ZoomDestination.x);
-        //v3LastZoomDestination = v3ZoomDestination;
-        yield return new WaitForSeconds(p_fZoomCooldown);
-        fClampedDestinationY = Mathf.Clamp(transform.position.y + fRandomY * -0.5f, -5.5f, 5.5f); //TODO: Make less hard coded
-        v3ZoomDestination.y = fClampedDestinationY; //Back to original position
-        v3ZoomDestination.x = transform.position.x + fRandomX;
-        v3ZoomDirection = v3ZoomDestination.normalized;
-        Debug.Log("New Destination");
-        yield return null;
+        fRandomX = Random.Range(transform.position.x - 1, fPointX);
+        fRandomY = Random.Range(transform.position.y - .5F, fPointY);
+
+        v2ZoomPos.x = fRandomX;
+        v2ZoomPos.y = fRandomY;
+
+        return v2ZoomPos;
+    }
+
+
+    void MoveDragonFly() {
+        if(transform.position.x > v3ZoomDestination.x) {
+            print("test");
+            transform.position = Vector3.MoveTowards(transform.position, v3ZoomDestination, fZoomSpeed * Time.deltaTime);
+            bIsAtTarget = false;
+        }
+        else if (transform.position.x <= v3ZoomDestination.x){
+            if(bRestartTimer == true) {
+                fTimer = fZoomCooldown;
+                bRestartTimer = false;
+            }
+            bHasTarget = false;
+            bIsAtTarget = true;
+            if (iZoomCount == 3){
+                iZoomCount = 0;
+            }
+        }
     }
 }
-
-//void RandomizeDestination()
-//    {
-//        //fRandomX = Random.Range(v2RandomMinInterval.x, v2RandomMaxInterval.x);
-//        //fRandomY = Random.Range(v2RandomMinInterval.y, v2RandomMaxInterval.y);
-//        //float fClampedDestinationY = Mathf.Clamp(fRandomY + transform.position.y, -5.5f, 5.5f); //TODO: Make less hard coded
-//        //v3ZoomDestination.x = fRandomX;
-//        //v3ZoomDestination.y = fClampedDestinationY;
-//        //v3ZoomDirection = v3ZoomDestination.normalized;
-//        ////Vector3 v3ZoomDestination = new Vector3() { transform.position.x + fRandomX; fClampedDestinationY; 0; }
-//        //return v3ZoomDestination;
-//    }
-//}

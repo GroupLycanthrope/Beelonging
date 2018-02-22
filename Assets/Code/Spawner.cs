@@ -14,7 +14,7 @@ public class SpawnData
 public class Spawner : MonoBehaviour{
     private float fTimer;
 
-    private int i;
+    static public int iSpawnerAt;
 
     private bool bHasSpawned;
     public bool bHasSortList;
@@ -25,56 +25,56 @@ public class Spawner : MonoBehaviour{
     public GameObject xWinningScreen;
 
     void Start(){
-        i = 0;
-        fTimer = aSpawnData[i].fWaitTime;
+        iSpawnerAt = 0;
+        fTimer = aSpawnData[iSpawnerAt].fWaitTime;
         bHasSortList = false;
     }
 
     void Update(){
         if (Application.isPlaying){
-            if (i < aSpawnData.Count){
+            if (iSpawnerAt < aSpawnData.Count){
                 // check if the previous wave is null before creating the next one
-                if (i != 0 && aSpawnData[i - 1].xSpawnObject == null){
+                if (iSpawnerAt != 0 && aSpawnData[iSpawnerAt - 1].xSpawnObject == null){
                     // start to count down to zero
                     fTimer -= Time.deltaTime;
                     if (fTimer <= 0){
                         // Spawn the enemy wave
-                        if (aSpawnData[i].xSpawnObject != null){
-                            GameObject spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+                        if (aSpawnData[iSpawnerAt].xSpawnObject != null){
+                            GameObject spawn = Instantiate(aSpawnData[iSpawnerAt].xSpawnObject, this.transform);
                             spawn.transform.Translate(0, transform.position.y, 0);
                             bHasSpawned = true;
                         }
-                        i++;
+                        iSpawnerAt++;
                         // had to add this in because random error dont know why but this fixes the error
-                        if(i != aSpawnData.Count) { 
-                        fTimer = aSpawnData[i].fWaitTime;
+                        if(iSpawnerAt != aSpawnData.Count) { 
+                        fTimer = aSpawnData[iSpawnerAt].fWaitTime;
                         }
 
                     }
                 }
                 else{
                     // this only happens on the first wave because aSpawnData[0-1] is not valid and the rest is just a copied from before
-                    if (i == 0){
+                    if (iSpawnerAt == 0){
                         fTimer -= Time.deltaTime;
                         if (fTimer <= 0){
-                            if (aSpawnData[i].xSpawnObject != null){
-                                GameObject spawn = Instantiate(aSpawnData[i].xSpawnObject, this.transform);
+                            if (aSpawnData[iSpawnerAt].xSpawnObject != null){
+                                GameObject spawn = Instantiate(aSpawnData[iSpawnerAt].xSpawnObject, this.transform);
                                 spawn.transform.Translate(0, transform.position.y, 0);
                                 bHasSpawned = true;
                             }
-                            i++;
-                            fTimer = aSpawnData[i].fWaitTime;
+                            iSpawnerAt++;
+                            fTimer = aSpawnData[iSpawnerAt].fWaitTime;
                         }
                     }
                 }
                 // checks after enemies and if a wave have been spawned it sets the previous wave to null so the next wave can spawn
                 if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true){
-                    aSpawnData[i - 1].xSpawnObject = null;
+                    aSpawnData[iSpawnerAt - 1].xSpawnObject = null;
                     bHasSpawned = false;
                 }
             }
 
-            if (!GameObject.FindGameObjectWithTag("Enemy") && i >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee"))
+            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("HoneycombPickup") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee"))
             {
                 xWinningScreen.SetActive(true);
             }
@@ -87,7 +87,7 @@ public class Spawner : MonoBehaviour{
         }
 #endif
     }
-    // this has to be an int otherwise noting work IDK why and it sort properly as it would be a float again programming is magic
+    // this has to be an int otherwise noting work IDK why and it sort properly as it would be a float, again programming is magic
     static int SortBySortID(SpawnData p1, SpawnData p2){
         return p1.fSortID.CompareTo(p2.fSortID);
     }
