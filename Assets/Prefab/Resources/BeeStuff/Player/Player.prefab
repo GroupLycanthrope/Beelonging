@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467338762861618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.45, y: -0.32, z: 0}
+  m_LocalPosition: {x: -5.33, y: -0.11, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4992404600844840}
@@ -727,6 +727,7 @@ MonoBehaviour:
   deathsound: {fileID: 8300000, guid: 0df054d8adb094046a95b0cfce3a0dd3, type: 3}
   honeycomb_pickup: {fileID: 8300000, guid: 90079b61430b9fb458d8716f4860408e, type: 3}
   honeycomb_activate: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
+  bIsDead: 1
 --- !u!114 &114588637104363918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -778,11 +779,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fFireRate: 0.6
+  fNextShot: 0
   fAcceleration: 1
   fDeceleration: 0.5
   fMaxVelocity: 5
+  v2PlayerSpreadBoundariesMin: {x: -7.5, y: -4}
+  v2PlayerSpreadBoundariesMax: {x: 7.5, y: 4}
+  v2PlayerFormationBoundariesMin: {x: -6.5, y: -3}
+  v2PlayerFormationBoundariesMax: {x: 6.5, y: 3}
   fShotSlowDown: 0.2
   shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
+  v3Direction: {x: 0, y: 0, z: 0}
 --- !u!212 &212900586767449472
 SpriteRenderer:
   m_ObjectHideFlags: 1
