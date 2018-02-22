@@ -10,8 +10,6 @@ public class AIMovement : MonoBehaviour
 
     private float fCurrentSpeed;
 
-    public float fDriftingSpeed;
-
     public float fSlowSpeedThreshold;
     public float fMediumSpeedThreshold;
 
@@ -41,7 +39,11 @@ public class AIMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (BeeManager.bFormationActive)
+	    if (Input.GetKeyUp("x"))
+	    {
+	        ChangeDestination(v3SpreadPosition);
+	    }
+        if (BeeManager.bFormationActive)
 	    {
 	        if ( /*BeeManager.bFormationActive*/
 	            Input.GetKeyDown("x"))
@@ -69,11 +71,6 @@ public class AIMovement : MonoBehaviour
 	            ChangeDestination(v3SpreadPosition);
 	        }
 	    }
-        if (Input.GetKeyUp("x"))
-	    {
-	        ChangeDestination(v3SpreadPosition);
-        }
-       
 
 	    if (Vector3.Distance(transform.position, v3Destination) >= 0.2)
 	    {
