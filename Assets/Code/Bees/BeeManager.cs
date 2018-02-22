@@ -24,15 +24,16 @@ public class BeeManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    iPowerUpCounter = 0;
+	    Time.timeScale = 1;
+        iPowerUpCounter = 0;
 	    aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
         bIsInvincible = false;
 	    bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update ()
 	{
 	    if (Input.GetKeyDown(KeyCode.Escape))
 	    {
@@ -120,7 +121,7 @@ public class BeeManager : MonoBehaviour
 
     public static void UnOccupyPositions()
     {
-        if (aSwarm.Count > 0)
+        if (aSwarm.Count > 1)
         {
             for (int i = 0; i < FormationPositions.Count; i++)
             {
