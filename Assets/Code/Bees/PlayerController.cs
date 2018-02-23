@@ -15,14 +15,8 @@ public class PlayerController : MonoBehaviour
     private float fVelocityX;
     private float fVelocityY;
 
-    public Vector2 v2PlayerSpreadBoundariesMin;
-    public Vector2 v2PlayerSpreadBoundariesMax;
-
-    public Vector2 v2PlayerFormationBoundariesMin;
-    public Vector2 v2PlayerFormationBoundariesMax;
-
-    private Vector2 v2PlayerBoundariesMin;
-    private Vector2 v2PlayerBoundariesMax;
+    public Vector2 v2PlayerBoundariesMin;
+    public Vector2 v2PlayerBoundariesMax;
 
     public float fShotSlowDown;
 
@@ -40,8 +34,6 @@ public class PlayerController : MonoBehaviour
     private GameObject goPauseMenu;
     private void Awake()
     {
-        v2PlayerBoundariesMin = v2PlayerSpreadBoundariesMin;
-        v2PlayerBoundariesMax = v2PlayerSpreadBoundariesMax;
         fNextShot = Time.time;
         goBulletStartPosition = transform.GetChild(0).gameObject;
         sBeeCollision = GetComponent<BeeCollision>();
@@ -84,17 +76,12 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetKeyDown("x"))
-        {
-            v2PlayerBoundariesMin = v2PlayerFormationBoundariesMin;
-            v2PlayerBoundariesMax = v2PlayerFormationBoundariesMax;
-            
+        {   
             Debug.Log("FormationActivate");
             BeeManager.bFormationActive = true;
         }
         else if (Input.GetKeyUp("x"))
         {
-            v2PlayerBoundariesMin = v2PlayerSpreadBoundariesMin;
-            v2PlayerBoundariesMax = v2PlayerSpreadBoundariesMax;
             Debug.Log("FormationDeactivate");
             BeeManager.bFormationActive = false;
             BeeManager.UnOccupyPositions();
@@ -142,8 +129,6 @@ public class PlayerController : MonoBehaviour
         Vector3 v3NewPosition;
         v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, v2PlayerBoundariesMin.x, v2PlayerBoundariesMax.x);
         v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, v2PlayerBoundariesMin.y, v2PlayerBoundariesMax.y);
-        //v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, -7.5f, 7.5f);
-        //v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, -4.0f, 4.0f);
         v3NewPosition.z = 0;
         transform.position = v3NewPosition;
         v3Direction.x = fVelocityX;

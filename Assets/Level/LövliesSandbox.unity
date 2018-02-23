@@ -219,7 +219,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1600488738981950, guid: 6eca4b28b36f5674c9d41a70c58d70e6, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114374913365861958, guid: 6eca4b28b36f5674c9d41a70c58d70e6,
         type: 2}
@@ -569,10 +569,6 @@ Prefab:
     - target: {fileID: 1565540831470406, guid: bcc7a8c012fa9934f8ba8d8aed121fa5, type: 2}
       propertyPath: m_Name
       value: AI_Bee (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1565540831470406, guid: bcc7a8c012fa9934f8ba8d8aed121fa5, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcc7a8c012fa9934f8ba8d8aed121fa5, type: 2}
@@ -1144,6 +1140,26 @@ Prefab:
     - target: {fileID: 4178032688951658, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751207738600036, guid: 10631bf6a5ea96147b9585799116f030,
+        type: 2}
+      propertyPath: v2PlayerBoundariesMin.x
+      value: -7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751207738600036, guid: 10631bf6a5ea96147b9585799116f030,
+        type: 2}
+      propertyPath: v2PlayerBoundariesMin.y
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751207738600036, guid: 10631bf6a5ea96147b9585799116f030,
+        type: 2}
+      propertyPath: v2PlayerBoundariesMax.x
+      value: 7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751207738600036, guid: 10631bf6a5ea96147b9585799116f030,
+        type: 2}
+      propertyPath: v2PlayerBoundariesMax.y
+      value: 4.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10631bf6a5ea96147b9585799116f030, type: 2}

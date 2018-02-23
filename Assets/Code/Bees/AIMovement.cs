@@ -16,6 +16,9 @@ public class AIMovement : MonoBehaviour
     public Vector2 v2DriftDistanceMin;
     public Vector2 v2DriftDistanceMax;
 
+    public Vector2 v2AIBoundariesMin;
+    public Vector2 v2AIBoundariesMax;
+
     private Vector3 v3SpreadPosition;
     private Vector3 v3Destination;
 
@@ -59,7 +62,12 @@ public class AIMovement : MonoBehaviour
 	            {
 	                goFormationPosition = BeeManager.GetFormationPosition();
 	            }
-	            ChangeDestination(goFormationPosition.transform.position);
+
+	            Vector3 tmp;
+	            tmp.x = Mathf.Clamp(goFormationPosition.transform.position.x, v2AIBoundariesMin.x, v2AIBoundariesMax.x);
+	            tmp.y = Mathf.Clamp(goFormationPosition.transform.position.y, v2AIBoundariesMin.y, v2AIBoundariesMax.y);
+	            tmp.z = 0;
+	            ChangeDestination(tmp);
             }
 
         }
