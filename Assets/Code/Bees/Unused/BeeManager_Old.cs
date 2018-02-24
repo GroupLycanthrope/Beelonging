@@ -51,16 +51,16 @@ public class BeeManager_Old : MonoBehaviour {
 
 
 
-        if (iPowerUpCounter == 3){
-            bIsInvincible = true;
-            InvincibilityCounter.fInvincibilityTimer -= Time.deltaTime;
-        }
+        //if (iPowerUpCounter == 3){
+        //    bIsInvincible = true;
+        //    HoneyCounter.fInvincibilityTimer -= Time.deltaTime;
+        //}
 
-        if (InvincibilityCounter.fInvincibilityTimer <= 0){
-            bIsInvincible = false;
-            InvincibilityCounter.fInvincibilityTimer = 5.0f;
-            iPowerUpCounter = 0;
-        }
+        //if (HoneyCounter.fInvincibilityTimer <= 0){
+        //    bIsInvincible = false;
+        //    HoneyCounter.fInvincibilityTimer = 5.0f;
+        //    iPowerUpCounter = 0;
+        //}
 
         if(Swarm.Length == 0) {
             //Time.timeScale = 0;

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoneycombMover : MonoBehaviour
+public class Honeycomb : MonoBehaviour
 {
 
     public float fFloatingSpeed;
 
+    public int iHoneyValue;
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +23,6 @@ public class HoneycombMover : MonoBehaviour
 
     void Move()
     {
-        transform.Translate(-fFloatingSpeed * Time.fixedDeltaTime, 0, 0);
+        transform.Translate(-fFloatingSpeed * Time.deltaTime, 0, 0);
     }
 }

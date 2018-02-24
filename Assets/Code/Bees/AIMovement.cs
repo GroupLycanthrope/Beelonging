@@ -42,21 +42,24 @@ public class AIMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (Input.GetKeyUp("x"))
+	    if (Input.GetKeyUp("x")
+	    || BeeManager.fHoneyCount <= 0)
 	    {
 	        ChangeDestination(v3SpreadPosition);
 	    }
         if (BeeManager.bFormationActive)
 	    {
 	        if ( /*BeeManager.bFormationActive*/
-	            Input.GetKeyDown("x"))
+	            Input.GetKeyDown("x")
+	            && BeeManager.fHoneyCount > 0)
 	        {
 	            v3SpreadPosition = v3Destination;
 	            goFormationPosition = BeeManager.GetFormationPosition();
 	        }
 	        
 
-	        if (Input.GetKey("x"))
+	        if (Input.GetKey("x")
+	            && BeeManager.fHoneyCount > 0)
 	        {
 	            if (goFormationPosition == null)
 	            {

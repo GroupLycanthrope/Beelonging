@@ -75,12 +75,14 @@ public class PlayerController : MonoBehaviour
             ResetVelocity();
         }
 
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("x")
+        && BeeManager.fHoneyCount > 0)
         {   
             Debug.Log("FormationActivate");
             BeeManager.bFormationActive = true;
         }
-        else if (Input.GetKeyUp("x"))
+        else if (Input.GetKeyUp("x")
+        || BeeManager.fHoneyCount <= 0)
         {
             Debug.Log("FormationDeactivate");
             BeeManager.bFormationActive = false;
