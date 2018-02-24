@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fFloatingSpeed: 2
-  iHoneyValue: 20
+  iHoneyValue: 10
 --- !u!212 &212876539171397150
 SpriteRenderer:
   m_ObjectHideFlags: 1
