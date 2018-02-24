@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour {
+public class Honeycomb : MonoBehaviour
+{
+
+    public float fFloatingSpeed;
+
+    public int iHoneyValue;
 
 	// Use this for initialization
 	void Start ()
@@ -14,12 +18,11 @@ public class PauseMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-	    
+	    Move();
 	}
 
-    void GoToMainMenu()
+    void Move()
     {
-        SceneManager.LoadScene("MainMenu");
-        Time.timeScale = 1;
+        transform.Translate(-fFloatingSpeed * Time.deltaTime, 0, 0);
     }
 }

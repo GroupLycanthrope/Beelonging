@@ -375,11 +375,12 @@ MonoBehaviour:
   fSlowSpeed: 1
   fMediumSpeed: 4.5
   fFastSpeed: 10
-  fDriftingSpeed: 0.5
   fSlowSpeedThreshold: 1.5
   fMediumSpeedThreshold: 2.5
   v2DriftDistanceMin: {x: -1, y: -1}
   v2DriftDistanceMax: {x: 1, y: 1}
+  v2AIBoundariesMin: {x: -7.8, y: -4.3}
+  v2AIBoundariesMax: {x: 7.8, y: 4.3}
   v3Direction: {x: 0, y: 0, z: 0}
 --- !u!114 &114928145575986360
 MonoBehaviour:

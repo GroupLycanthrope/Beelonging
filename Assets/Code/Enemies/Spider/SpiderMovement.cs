@@ -15,6 +15,6 @@ public class SpiderMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		transform.Translate(-fScrollingSpeed * Time.fixedDeltaTime, 0, 0);
+		transform.Translate(-fScrollingSpeed * Time.deltaTime, 0, 0);
 	}
 }

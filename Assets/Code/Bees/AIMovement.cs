@@ -10,13 +10,14 @@ public class AIMovement : MonoBehaviour
 
     private float fCurrentSpeed;
 
-    public float fDriftingSpeed;
-
     public float fSlowSpeedThreshold;
     public float fMediumSpeedThreshold;
 
     public Vector2 v2DriftDistanceMin;
     public Vector2 v2DriftDistanceMax;
+
+    public Vector2 v2AIBoundariesMin;
+    public Vector2 v2AIBoundariesMax;
 
     private Vector3 v3SpreadPosition;
     private Vector3 v3Destination;
@@ -41,23 +42,35 @@ public class AIMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (BeeManager.bFormationActive)
+	    if (Input.GetKeyUp("x")
+	    || BeeManager.fHoneyCount <= 0)
+	    {
+	        ChangeDestination(v3SpreadPosition);
+	    }
+        if (BeeManager.bFormationActive)
 	    {
 	        if ( /*BeeManager.bFormationActive*/
-	            Input.GetKeyDown("x"))
+	            Input.GetKeyDown("x")
+	            && BeeManager.fHoneyCount > 0)
 	        {
 	            v3SpreadPosition = v3Destination;
 	            goFormationPosition = BeeManager.GetFormationPosition();
 	        }
 	        
 
-	        if (Input.GetKey("x"))
+	        if (Input.GetKey("x")
+	            && BeeManager.fHoneyCount > 0)
 	        {
 	            if (goFormationPosition == null)
 	            {
 	                goFormationPosition = BeeManager.GetFormationPosition();
 	            }
-	            ChangeDestination(goFormationPosition.transform.position);
+
+	            Vector3 tmp;
+	            tmp.x = Mathf.Clamp(goFormationPosition.transform.position.x, v2AIBoundariesMin.x, v2AIBoundariesMax.x);
+	            tmp.y = Mathf.Clamp(goFormationPosition.transform.position.y, v2AIBoundariesMin.y, v2AIBoundariesMax.y);
+	            tmp.z = 0;
+	            ChangeDestination(tmp);
             }
 
         }
@@ -69,11 +82,6 @@ public class AIMovement : MonoBehaviour
 	            ChangeDestination(v3SpreadPosition);
 	        }
 	    }
-        if (Input.GetKeyUp("x"))
-	    {
-	        ChangeDestination(v3SpreadPosition);
-        }
-       
 
 	    if (Vector3.Distance(transform.position, v3Destination) >= 0.2)
 	    {

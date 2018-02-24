@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467338762861618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.33, y: -0.11, z: 0}
+  m_LocalPosition: {x: -5.33, y: -0.11, z: -2}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4992404600844840}
@@ -783,10 +783,8 @@ MonoBehaviour:
   fAcceleration: 1
   fDeceleration: 0.5
   fMaxVelocity: 5
-  v2PlayerSpreadBoundariesMin: {x: -7.5, y: -4}
-  v2PlayerSpreadBoundariesMax: {x: 7.5, y: 4}
-  v2PlayerFormationBoundariesMin: {x: -6.5, y: -3}
-  v2PlayerFormationBoundariesMax: {x: 6.5, y: 3}
+  v2PlayerBoundariesMin: {x: -7.7, y: -4.2}
+  v2PlayerBoundariesMax: {x: 7.7, y: 4.2}
   fShotSlowDown: 0.2
   shootsound: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
   v3Direction: {x: 0, y: 0, z: 0}

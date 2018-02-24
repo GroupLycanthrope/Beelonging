@@ -34,8 +34,8 @@ public class BeeCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        if (!BeeManager.bIsInvincible)
-        {
+        //if (!BeeManager.bIsInvincible)
+        //{
             if (p_xOtherCollider.gameObject.CompareTag("Enemy") ||
                 p_xOtherCollider.gameObject.CompareTag("EnemyProjectile"))
             {
@@ -43,30 +43,37 @@ public class BeeCollision : MonoBehaviour
                 //TODO: Death Animation
                 BeeManager.KillBeell(gameObject);
             }
-        }
+        //}
 
         if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp"))
         {
-            if (BeeManager.iPowerUpCounter >= 3)
+            if (BeeManager.fHoneyCount < FindObjectOfType<BeeManager>().fHoneyCountMax)
             {
-                source.PlayOneShot(honeycomb_pickup, 1F);
-                InvincibilityCounter.fInvincibilityTimer += 1;
-                Destroy(p_xOtherCollider.gameObject);
+                BeeManager.fHoneyCount += p_xOtherCollider.gameObject.GetComponent<Honeycomb>().iHoneyValue;
             }
-            else
-            {
-                BeeManager.iPowerUpCounter++;
-                Destroy(p_xOtherCollider.gameObject);
-                if (BeeManager.iPowerUpCounter == 3)
-                {
-                    source.PlayOneShot(honeycomb_activate, 1F);
-                }
+            Destroy(p_xOtherCollider.gameObject);
+            source.PlayOneShot(honeycomb_pickup, 1F);
+            Debug.Log(BeeManager.fHoneyCount.ToString());
+            //if (BeeManager.fHoneyCount >= 3)
+            //{
+            //    source.PlayOneShot(honeycomb_pickup, 1F);
+            //    HoneyCounter.fInvincibilityTimer += 1;
+            //    Destroy(p_xOtherCollider.gameObject);
+            //}
+            //else
+            //{
+            //    BeeManager.fHoneyCount++;
+            //    Destroy(p_xOtherCollider.gameObject);
+            //    if (BeeManager.fHoneyCount == 3)
+            //    {
+            //        source.PlayOneShot(honeycomb_activate, 1F);
+            //    }
 
-                else
-                {
-                    source.PlayOneShot(honeycomb_pickup, 1F);
-                }
-            }
+            //    else
+            //    {
+            //        source.PlayOneShot(honeycomb_pickup, 1F);
+            //    }
+            //}
         }
     }
 }
