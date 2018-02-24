@@ -647,7 +647,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4517620879888946, guid: 39582563ac7f98a4b8df05c8c94f5d71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 39.3
       objectReference: {fileID: 0}
     - target: {fileID: 4517620879888946, guid: 39582563ac7f98a4b8df05c8c94f5d71, type: 2}
       propertyPath: m_LocalPosition.y
@@ -945,6 +945,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4020737296052752, guid: 2af12f4462cc3bd43a5ce3a3d1696133, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_Depth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_AllowMSAA
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_AllowDynamicResolution
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20013720871650936, guid: 2af12f4462cc3bd43a5ce3a3d1696133,
+        type: 2}
+      propertyPath: m_TargetDisplay
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
