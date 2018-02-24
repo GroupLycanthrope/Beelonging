@@ -6,6 +6,7 @@ using UnityEngine;
 public class BeeManager : MonoBehaviour
 {
     public float fHoneyCountMax;
+    public float fHoneyStartCount;
     public float fHoneyCountDrain;
     public static float fHoneyCount;
 
@@ -26,8 +27,8 @@ public class BeeManager : MonoBehaviour
 	void Start ()
 	{
 	    Time.timeScale = 1;
-        fHoneyCount = fHoneyCountMax;
-	    aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
+        fHoneyCount = fHoneyStartCount;
+        aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
         //bIsInvincible = false;
 	    bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
@@ -138,6 +139,7 @@ public class BeeManager : MonoBehaviour
             {
                 for (int i = 0; i < FormationPositions.Count; i++)
                 {
+                    if(FormationPositions.Count > 0)
                     FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
                 }
             }
