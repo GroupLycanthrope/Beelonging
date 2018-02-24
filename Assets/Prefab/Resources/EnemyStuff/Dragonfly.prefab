@@ -213,11 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09b135fafe79504e833e2cb173ec175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fFlyingSpeed: 6
+  fFlyingSpeed: 0.5
   fZoomSpeed: 20
-  v2RandomMinInterval: {x: -1, y: -1}
-  v2RandomMaxInterval: {x: -2, y: 1}
   fZoomCooldown: 1
+  fRangeX: 1
+  fRangeY: 1
 --- !u!114 &114910365387456582
 MonoBehaviour:
   m_ObjectHideFlags: 1
