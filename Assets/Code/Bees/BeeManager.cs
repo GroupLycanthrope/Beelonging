@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class BeeManager : MonoBehaviour
 {
-    public static int iPowerUpCounter;
+    public float fHoneyCountMax;
+    public float fHoneyCountDrain;
+    public static float fHoneyCount;
 
-    public static bool bIsInvincible;
+    //public static bool bIsInvincible;
     public static bool bPlayerDead;
 
     public static bool bFormationActive;
@@ -19,15 +21,14 @@ public class BeeManager : MonoBehaviour
     private GameObject goPlayer;
 
     public static List<GameObject> aSwarm;
-    //private GameObject[] aSwarm;
 
 	// Use this for initialization
 	void Start ()
 	{
 	    Time.timeScale = 1;
-        iPowerUpCounter = 0;
+        fHoneyCount = fHoneyCountMax;
 	    aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
-        bIsInvincible = false;
+        //bIsInvincible = false;
 	    bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
 	}
@@ -35,7 +36,15 @@ public class BeeManager : MonoBehaviour
     // Update is called once per frame
     void Update ()
 	{
-	    if (Input.GetKeyDown(KeyCode.Escape))
+	    if (fHoneyCount < 0)
+	    {
+	        bFormationActive = false;
+	    }
+        if (bFormationActive)
+	    {
+	        fHoneyCount -= fHoneyCountDrain * Time.deltaTime;
+	    }
+        if (Input.GetKeyDown(KeyCode.Escape))
 	    {
 	        if (!goPauseMenu.activeSelf)
 	        {
@@ -48,17 +57,17 @@ public class BeeManager : MonoBehaviour
 	            Time.timeScale = 1;
 	        }
 	    }
-        if (iPowerUpCounter == 3)
-	    {
-	        bIsInvincible = true;
-	        InvincibilityCounter.fInvincibilityTimer -= Time.deltaTime;
-	    }
-	    if (InvincibilityCounter.fInvincibilityTimer <= 0)
-	    {
-	        bIsInvincible = false;
-	        InvincibilityCounter.fInvincibilityTimer = 5.0f;
-	        iPowerUpCounter = 0;
-	    }
+     //   if (fHoneyCount == 3)
+	    //{
+	    //    bIsInvincible = true;
+	    //    HoneyCounter.fInvincibilityTimer -= Time.deltaTime;
+	    //}
+	    //if (HoneyCounter.fInvincibilityTimer <= 0)
+	    //{
+	    //    bIsInvincible = false;
+	    //    HoneyCounter.fInvincibilityTimer = 5.0f;
+	    //    fHoneyCount = 0;
+	    //}
 
 	    if (aSwarm.Count == 0 
 	        && bPlayerDead)
@@ -71,6 +80,8 @@ public class BeeManager : MonoBehaviour
 	    {
             Respawn();
 	    }
+
+	    
     }
 
     void Respawn()
@@ -123,9 +134,12 @@ public class BeeManager : MonoBehaviour
     {
         if (aSwarm.Count > 1)
         {
-            for (int i = 0; i < FormationPositions.Count; i++)
+            if (FormationPositions != null)
             {
-                FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
+                for (int i = 0; i < FormationPositions.Count; i++)
+                {
+                    FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
+                }
             }
         }
     }

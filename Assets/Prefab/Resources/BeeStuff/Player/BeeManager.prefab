@@ -51,4 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8790549d9786854fb08348bf81b8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fHoneyCountMax: 120
+  fHoneyCountDrain: 10
   goGameOverScreen: {fileID: 0}
+  goPauseMenu: {fileID: 0}

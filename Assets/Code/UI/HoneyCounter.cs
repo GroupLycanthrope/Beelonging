@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InvincibilityCounter : MonoBehaviour
+public class HoneyCounter : MonoBehaviour
 {
-
-    public static float fInvincibilityTimer;
+    private int iHoneyCount;
 
     private Text tInvincibilityText; 
 
     void Awake()
     {
         tInvincibilityText = GetComponent<Text>();
-        fInvincibilityTimer = 5.0f;
+        iHoneyCount = 0;
     }
 
     void Start ()
@@ -24,7 +23,7 @@ public class InvincibilityCounter : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    fInvincibilityTimer = Mathf.Round(fInvincibilityTimer * 100f) / 100f;
-        tInvincibilityText.text = fInvincibilityTimer.ToString();
+	    iHoneyCount = Mathf.RoundToInt(BeeManager.fHoneyCount);
+        tInvincibilityText.text = iHoneyCount.ToString();
 	}
 }

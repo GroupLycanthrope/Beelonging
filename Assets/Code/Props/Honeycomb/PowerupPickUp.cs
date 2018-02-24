@@ -19,28 +19,28 @@ public class PowerupPickUp : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (BeeManager.iPowerUpCounter == 1)
+	    if (BeeManager.fHoneyCount == 1)
 	    {
 	        Image tempImage = xLeftHoneyComb.GetComponent<Image>();
 	        var tempColor = tempImage.color;
 	        tempColor.a = 1f;
 	        tempImage.color = tempColor;
 	    }
-	    else if (BeeManager.iPowerUpCounter == 2)
+	    else if (BeeManager.fHoneyCount == 2)
 	    {
 	        Image tempImage = xMiddleHoneyComb.GetComponent<Image>();
 	        var tempColor = tempImage.color;
 	        tempColor.a = 1f;
 	        tempImage.color = tempColor;
 	    }
-	    else if (BeeManager.iPowerUpCounter == 3)
+	    else if (BeeManager.fHoneyCount == 3)
 	    {
 	        Image tempImage = xRightHoneyComb.GetComponent<Image>();
 	        var tempColor = tempImage.color;
 	        tempColor.a = 1f;
 	        tempImage.color = tempColor;
 	    }
-	    else if (BeeManager.iPowerUpCounter == 0)
+	    else if (BeeManager.fHoneyCount == 0)
 	    {
 	        Image tempLeftImage = xLeftHoneyComb.GetComponent<Image>();
 	        var tempLeftColor = tempLeftImage.color;
