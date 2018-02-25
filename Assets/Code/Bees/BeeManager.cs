@@ -29,7 +29,6 @@ public class BeeManager : MonoBehaviour
 	    Time.timeScale = 1;
         fHoneyCount = fHoneyStartCount;
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
-	    aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         //bIsInvincible = false;
         bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
@@ -74,9 +73,7 @@ public class BeeManager : MonoBehaviour
 	    if (aSwarm.Count == 0 
 	        && bPlayerDead)
 	    {
-
             goGameOverScreen.SetActive(true);
-            //EngineActions.SetGameSpeed(0); 
         }
 	    else if (bPlayerDead == true)
 	    {
@@ -88,7 +85,7 @@ public class BeeManager : MonoBehaviour
 
     void Respawn()
     {
-        //GameObject.Find("Player").GetComponent<BeeCollision>().bIsDead = false;
+        aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         int random = Random.Range(1, aSwarm.Count);
         GameObject newPlayer = Instantiate(Resources.Load("BeeStuff/Player/Player")) as GameObject;
         goPlayer = newPlayer;
@@ -134,15 +131,19 @@ public class BeeManager : MonoBehaviour
 
     public static void UnOccupyPositions()
     {
-        if (aSwarm.Count > 1)
+        if (aSwarm.Count > 1
+            && !bPlayerDead)
         {
             if (aFormationPositions != null)
             {
                 for (int i = 0; i < aFormationPositions.Count; i++)
                 {
-                    if (aFormationPositions.Count > 1)
-                    {
-                        aFormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
+                    if (aFormationPositions.Count > 0)
+                    { 
+                        if (aFormationPositions[i] != null)
+                        {
+                            aFormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
+                        }
                     }
                 }
             }

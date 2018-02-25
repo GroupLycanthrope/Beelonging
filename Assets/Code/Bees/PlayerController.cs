@@ -78,13 +78,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("x")
         && BeeManager.fHoneyCount > 0)
         {   
-            Debug.Log("FormationActivate");
             BeeManager.bFormationActive = true;
         }
         else if (Input.GetKeyUp("x")
         || BeeManager.fHoneyCount <= 0)
         {
-            Debug.Log("FormationDeactivate");
             BeeManager.bFormationActive = false;
             BeeManager.UnOccupyPositions();
         }
