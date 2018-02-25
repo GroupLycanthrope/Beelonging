@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float fFireRate;
-    public float fNextShot;
+    private float fNextShot;
 
     public float fAcceleration;
     public float fDeceleration;

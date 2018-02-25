@@ -18,7 +18,7 @@ public class BeeManager : MonoBehaviour
     public GameObject goGameOverScreen;
     public GameObject goPauseMenu;
 
-    private static List<GameObject> FormationPositions;
+    private static List<GameObject> aFormationPositions;
     private GameObject goPlayer;
 
     public static List<GameObject> aSwarm;
@@ -29,8 +29,9 @@ public class BeeManager : MonoBehaviour
 	    Time.timeScale = 1;
         fHoneyCount = fHoneyStartCount;
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
+	    aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         //bIsInvincible = false;
-	    bPlayerDead = false;
+        bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
 	}
 
@@ -118,29 +119,31 @@ public class BeeManager : MonoBehaviour
 
     public static GameObject GetFormationPosition()
     {
-        FormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
+        aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         
-        for (int i = 0; i < FormationPositions.Count; i++)
+        for (int i = 0; i < aFormationPositions.Count; i++)
         {
-            if (FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied == false)
+            if (aFormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied == false)
             {
-                FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = true;
-                return FormationPositions[i];
+                aFormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = true;
+                return aFormationPositions[i];
             }
         }
-        return FormationPositions[0]; //Fallback if things go wrong
+        return aFormationPositions[0]; //Fallback if things go wrong
     }
 
     public static void UnOccupyPositions()
     {
         if (aSwarm.Count > 1)
         {
-            if (FormationPositions != null)
+            if (aFormationPositions != null)
             {
-                for (int i = 0; i < FormationPositions.Count; i++)
+                for (int i = 0; i < aFormationPositions.Count; i++)
                 {
-                    if(FormationPositions.Count > 0)
-                    FormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
+                    if (aFormationPositions.Count > 1)
+                    {
+                        aFormationPositions[i].GetComponent<PositionInFormation>().bIsOccupied = false;
+                    }
                 }
             }
         }
