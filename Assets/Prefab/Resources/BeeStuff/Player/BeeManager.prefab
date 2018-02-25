@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934612695898470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8790549d9786854fb08348bf81b8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHoneyCountMax: 120
-  fHoneyCountDrain: 10
+  fHoneyCountMax: 50
+  fHoneyStartCount: 0
+  fHoneyCountDrain: 5
   goGameOverScreen: {fileID: 0}
   goPauseMenu: {fileID: 0}
