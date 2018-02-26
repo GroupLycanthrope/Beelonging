@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float fShotSlowDown;
 
     public AudioClip shootsound;
+    public AudioClip changeform;
     private AudioSource source;
 
     private Animator aAnimator;
@@ -76,8 +77,10 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetKeyDown("x")
-        && BeeManager.fHoneyCount > 0)
-        {   
+        && BeeManager.fHoneyCount > 0
+        && Time.timeScale > 0)
+        {
+            source.PlayOneShot(changeform, 1F);
             BeeManager.bFormationActive = true;
         }
         else if (Input.GetKeyUp("x")

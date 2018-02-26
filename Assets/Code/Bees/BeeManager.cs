@@ -29,6 +29,8 @@ public class BeeManager : MonoBehaviour
 	    Time.timeScale = 1;
         fHoneyCount = fHoneyStartCount;
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
+        aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
+
         //bIsInvincible = false;
         bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");

@@ -22,6 +22,7 @@ public class Spider : MonoBehaviour
 
     public AudioClip spider_dead;
     public AudioClip spider_hit;
+    public AudioClip spider_shoot;
 
     private AudioSource source;
 
@@ -50,7 +51,8 @@ public class Spider : MonoBehaviour
             && transform.position.x - xPlayer.transform.position.x < fAggroRange
             && !bIsDead)
         {
-	        GameObject web = Instantiate(xProjectile);
+            source.PlayOneShot(spider_shoot, 1F);
+            GameObject web = Instantiate(xProjectile);
 	        web.transform.position = xProjectileOrigin.transform.position;
 	        fNextShot = Time.time + fFireRate;
         }

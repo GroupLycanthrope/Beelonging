@@ -47,8 +47,8 @@ public class AIMovement : MonoBehaviour
 	    {
 	        ChangeDestination(v3SpreadPosition);
 	    }
-        if (BeeManager.bFormationActive)
-	    {
+     //   if (BeeManager.bFormationActive)
+	    //{
 	        if ( /*BeeManager.bFormationActive*/
 	            Input.GetKeyDown("x")
 	            && BeeManager.fHoneyCount > 0)
@@ -61,19 +61,19 @@ public class AIMovement : MonoBehaviour
 	        if (Input.GetKey("x")
 	            && BeeManager.fHoneyCount > 0)
 	        {
-	            if (goFormationPosition == null)
-	            {
-	                goFormationPosition = BeeManager.GetFormationPosition();
-	            }
+                if (goFormationPosition == null)
+                {
+                    goFormationPosition = BeeManager.GetFormationPosition();
+                }
 
-	            Vector3 tmp;
+                Vector3 tmp;
 	            tmp.x = Mathf.Clamp(goFormationPosition.transform.position.x, v2AIBoundariesMin.x, v2AIBoundariesMax.x);
 	            tmp.y = Mathf.Clamp(goFormationPosition.transform.position.y, v2AIBoundariesMin.y, v2AIBoundariesMax.y);
 	            tmp.z = 0;
 	            ChangeDestination(tmp);
             }
 
-        }
+        //}
 	    else
 	    {
 	        if (Vector3.Distance(transform.position, v3Destination) <= 0.2)

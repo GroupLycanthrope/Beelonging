@@ -166,7 +166,8 @@ AudioSource:
   m_GameObject: {fileID: 1565540831470406}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243674794088135314, guid: adb6ce5005fdee64281b3e59646ddcba,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 49fb66baa403dc242b2c570aa8ac5eea, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -246,8 +247,9 @@ AudioSource:
   m_GameObject: {fileID: 1565540831470406}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0df054d8adb094046a95b0cfce3a0dd3, type: 3}
+  OutputAudioMixerGroup: {fileID: 243485107157242268, guid: adb6ce5005fdee64281b3e59646ddcba,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 530ffba9f0019f9439d56a0f116c8666, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -357,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2d5d6dee13c4344950c03cb2fe4059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathsound: {fileID: 8300000, guid: 0df054d8adb094046a95b0cfce3a0dd3, type: 3}
+  deathsound: {fileID: 8300000, guid: 530ffba9f0019f9439d56a0f116c8666, type: 3}
   honeycomb_pickup: {fileID: 8300000, guid: 90079b61430b9fb458d8716f4860408e, type: 3}
   honeycomb_activate: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
   bIsDead: 0
