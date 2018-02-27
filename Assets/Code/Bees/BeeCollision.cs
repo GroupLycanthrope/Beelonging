@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BeeCollision : MonoBehaviour
 {
+    public float fDespawnX;
 
     public AudioClip deathsound;
     public AudioClip honeycomb_pickup;
@@ -11,9 +12,19 @@ public class BeeCollision : MonoBehaviour
 
     private AudioSource source;
 
+    public float fDropAcceleration;
+    public float fDropMaxVelocity;
+    public float fDropMaxY;
+    public float fDeadScrollingSpeed;
+
+    private float fDropVelocity;
+
+    public Sprite sCollisionSprite;
+    public Sprite sWebbedSprite;
+
     [HideInInspector]
     public bool bIsDead;
-
+    
     public float fHitFlashSpeed;
 
     private void Awake()
@@ -31,21 +42,50 @@ public class BeeCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.x < -fDespawnX
+            || transform.position.x > fDespawnX)
+        {
+            Destroy(gameObject);
+        }
 
+        if (bIsDead)
+        {
+            CollisionDrop();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        //if (!BeeManager.bIsInvincible)
-        //{
-            if (p_xOtherCollider.gameObject.CompareTag("Enemy") ||
-                p_xOtherCollider.gameObject.CompareTag("EnemyProjectile"))
+        if (p_xOtherCollider.gameObject.CompareTag("Enemy") 
+            ||p_xOtherCollider.gameObject.CompareTag("Web")
+            ||p_xOtherCollider.gameObject.CompareTag("Stinger"))
+        {
+            GetComponent<Animator>().enabled = false;
+            source.PlayOneShot(deathsound, 1F);
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            bIsDead = true;
+            BeeManager.KillBeell(gameObject);
+            if (p_xOtherCollider.gameObject.CompareTag("Web"))
             {
-                source.PlayOneShot(deathsound, 1F);
-                //TODO: Death Animation
-                BeeManager.KillBeell(gameObject);
+                GetComponent<SpriteRenderer>().sprite = sWebbedSprite;
             }
-        //}
+            else
+            {
+                GetComponent<SpriteRenderer>().sprite = sCollisionSprite;
+            }
+            if (gameObject.name == "Player")
+            {
+                BeeManager.bPlayerDead = true;
+                GetComponent<PlayerController>().enabled = false;
+            }
+            else
+            {
+                GetComponent<AIMovement>().enabled = false;
+                GetComponent<AIShooting>().enabled = false;
+            }
+
+            gameObject.name = "DeadBee";
+        }
 
         if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp")) {
 
@@ -77,5 +117,20 @@ public class BeeCollision : MonoBehaviour
     void StartSpriteFlasher()
     {
         StartCoroutine(SpriteFlasher());
+    }
+    void CollisionDrop()
+    {
+        if (transform.position.y > fDropMaxY
+            && fDropVelocity > -fDropMaxVelocity)
+        {
+            fDropVelocity += fDropAcceleration;
+        }
+        else
+        {
+            fDropVelocity = 0;
+            gameObject.tag = "Dead";
+        }
+        transform.Translate(-fDeadScrollingSpeed * Time.deltaTime, -fDropVelocity * Time.deltaTime, 0);
+
     }
 }

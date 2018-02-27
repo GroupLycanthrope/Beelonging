@@ -1,10 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Playables;
 
 public class Fly : MonoBehaviour
 { 
     public float fFlyingSpeed;
+
+    public float fFlingingOffSpeed;
+    public float fFlingingOffRotationSpeed;
+
+    public float fDropAcceleration;
+    public float fDropMaxVelocity;
+    public float fDropMaxY;
+    public float fDeadScrollingSpeed;
+
+    private float fDropVelocity;
+
+    public float fDespawnX;
 
     public int iScoreValue;
 
@@ -12,10 +25,22 @@ public class Fly : MonoBehaviour
 
     private AudioSource source;
 
+    private SpriteRenderer sRenderer;
+    private PolygonCollider2D pcCollider;
+    private Animator aAnimator;
+
+    public Sprite sHoneyDeadSprite;
+    public Sprite sBeeCollisionSprite;
+
+    private bool bHoneyed = false;
+    private bool bCollided = false;
     private void Awake()
     {
         source = GetComponent<AudioSource>();
-        GetComponent<Animator>().SetFloat("fAnimationOffset", Random.Range(0, 1));
+        aAnimator = GetComponent<Animator>();
+        aAnimator.SetFloat("fAnimationOffset", Random.Range(0, 1));
+        sRenderer = GetComponent<SpriteRenderer>();
+        pcCollider = GetComponent<PolygonCollider2D>();
     }
 
     // Use this for initialization
@@ -27,9 +52,22 @@ public class Fly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        
+        if (bHoneyed)
+        {
+            FlingOff();
+        }
+        else if (bCollided)
+        {
+            CollisionDrop();
+        }
+        else
+        {
+            Move();
+        }
 
-        if (transform.position.x < -20)
+        if (transform.position.x < -fDespawnX
+            || transform.position.x > fDespawnX)
         {
             Destroy(gameObject);
         }
@@ -40,16 +78,50 @@ public class Fly : MonoBehaviour
         transform.Translate(-fFlyingSpeed * Time.deltaTime, 0, 0);
     }
 
+    void FlingOff()
+    {
+        transform.Rotate(0, 0, -fFlingingOffRotationSpeed * Time.deltaTime);
+        Vector3 tmp = transform.position;
+        tmp.x += fFlingingOffSpeed * Time.deltaTime;
+        transform.position = tmp; /* = new Vector3(fFlingingOffSpeed * Time.deltaTime, fFlingingOffSpeed * Time.deltaTime, 0);*/
+        transform.Translate(-fFlingingOffSpeed * Time.deltaTime, 0, 0);
+    }
+
+    void CollisionDrop()
+    {
+        if (transform.position.y > fDropMaxY
+            && fDropVelocity > -fDropMaxVelocity)
+        {
+            fDropVelocity += fDropAcceleration;
+        }
+        else
+        {
+            fDropVelocity = 0;
+            gameObject.tag = "Dead";
+        }
+        transform.Translate(-fDeadScrollingSpeed * Time.deltaTime, -fDropVelocity * Time.deltaTime, 0);
+
+    }
+
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        if (p_xOtherCollider.gameObject.CompareTag("BeeBullet") || p_xOtherCollider.gameObject.CompareTag("Bee"))
+        if (p_xOtherCollider.gameObject.CompareTag("BeeBullet") 
+            || p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
+            aAnimator.enabled = false;
             source.PlayOneShot(fly_dead, 1F);
-            GetComponent<SpriteRenderer>().enabled = false;
-            GetComponent<PolygonCollider2D>().enabled = false;
-            //TODO: Death animation (maybe with state for dying)
-            Destroy(gameObject, 1);
+            pcCollider.enabled = false;
             ScoreManager.iScore += iScoreValue;
+            if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
+            {
+                sRenderer.sprite = sHoneyDeadSprite;
+                bHoneyed = true;
+            }
+            else
+            {
+                sRenderer.sprite = sBeeCollisionSprite;
+                bCollided = true;
+            }
 
         }
     }

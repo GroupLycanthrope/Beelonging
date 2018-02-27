@@ -223,7 +223,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1565540831470406, guid: bcc7a8c012fa9934f8ba8d8aed121fa5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114688312793339212, guid: bcc7a8c012fa9934f8ba8d8aed121fa5,
         type: 2}
@@ -298,7 +298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &663423356
 Prefab:
@@ -559,6 +559,10 @@ Prefab:
       propertyPath: fScrollingSpeed
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1846956279349998, guid: 39582563ac7f98a4b8df05c8c94f5d71, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39582563ac7f98a4b8df05c8c94f5d71, type: 2}
   m_IsPrefabParent: 0
@@ -759,7 +763,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4909461087086744, guid: f5bce5bbb79e72d448f6f0c441775465, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5bce5bbb79e72d448f6f0c441775465, type: 2}
@@ -958,7 +962,7 @@ Prefab:
     - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
         type: 2}
       propertyPath: fHoneyStartCount
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
         type: 2}
@@ -1005,12 +1009,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4742685729984202, guid: f86b372684e6f2c469d9556780f6335f, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1600488738981950, guid: f86b372684e6f2c469d9556780f6335f, type: 2}
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 114374913365861958, guid: f86b372684e6f2c469d9556780f6335f,
+        type: 2}
+      propertyPath: xWinningScreen
+      value: 
+      objectReference: {fileID: 1966791163}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f86b372684e6f2c469d9556780f6335f, type: 2}
   m_IsPrefabParent: 0
@@ -1056,6 +1065,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10631bf6a5ea96147b9585799116f030, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1966791163 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1518948143681342, guid: cd8fa9e478c5230468c48bd7e10310fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1064338798}
 --- !u!1001 &2111268573
 Prefab:
   m_ObjectHideFlags: 0

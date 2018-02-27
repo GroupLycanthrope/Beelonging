@@ -8,7 +8,19 @@ public class DragonflyCollision : MonoBehaviour
 
     public float fHitFlashSpeed;
 
+    public float fDespawnX;
+
+    public float fDropAcceleration;
+    public float fDropMaxVelocity;
+    public float fDropMaxY;
+    public float fDeadScrollingSpeed;
+
+    private float fDropVelocity;
+
     public int iScoreValue;
+
+    public Sprite sHoneyDeadSprite;
+    public Sprite sBeeCollisionSprite;
 
     private bool bIsDead = false;
 
@@ -21,31 +33,44 @@ public class DragonflyCollision : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (transform.position.x < -20)
+	    if (transform.position.x <= -fDespawnX
+	        || transform.position.x >= fDespawnX)
 	    {
 	        Destroy(gameObject);
 	    }
 
-	    if (fHitPoints <= 0 && !bIsDead)
+        if (bIsDead)
 	    {
-	        GetComponent<SpriteRenderer>().enabled = false;
-	        GetComponent<PolygonCollider2D>().enabled = false;
-	        Destroy(gameObject, 1);
-	        bIsDead = true;
-	        ScoreManager.iScore += iScoreValue;
+	        CollisionDrop();
         }
+
     }
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
+        if (p_xOtherCollider.gameObject.CompareTag("BeeBullet")
+            || p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
-            TakeDamage(p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage);
-        }
-
-        if (p_xOtherCollider.gameObject.CompareTag("Bee"))
-        {
-            TakeDamage(1);
+            if (fHitPoints <= 1)
+            { 
+                GetComponent<PolygonCollider2D>().enabled = false;
+                //GetComponentInChildren<SpriteRenderer>().enabled = false;
+                bIsDead = true;
+                ScoreManager.iScore += iScoreValue;
+                GetComponent<DragonflyMovement>().enabled = false;
+                if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
+                {
+                    GetComponent<SpriteRenderer>().sprite = sHoneyDeadSprite;
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().sprite = sBeeCollisionSprite;
+                }
+            }
+            else
+            {
+                TakeDamage(1);
+            }
         }
     }
 
@@ -53,6 +78,22 @@ public class DragonflyCollision : MonoBehaviour
     {
         fHitPoints -= p_fDamage;
         StartCoroutine(SpriteFlasher());
+    }
+
+    void CollisionDrop()
+    {
+        if (transform.position.y > fDropMaxY
+            && fDropVelocity > -fDropMaxVelocity)
+        {
+            fDropVelocity += fDropAcceleration;
+        }
+        else
+        {
+            fDropVelocity = 0;
+            gameObject.tag = "Dead";
+        }
+        transform.Translate(-fDeadScrollingSpeed * Time.deltaTime, -fDropVelocity * Time.deltaTime, 0);
+
     }
 
     IEnumerator SpriteFlasher()

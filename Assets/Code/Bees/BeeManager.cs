@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class BeeManager : MonoBehaviour
@@ -82,42 +83,46 @@ public class BeeManager : MonoBehaviour
 	    {
             goGameOverScreen.SetActive(true);
         }
-	    else if (bPlayerDead == true)
-	    {
+        else if (bPlayerDead == true)
+        {
             Respawn();
-	    }
+        }
 
-	    
+
     }
 
     void Respawn()
     {
-        aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
-        int random = Random.Range(1, aSwarm.Count);
+        Destroy(GameObject.Find("FormationParent"));
+        int randomIndex = Random.Range(0, aSwarm.Count - 1);
         GameObject newPlayer = Instantiate(Resources.Load("BeeStuff/Player/Player")) as GameObject;
         goPlayer = newPlayer;
+        aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         goPlayer.gameObject.SendMessage("StartSpriteFlasher");
-        goPlayer.transform.position = aSwarm[random - 1].transform.position;
+        goPlayer.transform.position = aSwarm[randomIndex].transform.position;
         goPlayer.name = "Player";
-        KillBeell(aSwarm[random - 1]);
+        Destroy(aSwarm[randomIndex]);
+        aSwarm.Remove(aSwarm[randomIndex]);
+        //if(aSwarm[randomIndex] != null)
         bPlayerDead = false;
     }
 
     public static void KillBeell(GameObject p_goDeadBee)
     {
-        p_goDeadBee.GetComponent<SpriteRenderer>().enabled = false;
-        p_goDeadBee.GetComponent<CapsuleCollider2D>().enabled = false;
-        p_goDeadBee.GetComponent<BeeCollision>().bIsDead = true;
-        aSwarm.Remove(p_goDeadBee);
         for (int i = 0; i < aSwarm.Count; i++)
         {
-            aSwarm[i].SendMessage("StartSpriteFlasher");
+            if (aSwarm[i] != null)
+            {
+                aSwarm[i].SendMessage("StartSpriteFlasher");
+            }
         }
+
         if (p_goDeadBee.name == "Player")
         {
             bPlayerDead = true;
         }
-        Destroy(p_goDeadBee, 1);
+        aSwarm.Remove(p_goDeadBee);
+        //Destroy(p_goDeadBee, 1);
     }
 
     public static void AddBee(GameObject p_goNewBee)
