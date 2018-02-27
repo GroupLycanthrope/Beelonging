@@ -363,6 +363,7 @@ MonoBehaviour:
   honeycomb_pickup: {fileID: 8300000, guid: 90079b61430b9fb458d8716f4860408e, type: 3}
   honeycomb_activate: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
   bIsDead: 0
+  fHitFlashSpeed: 0.1
 --- !u!114 &114688312793339212
 MonoBehaviour:
   m_ObjectHideFlags: 1
