@@ -16,6 +16,9 @@ TagManager:
   - WinningScreen
   - Position
   - Wave
+  - Dead
+  - Web
+  - Stinger
   layers:
   - Default
   - TransparentFX

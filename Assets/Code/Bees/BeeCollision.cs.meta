@@ -7,7 +7,10 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - deathsound: {fileID: 8300000, guid: 0df054d8adb094046a95b0cfce3a0dd3, type: 3}
-  - This: {instanceID: 0}
+  - honeycomb_pickup: {instanceID: 0}
+  - honeycomb_activate: {instanceID: 0}
+  - sCollisionSprite: {fileID: 21300000, guid: a11bb242c79499c4cb95ce708ab9d0ba, type: 3}
+  - sWebbedSprite: {fileID: 21300000, guid: a11bb242c79499c4cb95ce708ab9d0ba, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

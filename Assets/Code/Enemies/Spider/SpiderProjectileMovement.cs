@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpiderProjectileMovement : MonoBehaviour
 {
     public float fSpeed;
-   
+
+    public float fDespawnX;
+
     private Vector3 v3Direction;
 
 	// Use this for initialization
@@ -22,7 +24,8 @@ public class SpiderProjectileMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (transform.position.x < -20 || transform.position.x > 20)
+	    if (transform.position.x < -fDespawnX 
+	        || transform.position.x > fDespawnX)
 	    {
 	        Destroy(gameObject);
 	    }
