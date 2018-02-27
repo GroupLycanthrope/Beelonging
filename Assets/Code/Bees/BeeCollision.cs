@@ -45,35 +45,9 @@ public class BeeCollision : MonoBehaviour
             }
         //}
 
-        if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp"))
-        {
-            if (BeeManager.fHoneyCount < FindObjectOfType<BeeManager>().fHoneyCountMax)
-            {
-                BeeManager.fHoneyCount += p_xOtherCollider.gameObject.GetComponent<Honeycomb>().iHoneyValue;
-            }
-            Destroy(p_xOtherCollider.gameObject);
-            source.PlayOneShot(honeycomb_pickup, 1F);
-            Debug.Log(BeeManager.fHoneyCount.ToString());
-            //if (BeeManager.fHoneyCount >= 3)
-            //{
-            //    source.PlayOneShot(honeycomb_pickup, 1F);
-            //    HoneyCounter.fInvincibilityTimer += 1;
-            //    Destroy(p_xOtherCollider.gameObject);
-            //}
-            //else
-            //{
-            //    BeeManager.fHoneyCount++;
-            //    Destroy(p_xOtherCollider.gameObject);
-            //    if (BeeManager.fHoneyCount == 3)
-            //    {
-            //        source.PlayOneShot(honeycomb_activate, 1F);
-            //    }
+        if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp")) {
 
-            //    else
-            //    {
-            //        source.PlayOneShot(honeycomb_pickup, 1F);
-            //    }
-            //}
+            source.PlayOneShot(honeycomb_pickup, 1F);
         }
     }
 }

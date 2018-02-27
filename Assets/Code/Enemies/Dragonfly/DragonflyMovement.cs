@@ -101,10 +101,10 @@ public class DragonflyMovement : MonoBehaviour
             v3ZoomDestination = SetZoomPos();
             // here
             v3ZoomDestination.y = v3SaveDesti.y * -1;
-            if (v3ZoomDestination.y >= 5.4F){
+            if (v3ZoomDestination.y >= 4.6F){
                 v3ZoomDestination.y -= 1;
             }
-            if (v3ZoomDestination.y <= -5.4){
+            if (v3ZoomDestination.y <= -4.6F){
                 v3ZoomDestination.y += 1;
             }
             bHasTarget = true;
