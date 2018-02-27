@@ -223,7 +223,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1565540831470406, guid: bcc7a8c012fa9934f8ba8d8aed121fa5, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114688312793339212, guid: bcc7a8c012fa9934f8ba8d8aed121fa5,
         type: 2}
@@ -958,7 +958,12 @@ Prefab:
     - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
         type: 2}
       propertyPath: fHoneyStartCount
-      value: 50
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
+        type: 2}
+      propertyPath: iSwarmMax
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cacba71c1d3219f49bd89879f44ace68, type: 2}

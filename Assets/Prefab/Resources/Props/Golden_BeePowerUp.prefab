@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4466012827321636}
   - component: {fileID: 212617725762536348}
   - component: {fileID: 50972760987078680}
-  - component: {fileID: 60329165246791690}
   - component: {fileID: 114956117223961400}
+  - component: {fileID: 70270569744285000}
   m_Layer: 0
   m_Name: Golden_BeePowerUp
   m_TagString: Untagged
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1099239394967580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -0.12558563}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.16051674, y: 0.12767866, z: -0.12558563}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60329165246791690
-PolygonCollider2D:
+--- !u!70 &70270569744285000
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,22 +75,9 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.32, y: 0.32}
-      - {x: -0.32, y: -0.32}
-      - {x: 0.32, y: -0.32}
-      - {x: 0.32, y: 0.32}
+  m_Offset: {x: -0.4180206, y: -0.59220946}
+  m_Size: {x: 4.3536353, y: 3.935618}
+  m_Direction: 1
 --- !u!114 &114956117223961400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fMoveSpeed: 2
+  iBonusScore: 1000
+  fSpawnRangeY: 4
 --- !u!212 &212617725762536348
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,9 +126,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3d931281d06a16848aac21d69b150b0e, type: 3}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: 6cf22f489d12c044482263ba95475990, type: 3}
+  m_Color: {r: 1, g: 0.843712, b: 0.50735295, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 0.64}

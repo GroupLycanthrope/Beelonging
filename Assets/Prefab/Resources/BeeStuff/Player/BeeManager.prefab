@@ -54,5 +54,6 @@ MonoBehaviour:
   fHoneyCountMax: 50
   fHoneyStartCount: 0
   fHoneyCountDrain: 5
+  iSwarmMax: 7
   goGameOverScreen: {fileID: 0}
   goPauseMenu: {fileID: 0}

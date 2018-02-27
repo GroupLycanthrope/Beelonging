@@ -5,28 +5,28 @@ using UnityEngine;
 public class GoldenBeePickUp : MonoBehaviour {
 
     public float fMoveSpeed;
+    public int iBonusScore;
 
     float fDeathTimer;
     float fDelay;
 
+    public float fSpawnRangeY;
+
+    private GameObject spawn;
+
     bool bCollidedWithPlayer;
     bool bSpawnBee;
 
-    PolygonCollider2D pcCollider;
+    //PolygonCollider2D pcCollider;
+    private CapsuleCollider2D pcCollider;
     SpriteRenderer spRenderer;
 
-    GameObject AI_Bee;
-    GameObject BeeSpawnPos;
-
-    GameObject CreateBee;
-
     void Start () {
-        pcCollider = GetComponent<PolygonCollider2D>();
+        pcCollider = GetComponent<CapsuleCollider2D>();
         spRenderer = GetComponent<SpriteRenderer>();
         fDelay = 10;
         fDeathTimer = fDelay;
-        AI_Bee = (GameObject)Resources.Load("BeeStuff/AI/AI_Bee", typeof(GameObject));
-        BeeSpawnPos = GameObject.Find("BeeSpawningPos");
+        //BeeSpawnPos = GameObject.Find("BeeSpawningPos");
         bSpawnBee = false;
     }
 
@@ -54,10 +54,19 @@ public class GoldenBeePickUp : MonoBehaviour {
         fDeathTimer -= Time.deltaTime;
 
         if (!bSpawnBee) {
-            CreateBee = Instantiate(AI_Bee);
-            CreateBee.transform.position = BeeSpawnPos.transform.position;
+            //spawn.transform.position = BeeSpawnPos.transform.position;
+            if (BeeManager.aSwarm.Count < BeeManager.iSwarmMaxCount)
+            {
+                spawn = Instantiate(Resources.Load("BeeStuff/AI/AI_Bee") as GameObject);
+                this.spawn.transform.position = new Vector3(-9, Random.Range(-fSpawnRangeY, fSpawnRangeY), -1); //-9 becauase it's just off the left border and -1 because all AI bees are on that z value
+            }
+            else
+            {
+                ScoreManager.iScore += iBonusScore;
+            }
+
             bSpawnBee = true;
-            BeeManager.AddBee(CreateBee);
+            BeeManager.AddBee(spawn);
         }
 
         if (fDeathTimer <= 0){

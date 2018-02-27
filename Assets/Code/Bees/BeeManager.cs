@@ -10,6 +10,9 @@ public class BeeManager : MonoBehaviour
     public float fHoneyCountDrain;
     public static float fHoneyCount;
 
+    public int iSwarmMax;
+    public static int iSwarmMaxCount;
+
     //public static bool bIsInvincible;
     public static bool bPlayerDead;
 
@@ -26,6 +29,7 @@ public class BeeManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+	    iSwarmMaxCount = iSwarmMax;
 	    Time.timeScale = 1;
         fHoneyCount = fHoneyStartCount;
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
