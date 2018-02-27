@@ -92,6 +92,7 @@ public class BeeManager : MonoBehaviour
         int random = Random.Range(1, aSwarm.Count);
         GameObject newPlayer = Instantiate(Resources.Load("BeeStuff/Player/Player")) as GameObject;
         goPlayer = newPlayer;
+        goPlayer.gameObject.SendMessage("StartSpriteFlasher");
         goPlayer.transform.position = aSwarm[random - 1].transform.position;
         goPlayer.name = "Player";
         KillBeell(aSwarm[random - 1]);
@@ -100,11 +101,14 @@ public class BeeManager : MonoBehaviour
 
     public static void KillBeell(GameObject p_goDeadBee)
     {
-        
         p_goDeadBee.GetComponent<SpriteRenderer>().enabled = false;
         p_goDeadBee.GetComponent<CapsuleCollider2D>().enabled = false;
         p_goDeadBee.GetComponent<BeeCollision>().bIsDead = true;
         aSwarm.Remove(p_goDeadBee);
+        for (int i = 0; i < aSwarm.Count; i++)
+        {
+            aSwarm[i].SendMessage("StartSpriteFlasher");
+        }
         if (p_goDeadBee.name == "Player")
         {
             bPlayerDead = true;

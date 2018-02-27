@@ -104,7 +104,7 @@ public class Spider : MonoBehaviour
             GetComponent<SpriteRenderer>().color = temp;
             yield return null;
         }
-        for (float f = 0f; f <= 1; f += fHitFlashSpeed)
+        for (float f = 0f; f <= 1.1; f += fHitFlashSpeed)
         {
             Color temp = GetComponent<SpriteRenderer>().color;
             temp.b = f;

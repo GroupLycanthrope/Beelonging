@@ -14,6 +14,8 @@ public class BeeCollision : MonoBehaviour
     [HideInInspector]
     public bool bIsDead;
 
+    public float fHitFlashSpeed;
+
     private void Awake()
     {
         bIsDead = false;
@@ -49,5 +51,31 @@ public class BeeCollision : MonoBehaviour
 
             source.PlayOneShot(honeycomb_pickup, 1F);
         }
+    }
+
+    IEnumerator SpriteFlasher()
+    {
+        for (float f = 1f; f >= 0; f -= fHitFlashSpeed)
+        {
+            Color temp = GetComponent<SpriteRenderer>().color;
+            temp.b = f;
+            temp.g = f;
+            GetComponent<SpriteRenderer>().color = temp;
+            yield return null;
+        }
+
+        for (float f = 0f; f <= 1.1; f += fHitFlashSpeed)
+        {
+            Color temp = GetComponent<SpriteRenderer>().color;
+            temp.b = f;
+            temp.g = f;
+            GetComponent<SpriteRenderer>().color = temp;
+            yield return null;
+        }
+    }
+
+    void StartSpriteFlasher()
+    {
+        StartCoroutine(SpriteFlasher());
     }
 }
