@@ -32,6 +32,9 @@ public class Honeycomb : MonoBehaviour
         if (bHasCollided) {
             GoToBar();
         }
+        if(transform.position.x < -14) {
+            Destroy(gameObject);
+        }
 	}
 
     void Move(){
