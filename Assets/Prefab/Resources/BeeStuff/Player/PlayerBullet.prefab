@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fSpeed: 8.5
   fDamage: 1
-  fBulletGrowRate: 0.03
+  fBulletGrowRate: 0.01
   fBulletSize: 0.3
 --- !u!212 &212890344880068524
 SpriteRenderer:
