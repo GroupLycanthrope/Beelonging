@@ -12,11 +12,14 @@ public class PlayerBullet : MonoBehaviour {
 
     private Animator aAnimator;
 
-
+    Vector3 v3GrowRate;
+    public float fBulletGrowRate;
+    public float fBulletSize;
     
     // Use this for initialization
-    void Start ()
-    {
+    void Start (){
+        v3GrowRate.x = fBulletGrowRate;
+        v3GrowRate.y = fBulletGrowRate;
         aAnimator = GetComponent<Animator>();
     }
 	
@@ -26,12 +29,9 @@ public class PlayerBullet : MonoBehaviour {
 
         v2Position = new Vector2(v2Position.x + fSpeed * Time.deltaTime, v2Position.y);
 
-        //if(m_v2Position.x < 0) {
-        //    m_v2Position.x += m_v2Position.x * -m_fSpeed * Time.deltaTime;
-        //}
-        //else {
-        //    m_v2Position.x += m_v2Position.x * m_fSpeed * Time.deltaTime;
-        //}
+        if(transform.localScale.x < fBulletSize) {
+            transform.localScale += v3GrowRate;
+        }
 
         transform.position = v2Position;
 

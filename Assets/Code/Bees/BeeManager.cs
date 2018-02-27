@@ -60,7 +60,8 @@ public class BeeManager : MonoBehaviour
 	            Time.timeScale = 1;
 	        }
 	    }
-     //   if (fHoneyCount == 3)
+    
+        //   if (fHoneyCount == 3)
 	    //{
 	    //    bIsInvincible = true;
 	    //    HoneyCounter.fInvincibilityTimer -= Time.deltaTime;

@@ -7,6 +7,9 @@ public class HoneyMeter : MonoBehaviour
 {
     private BeeManager goBeeManager;
 
+    private float fGoalCount;
+    public float fTickUpRate;
+
     private Slider sHoneyMeter;
 	// Use this for initialization
 	void Start ()
@@ -17,8 +20,12 @@ public class HoneyMeter : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
-	{
-	    sHoneyMeter.value = BeeManager.fHoneyCount;
+	void Update (){
+        fGoalCount = BeeManager.fHoneyCount;
+        if (sHoneyMeter.value < fGoalCount) {
+            sHoneyMeter.value += fTickUpRate;
+        }
+            
+            
 	}
 }
