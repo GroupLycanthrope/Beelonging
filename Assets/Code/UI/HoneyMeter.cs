@@ -25,6 +25,9 @@ public class HoneyMeter : MonoBehaviour
         if (sHoneyMeter.value < fGoalCount) {
             sHoneyMeter.value += fTickUpRate;
         }
+        if(sHoneyMeter.value > fGoalCount) {
+            sHoneyMeter.value -= fTickUpRate;
+        }
             
             
 	}
