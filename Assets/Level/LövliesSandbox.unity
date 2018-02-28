@@ -554,15 +554,6 @@ Prefab:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
-    - target: {fileID: 114310121051368766, guid: 39582563ac7f98a4b8df05c8c94f5d71,
-        type: 2}
-      propertyPath: fScrollingSpeed
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1846956279349998, guid: 39582563ac7f98a4b8df05c8c94f5d71, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39582563ac7f98a4b8df05c8c94f5d71, type: 2}
   m_IsPrefabParent: 0
