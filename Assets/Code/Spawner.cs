@@ -68,7 +68,7 @@ public class Spawner : MonoBehaviour{
                     }
                 }
                 // checks after enemies and if a wave have been spawned it sets the previous wave to null so the next wave can spawn
-                if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true){
+                if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true && !GameObject.FindGameObjectWithTag("HoneycombPickUp")){
                     aSpawnData[iSpawnerAt - 1].xSpawnObject = null;
                     bHasSpawned = false;
                 }
