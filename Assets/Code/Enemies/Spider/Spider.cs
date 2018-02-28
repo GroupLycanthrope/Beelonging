@@ -45,6 +45,7 @@ public class Spider : MonoBehaviour
     private bool bWantToFire;
     private bool bWantToMove;
     private bool bHasDestination;
+    private bool bHasShoot;
 
     private void Awake()
     {
@@ -77,6 +78,7 @@ public class Spider : MonoBehaviour
 	                web.transform.position = xProjectileOrigin.transform.position;
 	                fNextShot = fFireRate;
 	                bWantToMove = true;
+                    bHasShoot = false;
 	            }
 	        }
 	        else
@@ -95,7 +97,11 @@ public class Spider : MonoBehaviour
 	        }
 
 	        if (fNextShot <= fStandStillBeforeFire){
-                aAnimator.SetTrigger("tShooting");
+                if (!bHasShoot) {
+                    aAnimator.SetTrigger("tShooting");
+                    bHasShoot = true;
+                }
+               
                 bWantToFire = true;
                 if(GameObject.Find("Player").transform.position.x > transform.position.x) {
                     aAnimator.SetBool("bBee_is_right",true);
