@@ -8,13 +8,13 @@ AnimatorController:
   m_Name: Spider
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: b Bee_is_right
+  - m_Name: bBee_is_right
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: t shooting
+  - m_Name: tShooting
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -41,7 +41,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: t shooting
+    m_ConditionEvent: tShooting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102137361559456252}
@@ -101,7 +101,7 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: c48f63b060c5f0c42b156dedc6fe2e74, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: b Bee_is_right
+  m_MirrorParameter: bBee_is_right
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1102 &1102973813997556538
