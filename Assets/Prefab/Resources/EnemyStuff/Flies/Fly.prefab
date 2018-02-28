@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fFlyingSpeed: 3
-  fFlingingOffSpeed: 10
+  v2FlingingOffSpeed: {x: 10, y: 3}
   fFlingingOffRotationSpeed: 1000
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
