@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float fFireRate;
     private float fNextShot;
 
+    public float fFormationStartCost;
+
     public float fAcceleration;
     public float fDeceleration;
     public float fMaxVelocity;
@@ -77,10 +79,12 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetKeyDown("x")
-        && BeeManager.fHoneyCount > 0
-        && Time.timeScale > 0)
+        && BeeManager.fHoneyCount > fFormationStartCost
+        && Time.timeScale > 0
+        && BeeManager.aSwarm.Count > 1)
         {
             source.PlayOneShot(changeform, 1F);
+            BeeManager.fHoneyCount -= fFormationStartCost;
             BeeManager.bFormationActive = true;
         }
         else if (Input.GetKeyUp("x")
