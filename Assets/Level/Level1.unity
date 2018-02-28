@@ -175,7 +175,7 @@ Prefab:
     - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
         type: 2}
       propertyPath: fHoneyCountMax
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
         type: 2}
@@ -960,7 +960,7 @@ Prefab:
     - target: {fileID: 224793978838539886, guid: a5d230d28a1539d4bb670d868c624347,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a5d230d28a1539d4bb670d868c624347, type: 2}

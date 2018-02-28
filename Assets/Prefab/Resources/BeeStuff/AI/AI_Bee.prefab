@@ -365,7 +365,7 @@ MonoBehaviour:
   honeycomb_activate: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
-  fDropMaxY: -4
+  fDropMaxY: -100
   fDeadScrollingSpeed: 2
   sCollisionSprite: {fileID: 21300000, guid: 0de3317954d52274fb75066d055ddae8, type: 3}
   sWebbedSprite: {fileID: 21300000, guid: 646de64dec2b2f04d9dbb4a21608481f, type: 3}

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114910365387456582}
   - component: {fileID: 50538645291184762}
   - component: {fileID: 60210010956449330}
+  - component: {fileID: 95354883629561370}
   m_Layer: 0
   m_Name: Dragonfly
   m_TagString: Enemy
@@ -202,6 +203,23 @@ PolygonCollider2D:
       - {x: -0.52, y: -0.81}
       - {x: -0.56, y: -0.84}
       - {x: -0.55, y: -0.84}
+--- !u!95 &95354883629561370
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596621256433566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9c5b6acbe17db44198a2d30b6b01752, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114829541527311502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,7 +236,7 @@ MonoBehaviour:
   fZoomCooldown: 1
   fRangeX: 1
   fRangeY: 1
-  fMaxWaitTimeBeforeZooming: 5.5
+  fMaxWaitTimeBeforeZooming: 2
 --- !u!114 &114910365387456582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,11 +253,11 @@ MonoBehaviour:
   fDespawnX: 20
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
-  fDropMaxY: -4
+  fDropMaxY: -100
   fDeadScrollingSpeed: 2
   iScoreValue: 200
-  sHoneyDeadSprite: {fileID: 21300000, guid: d45e44f127ba767478f8d534f3e6e51a, type: 3}
-  sBeeCollisionSprite: {fileID: 21300000, guid: d45e44f127ba767478f8d534f3e6e51a,
+  sHoneyDeadSprite: {fileID: 21300000, guid: c196557b51c808248b18382db79c4d8e, type: 3}
+  sBeeCollisionSprite: {fileID: 21300000, guid: 067d1bf3497d3e743af6debd91b1d652,
     type: 3}
 --- !u!212 &212969330185041656
 SpriteRenderer:
@@ -275,7 +293,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d45e44f127ba767478f8d534f3e6e51a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04416e3a9a971e14a9134e02bf017295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
