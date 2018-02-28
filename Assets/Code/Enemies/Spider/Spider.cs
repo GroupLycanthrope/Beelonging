@@ -13,13 +13,11 @@ public class Spider : MonoBehaviour
     private int iDirection;
     private int iRandomNumber;
 
+    public float fMaxWaitTimeBeforeMovement;
     public float fDropAcceleration;
     public float fDropMaxVelocity;
     public float fDropMaxY;
     public float fDeadScrollingSpeed;
-
-    private float fDropVelocity;
-
     public float fMoveUpAndDownSpeed;
     public float fHitPoints;
     public float fFireRate;
@@ -28,6 +26,8 @@ public class Spider : MonoBehaviour
     public float fHitFlashSpeed;
     public float fStandStillBeforeFire;
 
+    private float fDropVelocity;
+    private float fWaitTime;
     private  float fNextShot;
     private float fDeltaX;
     
@@ -51,6 +51,8 @@ public class Spider : MonoBehaviour
     }
     // Use this for initialization
     void Start (){
+        fWaitTime = Random.Range(0f, fMaxWaitTimeBeforeMovement);
+
         fNextShot = fFireRate;
         bWantToMove = false;
         bIsDead = false;
@@ -58,7 +60,7 @@ public class Spider : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update (){
-
+        fWaitTime -= Time.deltaTime;
 	    if (!bIsDead)
 	    {
 	        fNextShot -= Time.deltaTime;
@@ -78,7 +80,10 @@ public class Spider : MonoBehaviour
 	        }
 	        else
 	        {
-	            Move();
+                if(fWaitTime <= 0) {
+                    Move();
+                }
+	           
 	        }
 
 

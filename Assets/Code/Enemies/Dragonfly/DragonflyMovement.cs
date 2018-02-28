@@ -17,6 +17,9 @@ public class DragonflyMovement : MonoBehaviour
     //Max Zoom in Y-position
     public float fRangeY;
 
+    public float fMaxWaitTimeBeforeZooming;
+
+    private float fWaitTime;
     //Clock to next zoom
     private float fTimer;
     // get the random point to zoom to
@@ -43,6 +46,7 @@ public class DragonflyMovement : MonoBehaviour
 
     // Use this for initialization
     void Start(){
+        fWaitTime = Random.Range(0f, fMaxWaitTimeBeforeZooming);
         v3OriginalYPosition.y = transform.position.y;
         fTimer = fZoomCooldown;
         bStartMoveToScreen = true;
@@ -52,8 +56,9 @@ public class DragonflyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fWaitTime -= Time.deltaTime;
         //only remenant of Fredriks code RIP code ;(
-        if (transform.position.x < -20){
+        if (transform.position.x < -15){
             Destroy(gameObject);
         }
         // clocker
@@ -67,7 +72,9 @@ public class DragonflyMovement : MonoBehaviour
         }
 
         if(!bStartMoveToScreen) {
-            Zoom();
+            if(fWaitTime <= 0) {
+                Zoom();
+            }
         }
         if (bHasTarget) {
             MoveDragonFly();
