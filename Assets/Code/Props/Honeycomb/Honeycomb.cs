@@ -10,17 +10,19 @@ public class Honeycomb : MonoBehaviour
 
     public int iHoneyValue;
 
-    GameObject gTargetPosWhenCollidedWith;
-
     bool bHasCollided;
     bool bCalculatedShrinkRate;
 
+    public Vector3 v3TargetPos;
     Vector3 v3ChangeScale;
+
 	// Use this for initialization
 	void Start (){
-        gTargetPosWhenCollidedWith = GameObject.Find("HoneycombGoTo");
         bHasCollided = false;
         bCalculatedShrinkRate = false;
+        v3TargetPos.x = -2.5f;
+        v3TargetPos.y = -4.2f;
+        v3TargetPos.z = -3;
     }
 	
 	// Update is called once per frame
@@ -43,10 +45,10 @@ public class Honeycomb : MonoBehaviour
 
     void GoToBar() {
         float fStep = (fFloatingSpeed * 3) * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, gTargetPosWhenCollidedWith.transform.position, fStep);
+        transform.position = Vector3.MoveTowards(transform.position, v3TargetPos, fStep);
 
         if (!bCalculatedShrinkRate) {
-            fShrinkRate = fStep/ (Vector3.Distance(transform.position, gTargetPosWhenCollidedWith.transform.position));
+            fShrinkRate = fStep/ (Vector3.Distance(transform.position, v3TargetPos));
             fShrinkRate = fShrinkRate / 8;
             v3ChangeScale.x = fShrinkRate;
             v3ChangeScale.y = fShrinkRate;
@@ -56,7 +58,7 @@ public class Honeycomb : MonoBehaviour
             transform.localScale -= v3ChangeScale;
         }
 
-        if(transform.position.x == gTargetPosWhenCollidedWith.transform.position.x) {
+        if(transform.position.x == v3TargetPos.x) {
             if (BeeManager.fHoneyCount < FindObjectOfType<BeeManager>().fHoneyCountMax){
                 BeeManager.fHoneyCount += iHoneyValue;
                 Destroy(gameObject);
