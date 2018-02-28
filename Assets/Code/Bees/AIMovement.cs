@@ -19,6 +19,9 @@ public class AIMovement : MonoBehaviour
     public Vector2 v2AIBoundariesMin;
     public Vector2 v2AIBoundariesMax;
 
+    public Vector2 v2DriftBoundariesMin;
+    public Vector2 v2DriftBoundariesMax;
+
     private Vector3 v3SpreadPosition;
     private Vector3 v3Destination;
 
@@ -142,8 +145,8 @@ public class AIMovement : MonoBehaviour
         Vector3 v3DriftDestination;
         float fRandomX = Random.Range(v2DriftDistanceMin.x, v2DriftDistanceMax.x);
         float fRandomY = Random.Range(v2DriftDistanceMin.y, v2DriftDistanceMax.y);
-        v3DriftDestination.x = Mathf.Clamp((transform.position.x + fRandomX), -7f, 0f);
-        v3DriftDestination.y = Mathf.Clamp((transform.position.y + fRandomY), -4f, 4f);
+        v3DriftDestination.x = Mathf.Clamp((transform.position.x + fRandomX), v2DriftBoundariesMin.x, v2DriftBoundariesMax.x);
+        v3DriftDestination.y = Mathf.Clamp((transform.position.y + fRandomY), v2DriftBoundariesMin.y, v2DriftBoundariesMax.y);
         v3DriftDestination.z = -1;
         return v3DriftDestination;
     }
