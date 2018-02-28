@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 82021169762632882}
   - component: {fileID: 82960870904185400}
   - component: {fileID: 82606562742830484}
+  - component: {fileID: 95939341073820854}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -394,6 +395,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95939341073820854
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521263716047048}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a482874a34bb1c94fa6f9040a10d0e2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114721769459949424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,9 +429,9 @@ MonoBehaviour:
   iScoreValue: 400
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
-  fDropMaxY: -4
+  fDropMaxY: -100
   fDeadScrollingSpeed: 2
-  fMoveUpAndDownSpeed: 0
+  fMoveUpAndDownSpeed: 1
   fHitPoints: 5
   fFireRate: 5
   fAggroRange: 20.25
