@@ -51,7 +51,8 @@ public class DragonflyCollision : MonoBehaviour
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet")
             || p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
-            if (fHitPoints <= 1)
+            if (fHitPoints <= 1
+                && !bIsDead)
             { 
                 GetComponent<PolygonCollider2D>().enabled = false;
                 //GetComponentInChildren<SpriteRenderer>().enabled = false;

@@ -145,7 +145,8 @@ public class Spider : MonoBehaviour
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet")
           ||p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
-            if (fHitPoints <= 1)
+            if (fHitPoints <= 1
+                && !bIsDead)
             {
                 source.PlayOneShot(spider_dead, 1F);
                 GetComponent<BoxCollider2D>().enabled = false;
