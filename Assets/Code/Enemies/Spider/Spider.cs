@@ -151,6 +151,7 @@ public class Spider : MonoBehaviour
                 GetComponent<BoxCollider2D>().enabled = false;
                 //GetComponentInChildren<SpriteRenderer>().enabled = false;
                 bIsDead = true;
+                GetComponent<Animator>().enabled = false;
                 ScoreManager.iScore += iScoreValue;
                 if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
                 {

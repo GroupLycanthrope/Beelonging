@@ -58,6 +58,7 @@ public class DragonflyCollision : MonoBehaviour
                 bIsDead = true;
                 ScoreManager.iScore += iScoreValue;
                 GetComponent<DragonflyMovement>().enabled = false;
+                GetComponent<Animator>().enabled = false;
                 if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
                 {
                     GetComponent<SpriteRenderer>().sprite = sHoneyDeadSprite;
