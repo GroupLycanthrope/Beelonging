@@ -427,6 +427,7 @@ MonoBehaviour:
     type: 2}
   xProjectileOrigin: {fileID: 1317297524708282}
   iScoreValue: 400
+  fMaxWaitTimeBeforeMovement: 0.5
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
   fDropMaxY: -100
