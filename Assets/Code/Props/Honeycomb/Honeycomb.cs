@@ -9,6 +9,7 @@ public class Honeycomb : MonoBehaviour
     float fShrinkRate;
 
     public int iHoneyValue;
+    public int iScoreValue;
 
     bool bHasCollided;
     bool bCalculatedShrinkRate;
@@ -58,6 +59,7 @@ public class Honeycomb : MonoBehaviour
         if(transform.position.x == v3TargetPos.x) {
             if (BeeManager.fHoneyCount < FindObjectOfType<BeeManager>().fHoneyCountMax){
                 BeeManager.fHoneyCount += iHoneyValue;
+                ScoreManager.iScore += iScoreValue;
                 Destroy(gameObject);
             }
         }
