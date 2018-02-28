@@ -36,8 +36,6 @@ public class AIMovement : MonoBehaviour
 
     void Start ()
     {
-        aAnimator = GetComponent<Animator>();
-        aAnimator.SetFloat("fAnimationOffset", Random.Range(0, 1));
         v3Destination = transform.position;
 	    v3SpreadPosition = transform.position;
 	}

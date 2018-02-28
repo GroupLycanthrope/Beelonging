@@ -23,6 +23,7 @@ public class AIShooting : MonoBehaviour
     {
         sBeeCollision = GetComponent<BeeCollision>();
         aAnimator = GetComponent<Animator>();
+        aAnimator.SetFloat("fAnimationOffset", Random.value);
         asSource = GetComponent<AudioSource>();
     }
     void Start ()

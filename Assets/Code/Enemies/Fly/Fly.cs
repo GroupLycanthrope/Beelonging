@@ -38,7 +38,7 @@ public class Fly : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
         aAnimator = GetComponent<Animator>();
-        aAnimator.SetFloat("fAnimationOffset", Random.Range(0, 1));
+        aAnimator.SetFloat("fAnimationOffset", Random.value);
         sRenderer = GetComponent<SpriteRenderer>();
         pcCollider = GetComponent<PolygonCollider2D>();
     }
