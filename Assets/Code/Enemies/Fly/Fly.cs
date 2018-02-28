@@ -7,7 +7,7 @@ public class Fly : MonoBehaviour
 { 
     public float fFlyingSpeed;
 
-    public float fFlingingOffSpeed;
+    public Vector2 v2FlingingOffSpeed;
     public float fFlingingOffRotationSpeed;
 
     public float fDropAcceleration;
@@ -82,9 +82,11 @@ public class Fly : MonoBehaviour
     {
         transform.Rotate(0, 0, -fFlingingOffRotationSpeed * Time.deltaTime);
         Vector3 tmp = transform.position;
-        tmp.x += fFlingingOffSpeed * Time.deltaTime;
-        transform.position = tmp; /* = new Vector3(fFlingingOffSpeed * Time.deltaTime, fFlingingOffSpeed * Time.deltaTime, 0);*/
-        transform.Translate(-fFlingingOffSpeed * Time.deltaTime, 0, 0);
+        tmp.x += v2FlingingOffSpeed.x * Time.deltaTime;
+        tmp.y -= v2FlingingOffSpeed.y * Time.deltaTime;
+        transform.position = tmp;
+        transform.Translate(-fFlyingSpeed * Time.deltaTime, 0, 0);
+
     }
 
     void CollisionDrop()
