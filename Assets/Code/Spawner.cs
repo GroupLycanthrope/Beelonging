@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour{
     public bool bHasSortList;
 
     public List<SpawnData> aSpawnData;
-    private List<SpawnData> aCopyofSpawnData;
+    static private List<SpawnData> aCopyofSpawnData;
 
     public GameObject xWinningScreen;
 
@@ -28,6 +28,7 @@ public class Spawner : MonoBehaviour{
         iSpawnerAt = 0;
         fTimer = aSpawnData[iSpawnerAt].fWaitTime;
         bHasSortList = false;
+        aCopyofSpawnData = aSpawnData;
     }
 
     void Update(){
@@ -44,6 +45,7 @@ public class Spawner : MonoBehaviour{
                             spawn.transform.Translate(0, transform.position.y, 0);
                             bHasSpawned = true;
                         }
+                        
                         iSpawnerAt++;
                         // had to add this in because random error dont know why but this fixes the error
                         if(iSpawnerAt != aSpawnData.Count) { 
@@ -68,7 +70,7 @@ public class Spawner : MonoBehaviour{
                     }
                 }
                 // checks after enemies and if a wave have been spawned it sets the previous wave to null so the next wave can spawn
-                if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true){
+                if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true && !GameObject.FindGameObjectWithTag("HoneycombPickUp")){
                     aSpawnData[iSpawnerAt - 1].xSpawnObject = null;
                     bHasSpawned = false;
                 }
@@ -90,6 +92,7 @@ public class Spawner : MonoBehaviour{
     // this has to be an int otherwise noting work IDK why and it sort properly as it would be a float, again programming is magic
     static int SortBySortID(SpawnData p1, SpawnData p2){
         return p1.fSortID.CompareTo(p2.fSortID);
+       
     }
 
     void SortList() {
@@ -97,4 +100,16 @@ public class Spawner : MonoBehaviour{
         aSpawnData.Sort(SortBySortID);
     }
 
+    static public int GetTotalWaves() {
+        
+        return aCopyofSpawnData.Count;
+    }
+
+    static public int GetWaveAt(){
+        return iSpawnerAt;
+    }
+    
+    static public float GetProcentOfWave(int p_iWave) {
+        return (p_iWave / aCopyofSpawnData.Count);
+    }
 }

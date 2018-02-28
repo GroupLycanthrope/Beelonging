@@ -16,7 +16,7 @@ public class BackgroundMovement : MonoBehaviour
     {
         mMeshRenderer = GetComponent<MeshRenderer>();
         v2TextureOffset.x = 0;
-        v2TextureOffset = mMeshRenderer.sharedMaterial.GetTextureOffset("_MainTex");
+        v2TextureOffset = mMeshRenderer.material.GetTextureOffset("_MainTex");
     }
 
     // Update is called once per frame
@@ -24,12 +24,13 @@ public class BackgroundMovement : MonoBehaviour
     {
         float repeat = Mathf.Repeat(Time.time * fScrollingSpeed, 1);
         v2TextureOffset.x = repeat;
-        mMeshRenderer.sharedMaterial.SetTextureOffset("_MainTex", v2TextureOffset);
+        mMeshRenderer.material.SetTextureOffset("_MainTex", v2TextureOffset);
     }
 
     void OnDestroy()
     {
         v2TextureOffset.x = 0;
-        mMeshRenderer.sharedMaterial.SetTextureOffset("_MainTex", v2TextureOffset);
+        mMeshRenderer.material.SetTextureOffset("_MainTex", v2TextureOffset);
     }
+
 }
