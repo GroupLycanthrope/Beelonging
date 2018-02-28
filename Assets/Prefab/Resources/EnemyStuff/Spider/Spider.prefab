@@ -411,9 +411,9 @@ MonoBehaviour:
   iScoreValue: 400
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
-  fDropMaxY: -4
+  fDropMaxY: -100
   fDeadScrollingSpeed: 2
-  fMoveUpAndDownSpeed: 0
+  fMoveUpAndDownSpeed: 1
   fHitPoints: 5
   fFireRate: 5
   fAggroRange: 20.25

@@ -234,7 +234,7 @@ MonoBehaviour:
   fDespawnX: 20
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
-  fDropMaxY: -4
+  fDropMaxY: -100
   fDeadScrollingSpeed: 2
   iScoreValue: 200
   sHoneyDeadSprite: {fileID: 21300000, guid: d45e44f127ba767478f8d534f3e6e51a, type: 3}

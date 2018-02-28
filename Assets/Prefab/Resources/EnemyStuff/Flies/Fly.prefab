@@ -371,7 +371,7 @@ MonoBehaviour:
   fFlingingOffRotationSpeed: 1000
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
-  fDropMaxY: -4
+  fDropMaxY: -100
   fDeadScrollingSpeed: 2
   fDespawnX: 20
   iScoreValue: 100
