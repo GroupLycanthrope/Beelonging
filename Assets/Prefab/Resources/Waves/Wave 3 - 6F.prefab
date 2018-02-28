@@ -52,24 +52,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aWaveSpawnData:
-  - v2DeltaPosition: {x: 9.11, y: 4}
+  - v2DeltaPosition: {x: 1, y: 4}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 11.2, y: 2.32}
+  - v2DeltaPosition: {x: 2, y: 2.32}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 10.4, y: 0.45}
+  - v2DeltaPosition: {x: 0.1, y: 0.45}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 12.4, y: -1}
+  - v2DeltaPosition: {x: -1, y: -1}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 9.9, y: -2.3}
+  - v2DeltaPosition: {x: -0.45, y: -2.3}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 13.5, y: -3}
+  - v2DeltaPosition: {x: -0.75, y: -3}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 13.5, y: -4}
+  - v2DeltaPosition: {x: -2, y: -4}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}

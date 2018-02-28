@@ -20,9 +20,6 @@ public class Honeycomb : MonoBehaviour
 	void Start (){
         bHasCollided = false;
         bCalculatedShrinkRate = false;
-        v3TargetPos.x = -2.5f;
-        v3TargetPos.y = -4.2f;
-        v3TargetPos.z = -3;
     }
 	
 	// Update is called once per frame
