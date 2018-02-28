@@ -817,7 +817,7 @@ MonoBehaviour:
   fDropMaxVelocity: 3
   fDropMaxY: -100
   fDeadScrollingSpeed: 2
-  sCollisionSprite: {fileID: 21300000, guid: 0de3317954d52274fb75066d055ddae8, type: 3}
+  sCollisionSprite: {fileID: 21300000, guid: fd0ca0134e92af942928fea0835a061f, type: 3}
   sWebbedSprite: {fileID: 21300000, guid: 646de64dec2b2f04d9dbb4a21608481f, type: 3}
   bIsDead: 1
   fHitFlashSpeed: 0.1
