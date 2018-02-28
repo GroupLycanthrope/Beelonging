@@ -13,8 +13,9 @@ public class Honeycomb : MonoBehaviour
     bool bHasCollided;
     bool bCalculatedShrinkRate;
 
-    Vector3 v3TargetPos;
+    public Vector3 v3TargetPos;
     Vector3 v3ChangeScale;
+
 	// Use this for initialization
 	void Start (){
         bHasCollided = false;
