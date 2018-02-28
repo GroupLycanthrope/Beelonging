@@ -6,7 +6,7 @@ public class GoldenBeePickUp : MonoBehaviour {
 
     public float fMoveSpeed;
     public int iBonusScore;
-
+    public int iScoreValue;
     float fDeathTimer;
     float fDelay;
 
@@ -70,6 +70,7 @@ public class GoldenBeePickUp : MonoBehaviour {
         }
 
         if (fDeathTimer <= 0){
+            ScoreManager.iScore += iScoreValue;
             Destroy(gameObject);   
         }
     }
