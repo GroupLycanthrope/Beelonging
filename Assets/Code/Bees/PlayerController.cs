@@ -87,6 +87,11 @@ public class PlayerController : MonoBehaviour
             BeeManager.fHoneyCount -= fFormationStartCost;
             BeeManager.bFormationActive = true;
         }
+        else if (Input.GetKeyDown("x")
+                 && BeeManager.fHoneyCount < fFormationStartCost)
+        {
+            BeeManager.fHoneyCount = 0;
+        }
         else if (Input.GetKeyUp("x")
         || BeeManager.fHoneyCount <= 0)
         {
