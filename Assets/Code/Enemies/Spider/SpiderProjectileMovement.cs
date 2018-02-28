@@ -10,14 +10,35 @@ public class SpiderProjectileMovement : MonoBehaviour
 
     private Vector3 v3Direction;
 
-	// Use this for initialization
-	void Start ()
-	{
-        var xPlayer = GameObject.Find("Player");
+    float iDeltaX;
+    float iDeltaY;
+    public float iHypotenuse;
+    public float iDegree;
+    public float iRadian;
+    GameObject xPlayer;
+
+    // Use this for initialization
+    void Start (){
+
+        xPlayer = GameObject.Find("Player");
+
+        iDeltaX = transform.position.x - xPlayer.transform.position.x;
+        iDeltaY = transform.position.y - xPlayer.transform.position.y;
+
+        iHypotenuse = Mathf.Sqrt(Mathf.Pow(iDeltaX,2) + Mathf.Pow(iDeltaY,2));
+
+        iRadian = Mathf.Acos((iDeltaX / iHypotenuse));
+
+        iDegree = iRadian * (180 / Mathf.PI);
+
         if (xPlayer != null)
-        { 
-	        v3Direction = xPlayer.transform.position - transform.position;
-            v3Direction.Normalize();
+        {
+            if(xPlayer.transform.position.y > transform.position.y){
+                transform.Rotate(0, 0, -iDegree);
+            }
+            else{
+                transform.Rotate(0, 0, iDegree);
+            }           
         }
     }
 	
@@ -29,6 +50,7 @@ public class SpiderProjectileMovement : MonoBehaviour
 	    {
 	        Destroy(gameObject);
 	    }
-        transform.Translate(v3Direction * fSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, xPlayer.transform.position, fSpeed * Time.deltaTime);
+        //transform.Translate(v3Direction * fSpeed * Time.deltaTime);
 	}
 }
