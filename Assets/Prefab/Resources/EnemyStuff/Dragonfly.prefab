@@ -236,6 +236,7 @@ MonoBehaviour:
   fZoomCooldown: 1
   fRangeX: 1
   fRangeY: 1
+  fMaxWaitTimeBeforeZooming: 5.5
 --- !u!114 &114910365387456582
 MonoBehaviour:
   m_ObjectHideFlags: 1
