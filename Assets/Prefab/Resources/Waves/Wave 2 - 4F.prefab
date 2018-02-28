@@ -52,15 +52,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aWaveSpawnData:
-  - v2DeltaPosition: {x: 9, y: 4}
+  - v2DeltaPosition: {x: 1, y: 4}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 8, y: -3}
+  - v2DeltaPosition: {x: 2, y: -3}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 9, y: -3.7}
+  - v2DeltaPosition: {x: 2, y: -3.7}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 8, y: 4.3}
+  - v2DeltaPosition: {x: 1, y: 4.3}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
