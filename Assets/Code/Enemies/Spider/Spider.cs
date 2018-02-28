@@ -13,6 +13,13 @@ public class Spider : MonoBehaviour
     private int iDirection;
     private int iRandomNumber;
 
+    public float fDropAcceleration;
+    public float fDropMaxVelocity;
+    public float fDropMaxY;
+    public float fDeadScrollingSpeed;
+
+    private float fDropVelocity;
+
     public float fMoveUpAndDownSpeed;
     public float fHitPoints;
     public float fFireRate;
@@ -28,8 +35,11 @@ public class Spider : MonoBehaviour
     public AudioClip spider_hit;
     public AudioClip spider_shoot;
 
-    private AudioSource source;
+    public Sprite sHoneyDeadSprite;
+    public Sprite sBeeCollisionSprite;
 
+    private AudioSource source;
+    
     private bool bIsDead;
     private bool bWantToFire;
     private bool bWantToMove;
@@ -49,47 +59,49 @@ public class Spider : MonoBehaviour
 	// Update is called once per frame
 	void Update (){
 
-        fNextShot -= Time.deltaTime;
-        if (bWantToFire) {
-            GameObject xPlayer = GameObject.Find("Player");
-            if (xPlayer != null
-                && fNextShot <= 0
-                && transform.position.x - xPlayer.transform.position.x < fAggroRange
-                && !bIsDead){
-                source.PlayOneShot(spider_shoot, 1F);
-                GameObject web = Instantiate(xProjectile);
-                web.transform.position = xProjectileOrigin.transform.position;
-                fNextShot = fFireRate;
-                bWantToMove = true;
-            }
-        }
-        else {
-            Move();
-        }
+	    if (!bIsDead)
+	    {
+	        fNextShot -= Time.deltaTime;
+	        if (bWantToFire)
+	        {
+	            GameObject xPlayer = GameObject.Find("Player");
+	            if (xPlayer != null
+	                && fNextShot <= 0
+	                && transform.position.x - xPlayer.transform.position.x < fAggroRange)
+	            {
+	                source.PlayOneShot(spider_shoot, 1F);
+	                GameObject web = Instantiate(xProjectile);
+	                web.transform.position = xProjectileOrigin.transform.position;
+	                fNextShot = fFireRate;
+	                bWantToMove = true;
+	            }
+	        }
+	        else
+	        {
+	            Move();
+	        }
 
 
-	    if (transform.position.x <= fDespawnX){
-	        Destroy(gameObject);
+	        if (transform.position.x <= -fDespawnX
+	            || transform.position.x >= fDespawnX)
+	        {
+	            Destroy(gameObject);
+	        }
+
+	        if (fNextShot <= fStandStillBeforeFire)
+	        {
+	            bWantToFire = true;
+	        }
+	        else
+	        {
+	            bWantToFire = false;
+	        }
 	    }
-
-        if(fNextShot <= fStandStillBeforeFire) {
-            bWantToFire = true;
-        }
-        else{
-            bWantToFire = false;
-        }
-
-	    if (fHitPoints <= 0 && !bIsDead){
-	        source.PlayOneShot(spider_dead, 1F);
-	        GetComponent<SpriteRenderer>().enabled = false;
-	        GetComponent<BoxCollider2D>().enabled = false;
-	        GetComponentInChildren<SpriteRenderer>().enabled = false;
-	        bIsDead = true;
-	        //TODO: Death animation (maybe with state for dying)
-	        Destroy(gameObject, 1);
-	        ScoreManager.iScore += iScoreValue;
-        }
-    }
+	    else
+	    {
+	        CollisionDrop();
+	    }
+	}
 
     void Move() {
         
@@ -125,22 +137,53 @@ public class Spider : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
+        if (p_xOtherCollider.gameObject.CompareTag("BeeBullet")
+          ||p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
-            TakeDamage(p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage);
-        }
-
-        if (p_xOtherCollider.gameObject.CompareTag("Bee"))
-        {
-            TakeDamage(1);
+            if (fHitPoints <= 1)
+            {
+                source.PlayOneShot(spider_dead, 1F);
+                GetComponent<BoxCollider2D>().enabled = false;
+                //GetComponentInChildren<SpriteRenderer>().enabled = false;
+                bIsDead = true;
+                ScoreManager.iScore += iScoreValue;
+                if (p_xOtherCollider.gameObject.CompareTag("BeeBullet"))
+                {
+                    GetComponent<SpriteRenderer>().sprite = sHoneyDeadSprite;
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().sprite = sBeeCollisionSprite;
+                }
+            }
+            else
+            {
+                TakeDamage(1);
+            }
         }
     }
 
     void TakeDamage(float p_fDamage)
     {
-        source.PlayOneShot(spider_hit, 1F);
-        fHitPoints -= p_fDamage;
-        StartCoroutine(SpriteFlasher());
+            source.PlayOneShot(spider_hit, 1F);
+            fHitPoints -= p_fDamage;
+            StartCoroutine(SpriteFlasher());
+    }
+
+    void CollisionDrop()
+    {
+        if (transform.position.y > fDropMaxY
+            && fDropVelocity > -fDropMaxVelocity)
+        {
+            fDropVelocity += fDropAcceleration;
+        }
+        else
+        {
+            fDropVelocity = 0;
+            gameObject.tag = "Dead";
+        }
+        transform.Translate(-fDeadScrollingSpeed * Time.deltaTime, -fDropVelocity * Time.deltaTime, 0);
+
     }
 
     IEnumerator SpriteFlasher()

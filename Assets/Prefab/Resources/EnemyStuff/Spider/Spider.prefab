@@ -409,14 +409,23 @@ MonoBehaviour:
     type: 2}
   xProjectileOrigin: {fileID: 1317297524708282}
   iScoreValue: 400
+  fDropAcceleration: 0.5
+  fDropMaxVelocity: 3
+  fDropMaxY: -4
+  fDeadScrollingSpeed: 2
+  fMoveUpAndDownSpeed: 0
   fHitPoints: 5
   fFireRate: 5
   fAggroRange: 20.25
-  fDespawnX: -13
+  fDespawnX: 20
   fHitFlashSpeed: 0.1
+  fStandStillBeforeFire: 1
   spider_dead: {fileID: 8300000, guid: 22e11a50b6436ff41a54247c58624bc5, type: 3}
   spider_hit: {fileID: 8300000, guid: 600ae1da3d9e1a14f97bc049f1b406f2, type: 3}
   spider_shoot: {fileID: 8300000, guid: 01a38e58d9dcfac40b098a033eaf5ebb, type: 3}
+  sHoneyDeadSprite: {fileID: 21300000, guid: f62c39040237a4447bdeef4adbaebbf8, type: 3}
+  sBeeCollisionSprite: {fileID: 21300000, guid: 654a291708197ad4d9e0e80da7eeeccf,
+    type: 3}
 --- !u!114 &114897122261025164
 MonoBehaviour:
   m_ObjectHideFlags: 1

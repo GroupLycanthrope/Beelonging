@@ -359,9 +359,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2d5d6dee13c4344950c03cb2fe4059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fDespawnX: 20
   deathsound: {fileID: 8300000, guid: 530ffba9f0019f9439d56a0f116c8666, type: 3}
   honeycomb_pickup: {fileID: 8300000, guid: 90079b61430b9fb458d8716f4860408e, type: 3}
   honeycomb_activate: {fileID: 8300000, guid: bb0a95a3147d9e747b7ba2551afe8380, type: 3}
+  fDropAcceleration: 0.5
+  fDropMaxVelocity: 3
+  fDropMaxY: -4
+  fDeadScrollingSpeed: 2
+  sCollisionSprite: {fileID: 21300000, guid: 0de3317954d52274fb75066d055ddae8, type: 3}
+  sWebbedSprite: {fileID: 21300000, guid: 646de64dec2b2f04d9dbb4a21608481f, type: 3}
   bIsDead: 0
   fHitFlashSpeed: 0.1
 --- !u!114 &114688312793339212
