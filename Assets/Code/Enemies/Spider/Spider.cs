@@ -39,7 +39,8 @@ public class Spider : MonoBehaviour
     public Sprite sBeeCollisionSprite;
 
     private AudioSource source;
-    
+    private Animator aAnimator;
+
     private bool bIsDead;
     private bool bWantToFire;
     private bool bWantToMove;
@@ -48,6 +49,7 @@ public class Spider : MonoBehaviour
     private void Awake()
     {
         source = GetComponent<AudioSource>();
+        aAnimator = GetComponent<Animator>();
     }
     // Use this for initialization
     void Start (){
@@ -69,8 +71,7 @@ public class Spider : MonoBehaviour
 	            GameObject xPlayer = GameObject.Find("Player");
 	            if (xPlayer != null
 	                && fNextShot <= 0
-	                && transform.position.x - xPlayer.transform.position.x < fAggroRange)
-	            {
+	                && transform.position.x - xPlayer.transform.position.x < fAggroRange){
 	                source.PlayOneShot(spider_shoot, 1F);
 	                GameObject web = Instantiate(xProjectile);
 	                web.transform.position = xProjectileOrigin.transform.position;
@@ -93,13 +94,20 @@ public class Spider : MonoBehaviour
 	            Destroy(gameObject);
 	        }
 
-	        if (fNextShot <= fStandStillBeforeFire)
-	        {
-	            bWantToFire = true;
+	        if (fNextShot <= fStandStillBeforeFire){
+                aAnimator.SetTrigger("tShooting");
+                bWantToFire = true;
+                if(GameObject.Find("Player").transform.position.x > transform.position.x) {
+                    aAnimator.SetBool("bBee_is_right",true);
+                }
+                else {
+                    aAnimator.SetBool("bBee_is_right", false);
+                }
 	        }
 	        else
 	        {
-	            bWantToFire = false;
+                
+                bWantToFire = false;
 	        }
 	    }
 	    else

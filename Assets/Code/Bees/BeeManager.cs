@@ -22,9 +22,10 @@ public class BeeManager : MonoBehaviour
     public GameObject goGameOverScreen;
     public GameObject goPauseMenu;
 
-    private static List<GameObject> aFormationPositions;
     private GameObject goPlayer;
+    private GameObject goParticles;
 
+    private static List<GameObject> aFormationPositions;
     public static List<GameObject> aSwarm;
 
 	// Use this for initialization
@@ -35,7 +36,7 @@ public class BeeManager : MonoBehaviour
         fHoneyCount = fHoneyStartCount;
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
         aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
-
+        goParticles = (GameObject)Resources.Load("Props/ParticleSystem", typeof(GameObject));
         //bIsInvincible = false;
         bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
@@ -101,6 +102,10 @@ public class BeeManager : MonoBehaviour
         goPlayer.gameObject.SendMessage("StartSpriteFlasher");
         goPlayer.transform.position = aSwarm[randomIndex].transform.position;
         goPlayer.name = "Player";
+
+        GameObject Particles = Instantiate(goParticles);
+        Particles.transform.position = goPlayer.transform.position;
+
         Destroy(aSwarm[randomIndex]);
         aSwarm.Remove(aSwarm[randomIndex]);
         //if(aSwarm[randomIndex] != null)
