@@ -65,6 +65,11 @@ public class BeeManager : MonoBehaviour
 	            Time.timeScale = 1;
 	        }
 	    }
+
+	    if (fHoneyCount > fHoneyCountMax)
+	    {
+	        fHoneyCount = fHoneyCountMax;
+	    }
     
         //   if (fHoneyCount == 3)
 	    //{
