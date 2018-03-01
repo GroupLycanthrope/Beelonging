@@ -71,7 +71,7 @@ public class WaspController : MonoBehaviour {
     else {
         // gets a random pos to move to it
         if (!bInitialPosDecided){
-            fInitialPos = Random.Range(2f, 7f);
+            fInitialPos = Random.Range(4f, 7f);
             bInitialPosDecided = true;
         }
         // moves the wasp to the decided position
