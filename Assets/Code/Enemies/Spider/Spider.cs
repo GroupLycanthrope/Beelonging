@@ -103,7 +103,7 @@ public class Spider : MonoBehaviour
                 }
                
                 bWantToFire = true;
-                if(GameObject.Find("Player").transform.position.x > transform.position.x) {
+                if(GameObject.Find("Player") != null && GameObject.Find("Player").transform.position.x > transform.position.x) {
                     aAnimator.SetBool("bBee_is_right",true);
                 }
                 else {

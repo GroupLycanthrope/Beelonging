@@ -21,6 +21,7 @@ public class SpiderProjectileMovement : MonoBehaviour
     void Start (){
 
         xPlayer = GameObject.Find("Player");
+        v3Direction = xPlayer.transform.position;
 
         iDeltaX = transform.position.x - xPlayer.transform.position.x;
         iDeltaY = transform.position.y - xPlayer.transform.position.y;
@@ -50,7 +51,6 @@ public class SpiderProjectileMovement : MonoBehaviour
 	    {
 	        Destroy(gameObject);
 	    }
-        transform.position = Vector3.MoveTowards(transform.position, xPlayer.transform.position, fSpeed * Time.deltaTime);
-        //transform.Translate(v3Direction * fSpeed * Time.deltaTime);
+        transform.Translate(-1 * fSpeed *Time.deltaTime,0,0);
 	}
 }
