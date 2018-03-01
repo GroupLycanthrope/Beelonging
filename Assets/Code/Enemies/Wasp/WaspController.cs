@@ -71,7 +71,7 @@ public class WaspController : MonoBehaviour {
     else {
         // gets a random pos to move to it
         if (!bInitialPosDecided){
-            fInitialPos = Random.Range(2f, 7f);
+            fInitialPos = Random.Range(4f, 7f);
             bInitialPosDecided = true;
         }
         // moves the wasp to the decided position
@@ -101,11 +101,11 @@ public class WaspController : MonoBehaviour {
             v3TargetPos.x = v3OriginalPosition.x + v3TargetPos.x;
             v3TargetPos.y = v3OriginalPosition.y + v3TargetPos.y;
 
-            if(v3TargetPos.y >= BeeManager.GetMaxCameraBorder().y) {
+            if(v3TargetPos.y >= BeeManager.GetMaxCameraBorder().y- 0.5f) {
                 v3TargetPos.y = BeeManager.GetMaxCameraBorder().y - 0.5f;
             }
 
-            if (v3TargetPos.y <= BeeManager.GetMinCameraBorder().y) {
+            if (v3TargetPos.y <= BeeManager.GetMinCameraBorder().y + 0.5f) {
                 v3TargetPos.y = BeeManager.GetMaxCameraBorder().y + 0.5f;
             }
 
