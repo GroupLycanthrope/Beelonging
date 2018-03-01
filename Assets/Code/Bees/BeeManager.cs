@@ -65,6 +65,11 @@ public class BeeManager : MonoBehaviour
 	            Time.timeScale = 1;
 	        }
 	    }
+
+	    if (fHoneyCount > fHoneyCountMax)
+	    {
+	        fHoneyCount = fHoneyCountMax;
+	    }
     
         //   if (fHoneyCount == 3)
 	    //{
@@ -96,6 +101,7 @@ public class BeeManager : MonoBehaviour
         Destroy(GameObject.Find("FormationParent"));
         int randomIndex = Random.Range(0, aSwarm.Count - 1);
         GameObject newPlayer = Instantiate(Resources.Load("BeeStuff/Player/Player")) as GameObject;
+        AddBee(newPlayer);
         goPlayer = newPlayer;
         aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         goPlayer.gameObject.SendMessage("StartSpriteFlasher");
