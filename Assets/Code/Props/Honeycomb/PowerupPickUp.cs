@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PowerupPickUp : MonoBehaviour
 {
-
+    // WTF is this code???
 
     public GameObject xLeftHoneyComb;
     public GameObject xMiddleHoneyComb;

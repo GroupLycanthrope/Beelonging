@@ -13,7 +13,7 @@ public class WaspBullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (transform.position.x < -20 || transform.position.x > 20){
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1){
             Destroy(gameObject);
         }
         transform.Translate(Vector2.left * fSpeed * Time.deltaTime);

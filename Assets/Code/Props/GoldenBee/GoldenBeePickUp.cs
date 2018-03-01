@@ -43,7 +43,8 @@ public class GoldenBeePickUp : MonoBehaviour {
         transform.Translate(Vector2.left * fMoveSpeed * Time.deltaTime);
     }
     void CheckBorder() {
-        if(transform.position.x <= -20) {
+
+        if(transform.position.x < BeeManager.GetMinCameraBorder().x - 1) {
             Destroy(gameObject);
         }
     }

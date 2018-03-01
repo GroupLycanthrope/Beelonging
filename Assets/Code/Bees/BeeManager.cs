@@ -27,10 +27,16 @@ public class BeeManager : MonoBehaviour
     private static List<GameObject> aFormationPositions;
     public static List<GameObject> aSwarm;
 
+    static private Vector3 v3MaxCameraBorders;
+    static private Vector3 v3MinCameraBorder;
+
 	// Use this for initialization
 	void Start ()
 	{
-	    iSwarmMaxCount = iSwarmMax;
+        v3MaxCameraBorders = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        v3MinCameraBorder = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+
+        iSwarmMaxCount = iSwarmMax;
 	    Time.timeScale = 1;
         fHoneyCount = fHoneyStartCount;
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
@@ -174,5 +180,12 @@ public class BeeManager : MonoBehaviour
                 }
             }
         }
+    }
+    // getting the borders for the camera
+    public static Vector3 GetMaxCameraBorder(){
+        return v3MaxCameraBorders;
+    }
+    public static Vector3 GetMinCameraBorder(){
+        return v3MinCameraBorder;
     }
 }

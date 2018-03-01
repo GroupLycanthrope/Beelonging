@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 60681915937749596}
   m_Layer: 0
   m_Name: Wasp
-  m_TagString: Enemy
+  m_TagString: Wasp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555478012141658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28999996, y: -0.012000084, z: 0.969217}
+  m_LocalPosition: {x: -1.17, y: -0.012000084, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4443348458573528}
@@ -66,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590782139349122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 8.61, y: 2.09, z: -1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4266307966039880}
   m_Father: {fileID: 0}
@@ -314,11 +314,12 @@ MonoBehaviour:
   xProjectile: {fileID: 1363127886819042, guid: 4d133e67741fff1428db0f25b1fac29b,
     type: 2}
   xProjectileOrigin: {fileID: 1555478012141658}
-  fMoveSpeed: 1
+  fMoveSpeed: 2
   fRadius: 1.5
-  fCooldownBeforeNextMove: 1.5
   fStandStillBeforeFire: 1.5
   fFireRate: 8
+  bIsAtPosition: 0
+  bHasPosition: 0
 --- !u!114 &114365628903949122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,9 +331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e230496ea4c2047933cecfeabbf1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHitPoints: 4
+  fHitPoints: 6
   fHitFlashSpeed: 0.1
   iScoreValue: 500
+  fDamageFireRateMultiplier: 0.75
 --- !u!212 &212818902734356144
 SpriteRenderer:
   m_ObjectHideFlags: 1

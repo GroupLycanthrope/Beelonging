@@ -17,7 +17,6 @@ public class Fly : MonoBehaviour
 
     private float fDropVelocity;
 
-    public float fDespawnX;
 
     public int iScoreValue;
 
@@ -66,9 +65,7 @@ public class Fly : MonoBehaviour
             Move();
         }
 
-        if (transform.position.x < -fDespawnX
-            || transform.position.x > fDespawnX)
-        {
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1 || transform.position.x > BeeManager.GetMaxCameraBorder().x + 3){
             Destroy(gameObject);
         }
     }

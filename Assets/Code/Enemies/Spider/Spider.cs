@@ -22,7 +22,6 @@ public class Spider : MonoBehaviour
     public float fHitPoints;
     public float fFireRate;
     public float fAggroRange;
-    public float fDespawnX;
     public float fHitFlashSpeed;
     public float fStandStillBeforeFire;
 
@@ -89,14 +88,12 @@ public class Spider : MonoBehaviour
 	           
 	        }
 
+            if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1)
+            {
+                Destroy(gameObject);
+            }
 
-	        if (transform.position.x <= -fDespawnX
-	            || transform.position.x >= fDespawnX)
-	        {
-	            Destroy(gameObject);
-	        }
-
-	        if (fNextShot <= fStandStillBeforeFire){
+            if (fNextShot <= fStandStillBeforeFire){
                 if (!bHasShoot) {
                     aAnimator.SetTrigger("tShooting");
                     bHasShoot = true;

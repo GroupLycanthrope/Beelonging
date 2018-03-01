@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SpawnData
-{
+public class SpawnData{
     public float fSortID;
     public float fWaitTime;
     public GameObject xSpawnObject;

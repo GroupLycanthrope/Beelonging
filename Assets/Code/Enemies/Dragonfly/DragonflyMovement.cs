@@ -57,8 +57,7 @@ public class DragonflyMovement : MonoBehaviour
     void Update()
     {
         fWaitTime -= Time.deltaTime;
-        //only remenant of Fredriks code RIP code ;(
-        if (transform.position.x < -15){
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 3 ){
             Destroy(gameObject);
         }
         // clocker
