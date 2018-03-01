@@ -59,6 +59,7 @@ public class GoldenBeePickUp : MonoBehaviour {
             {
                 spawn = Instantiate(Resources.Load("BeeStuff/AI/AI_Bee") as GameObject);
                 this.spawn.transform.position = new Vector3(-9, Random.Range(-fSpawnRangeY, fSpawnRangeY), -1); //-9 becauase it's just off the left border and -1 because all AI bees are on that z value
+                BeeManager.AddBee(spawn);
             }
             else
             {
@@ -66,7 +67,6 @@ public class GoldenBeePickUp : MonoBehaviour {
             }
 
             bSpawnBee = true;
-            BeeManager.AddBee(spawn);
         }
 
         if (fDeathTimer <= 0){
