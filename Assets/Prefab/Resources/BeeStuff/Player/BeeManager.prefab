@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8790549d9786854fb08348bf81b8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHoneyCountMax: 50
+  fHoneyCountMax: 40
   fHoneyStartCount: 0
   fHoneyCountDrain: 5
   iSwarmMax: 7
