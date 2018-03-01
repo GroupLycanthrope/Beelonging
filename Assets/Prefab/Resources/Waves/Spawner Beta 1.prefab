@@ -125,4 +125,5 @@ MonoBehaviour:
     fWaitTime: 5
     xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
       type: 2}
-  xWinningScreen: {fileID: 0}
+  xWinningScreen: {fileID: 1518948143681342, guid: cd8fa9e478c5230468c48bd7e10310fe,
+    type: 2}
