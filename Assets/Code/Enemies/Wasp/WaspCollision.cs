@@ -10,9 +10,18 @@ public class WaspCollision : MonoBehaviour {
 
     public int iScoreValue;
 
+    public float fDamageFireRateMultiplier;
+
     private bool bIsDead = false;
 
-	void Update () {
+    WaspController wasp;
+
+    private void Start()
+    {
+        wasp = gameObject.GetComponent<WaspController>();
+    }
+
+    void Update () {
         if (transform.position.x < -20){
             Destroy(gameObject);
         }
@@ -38,6 +47,7 @@ public class WaspCollision : MonoBehaviour {
 
     void TakeDamage(float p_fDamage){
         fHitPoints -= p_fDamage;
+        wasp.fFireRate *= fDamageFireRateMultiplier;
         StartCoroutine(SpriteFlasher());
     }
     

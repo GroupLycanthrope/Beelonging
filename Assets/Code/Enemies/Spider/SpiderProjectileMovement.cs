@@ -46,11 +46,14 @@ public class SpiderProjectileMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (transform.position.x < -fDespawnX 
-	        || transform.position.x > fDespawnX)
-	    {
-	        Destroy(gameObject);
-	    }
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1 || transform.position.x > BeeManager.GetMaxCameraBorder().x + 1){
+            Destroy(gameObject);
+        }
+        if (transform.position.y < BeeManager.GetMinCameraBorder().y - 1 || transform.position.y > BeeManager.GetMaxCameraBorder().y + 1)
+        {
+            Destroy(gameObject);
+        }
+
         transform.Translate(-1 * fSpeed *Time.deltaTime,0,0);
 	}
 }

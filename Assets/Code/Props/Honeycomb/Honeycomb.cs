@@ -32,7 +32,7 @@ public class Honeycomb : MonoBehaviour
         if (bHasCollided) {
             GoToBar();
         }
-        if(transform.position.x < -14) {
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1){
             Destroy(gameObject);
         }
 	}

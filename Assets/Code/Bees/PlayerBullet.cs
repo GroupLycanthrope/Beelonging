@@ -35,13 +35,13 @@ public class PlayerBullet : MonoBehaviour {
 
         transform.position = v2Position;
 
-        if(v2Position.x > 9) {
+        if (transform.position.x > BeeManager.GetMaxCameraBorder().x + 1){
             Destroy(gameObject);
         }
     }
     void OnCollisionEnter2D(Collision2D p_xOtherCollider)
     {
-        if (p_xOtherCollider.gameObject.CompareTag("Enemy"))
+        if (p_xOtherCollider.gameObject.CompareTag("Enemy") || p_xOtherCollider.gameObject.CompareTag("Wasp"))
         {
             GetComponent<CapsuleCollider2D>().enabled = false;
             fSpeed = 0;

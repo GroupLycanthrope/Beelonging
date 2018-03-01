@@ -19,6 +19,7 @@ TagManager:
   - Dead
   - Web
   - Stinger
+  - Wasp
   layers:
   - Default
   - TransparentFX
