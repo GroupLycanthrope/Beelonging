@@ -4,6 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class SpawnData{
+    public bool bAllDespawned;
+    public bool bAllKilled;
     public float fSortID;
     public float fWaitTime;
     public GameObject xSpawnObject;
@@ -15,8 +17,20 @@ public class Spawner : MonoBehaviour{
 
     static public int iSpawnerAt;
 
+    public int iSkipEntries;
+
+    private bool bControllBool;
+    private bool bHasList;
+
     private bool bHasSpawned;
-    public bool bHasSortList;
+    private bool bHasSortList;
+
+
+
+    public bool bAllEnemiesDied;
+    public bool bAllEnemiesDespawned;
+
+
 
     public List<SpawnData> aSpawnData;
     static private List<SpawnData> aCopyofSpawnData;
@@ -32,7 +46,9 @@ public class Spawner : MonoBehaviour{
 
     void Update(){
         if (Application.isPlaying){
-            if (iSpawnerAt < aSpawnData.Count){
+
+            if (iSpawnerAt < aSpawnData.Count)
+            {
                 // check if the previous wave is null before creating the next one
                 if (iSpawnerAt != 0 && aSpawnData[iSpawnerAt - 1].xSpawnObject == null){
                     // start to count down to zero
@@ -72,22 +88,25 @@ public class Spawner : MonoBehaviour{
                 if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true && !GameObject.FindGameObjectWithTag("HoneycombPickUp")){
                     aSpawnData[iSpawnerAt - 1].xSpawnObject = null;
                     bHasSpawned = false;
+                    bHasList = false;
                 }
+
             }
 
-            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("HoneycombPickUp") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee"))
+            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("HoneycombPickUp") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee") && !GameObject.FindGameObjectWithTag("Wasp"))
             {
                 xWinningScreen.SetActive(true);
             }
-        }
+    }
         // this only happens in the Editor not when the game is played minimizes lag
 #if UNITY_EDITOR
         // extra safe guard because unity is a cunt sometimes
         if (!Application.isPlaying) {
             SortList();
         }
+
 #endif
-    }
+}
     // this has to be an int otherwise noting work IDK why and it sort properly as it would be a float, again programming is magic
     static int SortBySortID(SpawnData p1, SpawnData p2){
         return p1.fSortID.CompareTo(p2.fSortID);
@@ -109,6 +128,6 @@ public class Spawner : MonoBehaviour{
     }
     
     static public float GetProcentOfWave(int p_iWave) {
-        return (p_iWave / aCopyofSpawnData.Count);
+        return (p_iWave / aCopyofSpawnData.Count) * 100;
     }
 }
