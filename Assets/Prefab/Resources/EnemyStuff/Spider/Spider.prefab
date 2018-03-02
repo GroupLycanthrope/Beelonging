@@ -433,10 +433,9 @@ MonoBehaviour:
   fDropMaxY: -100
   fDeadScrollingSpeed: 2
   fMoveUpAndDownSpeed: 1
-  fHitPoints: 5
+  fHitPoints: 6
   fFireRate: 5
   fAggroRange: 15
-  fDespawnX: 10
   fHitFlashSpeed: 0.1
   fStandStillBeforeFire: 1
   spider_dead: {fileID: 8300000, guid: 22e11a50b6436ff41a54247c58624bc5, type: 3}

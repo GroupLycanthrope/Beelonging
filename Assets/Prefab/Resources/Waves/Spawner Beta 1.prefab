@@ -51,78 +51,157 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fb25b0f1a1fd544942fe25f9de162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bHasSortList: 0
+  iSkipEntries: 0
+  bHasList: 0
   aSpawnData:
-  - fSortID: 1
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 1
     fWaitTime: 3
     xSpawnObject: {fileID: 1517732432264054, guid: d50f9618442cec34bb2c9d23e355de83,
       type: 2}
-  - fSortID: 2
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 2
+    fWaitTime: 2
     xSpawnObject: {fileID: 1598677551717588, guid: 4b5a2635d0300344eb2c3d3e4b310472,
       type: 2}
-  - fSortID: 3
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 3
+    fWaitTime: 2
     xSpawnObject: {fileID: 1920382828593444, guid: 927477beb882db941bf18e93d983cae0,
       type: 2}
-  - fSortID: 3.5
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 3.5
+    fWaitTime: 2
     xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
       type: 2}
-  - fSortID: 4
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 4
+    fWaitTime: 2
     xSpawnObject: {fileID: 1818587419624122, guid: 2e505663615cdf349969b6a5558fb396,
       type: 2}
-  - fSortID: 4.5
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 4.5
+    fWaitTime: 2
     xSpawnObject: {fileID: 1386867940197332, guid: 217b738a512fc4745aa8e656736aa1f5,
       type: 2}
-  - fSortID: 5
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 5
+    fWaitTime: 2
     xSpawnObject: {fileID: 1811095952162182, guid: e48523b9c2aa3f149972309b8ba237b8,
       type: 2}
-  - fSortID: 5.5
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 5.5
+    fWaitTime: 2
     xSpawnObject: {fileID: 1386190999996704, guid: dc631d90e53e97a44b296814618e4b74,
       type: 2}
-  - fSortID: 6
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 6
+    fWaitTime: 2
     xSpawnObject: {fileID: 1321060393569556, guid: 601c33d1564608e4c9d61d8e6c491eab,
       type: 2}
-  - fSortID: 6.5
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 6.5
+    fWaitTime: 2
     xSpawnObject: {fileID: 1109238499892852, guid: 6134d3ac100d4fc4e95768cf029d1980,
       type: 2}
-  - fSortID: 7
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 7
+    fWaitTime: 2
     xSpawnObject: {fileID: 1561993667525666, guid: 5bb01ed3c762e894180b317b200ae706,
       type: 2}
-  - fSortID: 7.5
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 7.5
+    fWaitTime: 2
     xSpawnObject: {fileID: 1542081431716476, guid: 3b48027974a79414d942f14e9cb3cb0a,
       type: 2}
-  - fSortID: 8
-    fWaitTime: 4
-    xSpawnObject: {fileID: 1032586027786804, guid: a2a0a1acb87a6a74c8ce134334ae7288,
-      type: 2}
-  - fSortID: 8.5
-    fWaitTime: 4
-    xSpawnObject: {fileID: 1930955748101180, guid: 3af03ffdbe7720147b2971ef314a60d8,
-      type: 2}
-  - fSortID: 9
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 8
+    fWaitTime: 2
     xSpawnObject: {fileID: 1161439434280932, guid: 0737d8da73844ee41968e6410ae7c16e,
       type: 2}
-  - fSortID: 9.5
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 8.5
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1930955748101180, guid: 3af03ffdbe7720147b2971ef314a60d8,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 9
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1032586027786804, guid: a2a0a1acb87a6a74c8ce134334ae7288,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 9.5
+    fWaitTime: 2
     xSpawnObject: {fileID: 1914973413412734, guid: 696218edcdb1e4f4697064b21fbf2f4b,
       type: 2}
-  - fSortID: 10
-    fWaitTime: 4
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 10
+    fWaitTime: 2
     xSpawnObject: {fileID: 1753090723543672, guid: 8880fef6338239f4889978b6cbe44227,
       type: 2}
-  - fSortID: 11
-    fWaitTime: 5
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 2
     xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
       type: 2}
   xWinningScreen: {fileID: 1518948143681342, guid: cd8fa9e478c5230468c48bd7e10310fe,
