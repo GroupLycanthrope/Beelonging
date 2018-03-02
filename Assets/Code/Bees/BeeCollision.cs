@@ -87,7 +87,7 @@ public class BeeCollision : MonoBehaviour
             gameObject.name = "DeadBee";
         }
 
-        if (p_xOtherCollider.gameObject.CompareTag("HoneycombPickUp")) {
+        if (p_xOtherCollider.gameObject.CompareTag("PickUp")) {
 
             source.PlayOneShot(honeycomb_pickup, 1F);
         }
