@@ -13,26 +13,28 @@ public class SpawnData{
 
 [ExecuteInEditMode]
 public class Spawner : MonoBehaviour{
-    private float fTimer;
+
+    float fTimer;
 
     static public int iSpawnerAt;
-
     public int iSkipEntries;
 
     private bool bControllBool;
-    private bool bHasList;
+    public bool bHasList;
 
-    private bool bHasSpawned;
+    private bool bNewWave;
+    private bool bIsScreenEmpty;
     private bool bHasSortList;
+    
+    bool bAllEnemiesDied;
+    bool bAllEnemiesDespawned;
 
-
-
-    public bool bAllEnemiesDied;
-    public bool bAllEnemiesDespawned;
-
-
+    bool[] abAllEnemiesDespawned;
+    GameObject[] aAllEnemies;
+    GameObject[] aAllPowerUps;
 
     public List<SpawnData> aSpawnData;
+
     static private List<SpawnData> aCopyofSpawnData;
 
     public GameObject xWinningScreen;
@@ -41,59 +43,99 @@ public class Spawner : MonoBehaviour{
         iSpawnerAt = 0;
         fTimer = aSpawnData[iSpawnerAt].fWaitTime;
         bHasSortList = false;
+        
         aCopyofSpawnData = aSpawnData;
     }
 
     void Update(){
         if (Application.isPlaying){
 
-            if (iSpawnerAt < aSpawnData.Count)
-            {
-                // check if the previous wave is null before creating the next one
-                if (iSpawnerAt != 0 && aSpawnData[iSpawnerAt - 1].xSpawnObject == null){
-                    // start to count down to zero
+            if (iSpawnerAt < aSpawnData.Count){
+                if (bNewWave && bIsScreenEmpty) {
                     fTimer -= Time.deltaTime;
-                    if (fTimer <= 0){
-                        // Spawn the enemy wave
+                    if (fTimer <= 0) {
+                        if (bAllEnemiesDespawned || bAllEnemiesDied) { 
+                            iSpawnerAt += iSkipEntries;
+                            bAllEnemiesDespawned = false;
+                            bAllEnemiesDied = false;
+                            abAllEnemiesDespawned = new bool[0];
+                            aAllEnemies = new GameObject[0];
+                        }
+
                         if (aSpawnData[iSpawnerAt].xSpawnObject != null){
                             GameObject spawn = Instantiate(aSpawnData[iSpawnerAt].xSpawnObject, this.transform);
                             spawn.transform.Translate(0, transform.position.y, 0);
-                            bHasSpawned = true;
+                            bNewWave = false;
+                            bHasList = false;
                         }
-                        
-                        iSpawnerAt++;
+                         iSpawnerAt++;
                         // had to add this in because random error dont know why but this fixes the error
-                        if(iSpawnerAt != aSpawnData.Count) { 
-                        fTimer = aSpawnData[iSpawnerAt].fWaitTime;
-                        }
-
-                    }
-                }
-                else{
-                    // this only happens on the first wave because aSpawnData[0-1] is not valid and the rest is just a copied from before
-                    if (iSpawnerAt == 0){
-                        fTimer -= Time.deltaTime;
-                        if (fTimer <= 0){
-                            if (aSpawnData[iSpawnerAt].xSpawnObject != null){
-                                GameObject spawn = Instantiate(aSpawnData[iSpawnerAt].xSpawnObject, this.transform);
-                                spawn.transform.Translate(0, transform.position.y, 0);
-                                bHasSpawned = true;
-                            }
-                            iSpawnerAt++;
+                        if (iSpawnerAt != aSpawnData.Count){
                             fTimer = aSpawnData[iSpawnerAt].fWaitTime;
                         }
                     }
                 }
-                // checks after enemies and if a wave have been spawned it sets the previous wave to null so the next wave can spawn
-                if (!GameObject.FindGameObjectWithTag("Enemy") && bHasSpawned == true && !GameObject.FindGameObjectWithTag("HoneycombPickUp")){
-                    aSpawnData[iSpawnerAt - 1].xSpawnObject = null;
-                    bHasSpawned = false;
-                    bHasList = false;
+
+                if (!bNewWave && bIsScreenEmpty){
+                    bNewWave = true;
+                }
+
+
+                if (iSpawnerAt != 0){
+
+                    if (!bHasList && (GameObject.FindGameObjectWithTag("Enemy") || GameObject.FindGameObjectWithTag("PickUp"))) {
+                        aAllEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+                        aAllPowerUps = GameObject.FindGameObjectsWithTag("PickUp");
+
+                        abAllEnemiesDespawned = new bool[aAllEnemies.Length + aAllPowerUps.Length];
+                        bHasList = true;
+                    }
+
+                    if (aSpawnData[iSpawnerAt - 1].bAllKilled == true || aSpawnData[iSpawnerAt - 1].bAllDespawned == true){
+                        for(int i = 0; i < aAllEnemies.Length; i++) {
+                            if(aAllEnemies[i] != null && aAllEnemies[i].transform.position.x <= BeeManager.GetMinCameraBorder().x) {
+                                abAllEnemiesDespawned[i] = true;
+                            }
+                        }
+                        if (bNewWave) {
+                            foreach(bool despawned in abAllEnemiesDespawned) {
+                                if(despawned == true) {
+                                    bAllEnemiesDespawned = true;
+                                }
+                                else {
+                                    bAllEnemiesDespawned = false;
+                                    break;
+                                }
+                            }
+                            foreach (bool killed in abAllEnemiesDespawned){
+                                if (killed == false){
+                                    bAllEnemiesDied = true;
+                                }
+                                else{
+                                    bAllEnemiesDied = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
 
             }
 
-            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("HoneycombPickUp") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee") && !GameObject.FindGameObjectWithTag("Wasp"))
+            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("PickUp")){
+                bIsScreenEmpty = true;
+            }
+            else {
+                bIsScreenEmpty = false;
+            }
+
+            
+
+
+
+
+            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("PickUp") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee") && !GameObject.FindGameObjectWithTag("Wasp"))
             {
                 xWinningScreen.SetActive(true);
             }
