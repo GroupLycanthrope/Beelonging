@@ -117,13 +117,13 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 12
-    fWaitTime: 2
+    fWaitTime: 1
     xSpawnObject: {fileID: 1321060393569556, guid: 601c33d1564608e4c9d61d8e6c491eab,
       type: 2}
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 13
-    fWaitTime: 1.5
+    fWaitTime: 1
     xSpawnObject: {fileID: 1930955748101180, guid: 3af03ffdbe7720147b2971ef314a60d8,
       type: 2}
   - bAllDespawned: 0
@@ -135,13 +135,13 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 15
-    fWaitTime: 2
+    fWaitTime: 1
     xSpawnObject: {fileID: 1817773534800684, guid: 2119127353e583a4c8ca60408724119c,
       type: 2}
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 16
-    fWaitTime: 1.5
+    fWaitTime: 1
     xSpawnObject: {fileID: 1401268145791652, guid: c9dca8f920b2ca442b46890c663a0a19,
       type: 2}
   xWinningScreen: {fileID: 0}
