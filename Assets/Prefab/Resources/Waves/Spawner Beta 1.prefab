@@ -57,7 +57,11 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 1
+<<<<<<< HEAD
     fWaitTime: 3
+=======
+    fWaitTime: 1.5
+>>>>>>> develop
     xSpawnObject: {fileID: 1517732432264054, guid: d50f9618442cec34bb2c9d23e355de83,
       type: 2}
   - bAllDespawned: 0
@@ -75,13 +79,21 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 3.5
+<<<<<<< HEAD
     fWaitTime: 2
+=======
+    fWaitTime: 1
+>>>>>>> develop
     xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
       type: 2}
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 4
+<<<<<<< HEAD
     fWaitTime: 2
+=======
+    fWaitTime: 3
+>>>>>>> develop
     xSpawnObject: {fileID: 1818587419624122, guid: 2e505663615cdf349969b6a5558fb396,
       type: 2}
   - bAllDespawned: 0
@@ -93,7 +105,11 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 5
+<<<<<<< HEAD
     fWaitTime: 2
+=======
+    fWaitTime: 1
+>>>>>>> develop
     xSpawnObject: {fileID: 1811095952162182, guid: e48523b9c2aa3f149972309b8ba237b8,
       type: 2}
   - bAllDespawned: 0
@@ -117,7 +133,11 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 7
+<<<<<<< HEAD
     fWaitTime: 2
+=======
+    fWaitTime: 1.5
+>>>>>>> develop
     xSpawnObject: {fileID: 1561993667525666, guid: 5bb01ed3c762e894180b317b200ae706,
       type: 2}
   - bAllDespawned: 0
@@ -129,8 +149,13 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 8
+<<<<<<< HEAD
     fWaitTime: 2
     xSpawnObject: {fileID: 1161439434280932, guid: 0737d8da73844ee41968e6410ae7c16e,
+=======
+    fWaitTime: 3
+    xSpawnObject: {fileID: 1032586027786804, guid: a2a0a1acb87a6a74c8ce134334ae7288,
+>>>>>>> develop
       type: 2}
   - bAllDespawned: 0
     bAllKilled: 0
@@ -141,13 +166,22 @@ MonoBehaviour:
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 9
+<<<<<<< HEAD
     fWaitTime: 2
     xSpawnObject: {fileID: 1032586027786804, guid: a2a0a1acb87a6a74c8ce134334ae7288,
+=======
+    fWaitTime: 3
+    xSpawnObject: {fileID: 1161439434280932, guid: 0737d8da73844ee41968e6410ae7c16e,
+>>>>>>> develop
       type: 2}
   - bAllDespawned: 0
     bAllKilled: 0
     fSortID: 9.5
+<<<<<<< HEAD
     fWaitTime: 2
+=======
+    fWaitTime: 1
+>>>>>>> develop
     xSpawnObject: {fileID: 1914973413412734, guid: 696218edcdb1e4f4697064b21fbf2f4b,
       type: 2}
   - bAllDespawned: 0
@@ -160,6 +194,7 @@ MonoBehaviour:
     bAllKilled: 0
     fSortID: 11
     fWaitTime: 2
+<<<<<<< HEAD
     xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
       type: 2}
   - bAllDespawned: 0
@@ -202,6 +237,8 @@ MonoBehaviour:
     bAllKilled: 0
     fSortID: 11
     fWaitTime: 2
+=======
+>>>>>>> develop
     xSpawnObject: {fileID: 1383467351683230, guid: 2c33df0ea854b6c4dbac5b5c2d52d29b,
       type: 2}
   xWinningScreen: {fileID: 1518948143681342, guid: cd8fa9e478c5230468c48bd7e10310fe,
