@@ -144,4 +144,40 @@ MonoBehaviour:
     fWaitTime: 1
     xSpawnObject: {fileID: 1401268145791652, guid: c9dca8f920b2ca442b46890c663a0a19,
       type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 17
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1966800412998806, guid: c751bf3a28adc3145b245a025186847a,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 18
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1769568476404622, guid: 1ff2c0f6eacca9747b7d3de7169248d6,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 19
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1161439434280932, guid: 0737d8da73844ee41968e6410ae7c16e,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 20
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1751686677723242, guid: 9928c466d6d55734b971b8e5c6763e3f,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 21
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1920382828593444, guid: 927477beb882db941bf18e93d983cae0,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 22
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1814455732582558, guid: b735f8db74ccbaf48bca74bf208c4395,
+      type: 2}
   xWinningScreen: {fileID: 0}
