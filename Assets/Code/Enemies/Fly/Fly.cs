@@ -115,6 +115,7 @@ public class Fly : MonoBehaviour
             {
                 sRenderer.sprite = sHoneyDeadSprite;
                 bHoneyed = true;
+                //GetComponent<ParticleSystem>().Play();
             }
             else
             {

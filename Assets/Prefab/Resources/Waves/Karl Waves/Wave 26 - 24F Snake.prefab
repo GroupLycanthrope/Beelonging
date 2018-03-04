@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1401268145791652}
+  m_IsPrefabParent: 1
+--- !u!1 &1401268145791652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4648697485356210}
+  - component: {fileID: 114810470690214454}
+  m_Layer: 0
+  m_Name: Wave 26 - 24F Snake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4648697485356210
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1401268145791652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114810470690214454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1401268145791652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17ddecc5d13fb04c8c95d9e0e97134c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aWaveSpawnData:
+  - v2DeltaPosition: {x: -0.5, y: -3}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 0.55, y: -2}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 1.5, y: -1}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 2.7, y: -0.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 4, y: 0}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 5, y: 0.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 6, y: 1.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 7.5, y: 2}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 8.5, y: 1.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 10, y: 1}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 11, y: 0}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 12, y: -1}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 13, y: -1.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 14.5, y: -2}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 14.5, y: -3}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 15.5, y: -1.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 16, y: 0}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 17, y: 1}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 20, y: 1.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 22, y: 0.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 23, y: -5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 24, y: -1.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 25, y: -2}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}
+  - v2DeltaPosition: {x: 26, y: -2.5}
+    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+      type: 2}

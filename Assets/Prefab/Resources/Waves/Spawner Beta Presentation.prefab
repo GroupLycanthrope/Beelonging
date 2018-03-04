@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1614431756627046}
+  m_IsPrefabParent: 1
+--- !u!1 &1614431756627046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4756356502699036}
+  - component: {fileID: 114349437941466548}
+  m_Layer: 0
+  m_Name: Spawner Beta Presentation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4756356502699036
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614431756627046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114349437941466548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1614431756627046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fb25b0f1a1fd544942fe25f9de162e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iSkipEntries: 0
+  bHasList: 0
+  aSpawnData:
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 1
+    fWaitTime: 2
+    xSpawnObject: {fileID: 1517732432264054, guid: d50f9618442cec34bb2c9d23e355de83,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 2
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1923623389222226, guid: 4b5a2635d0300344eb2c3d3e4b310472,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 3
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1920382828593444, guid: 927477beb882db941bf18e93d983cae0,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 4
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1814455732582558, guid: b735f8db74ccbaf48bca74bf208c4395,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 5
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 6
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1386867940197332, guid: 217b738a512fc4745aa8e656736aa1f5,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 7
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1811095952162182, guid: e48523b9c2aa3f149972309b8ba237b8,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 8
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1386190999996704, guid: dc631d90e53e97a44b296814618e4b74,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 10
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1830034861725284, guid: a9e30fb78bc2ba3488d8b35e864c8f4b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 11
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1109238499892852, guid: 6134d3ac100d4fc4e95768cf029d1980,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 12
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1321060393569556, guid: 601c33d1564608e4c9d61d8e6c491eab,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 13
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1930955748101180, guid: 3af03ffdbe7720147b2971ef314a60d8,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 14
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 15
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1817773534800684, guid: 2119127353e583a4c8ca60408724119c,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 16
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1401268145791652, guid: c9dca8f920b2ca442b46890c663a0a19,
+      type: 2}
+  xWinningScreen: {fileID: 0}
