@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e230496ea4c2047933cecfeabbf1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHitPoints: 6
+  fHitPoints: 8
   fHitFlashSpeed: 0.1
   iScoreValue: 500
   fDamageFireRateMultiplier: 0.75

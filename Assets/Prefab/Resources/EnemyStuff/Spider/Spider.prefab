@@ -626,7 +626,7 @@ MonoBehaviour:
   fDropMaxY: -100
   fDeadScrollingSpeed: 2
   fMoveUpAndDownSpeed: 1
-  fHitPoints: 5
+  fHitPoints: 6
   fFireRate: 5
   fAggroRange: 15
   fHitFlashSpeed: 0.1
