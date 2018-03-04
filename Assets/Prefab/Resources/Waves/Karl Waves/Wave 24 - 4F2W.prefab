@@ -52,21 +52,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aWaveSpawnData:
-  - v2DeltaPosition: {x: 0, y: 0}
+  - v2DeltaPosition: {x: 1, y: 3}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 0, y: 0}
+  - v2DeltaPosition: {x: 2, y: 2}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 0, y: 0}
+  - v2DeltaPosition: {x: 1, y: 1}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 0, y: 0}
+  - v2DeltaPosition: {x: 2, y: 0}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 0, y: 0}
-    xSpawnObject: {fileID: 1590782139349122, guid: 0d92ccbe9941e854a9bb7ea4b466f1ba,
-      type: 2}
-  - v2DeltaPosition: {x: 0, y: 0}
+  - v2DeltaPosition: {x: 1, y: 2}
     xSpawnObject: {fileID: 1590782139349122, guid: 0d92ccbe9941e854a9bb7ea4b466f1ba,
       type: 2}
