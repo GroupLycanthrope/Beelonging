@@ -1030,6 +1030,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 1614431756627046, guid: e45bec408fe423c4db9b188cf8be9ec9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114349437941466548, guid: e45bec408fe423c4db9b188cf8be9ec9,
+        type: 2}
+      propertyPath: xWinningScreen
+      value: 
+      objectReference: {fileID: 1966791163}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e45bec408fe423c4db9b188cf8be9ec9, type: 2}
   m_IsPrefabParent: 0
