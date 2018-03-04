@@ -160,7 +160,7 @@ public class Spider : MonoBehaviour
                 && !bIsDead)
             {
                 source.PlayOneShot(spider_dead, 1F);
-                GetComponent<PolygonCollider2D>().enabled = false;
+                GetComponent<BoxCollider2D>().enabled = false;
                 //GetComponentInChildren<SpriteRenderer>().enabled = false;
                 bIsDead = true;
                 GetComponent<Animator>().enabled = false;

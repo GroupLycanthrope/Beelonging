@@ -105,9 +105,9 @@ public class WaspController : MonoBehaviour {
                 v3TargetPos.y = BeeManager.GetMaxCameraBorder().y - 0.5f;
             }
 
-            if (v3TargetPos.x >= BeeManager.GetMaxCameraBorder().x - 0.5f)
+            if (v3TargetPos.x >= BeeManager.GetMaxCameraBorder().x - 1)
             {
-                v3TargetPos.y = BeeManager.GetMaxCameraBorder().x - 0.5f;
+                v3TargetPos.x = BeeManager.GetMaxCameraBorder().x - 1;
             }
 
             if (v3TargetPos.y <= BeeManager.GetMinCameraBorder().y + 0.5f) {
