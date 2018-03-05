@@ -192,4 +192,10 @@ MonoBehaviour:
     fWaitTime: 0.5
     xSpawnObject: {fileID: 1814455732582558, guid: b735f8db74ccbaf48bca74bf208c4395,
       type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    fSortID: 23
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1837295469572182, guid: c5dc112bd4a67f646b8c371f7038270c,
+      type: 2}
   xWinningScreen: {fileID: 0}

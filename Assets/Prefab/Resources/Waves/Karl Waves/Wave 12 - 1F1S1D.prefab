@@ -55,9 +55,9 @@ MonoBehaviour:
   - v2DeltaPosition: {x: 0, y: 0}
     xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
       type: 2}
-  - v2DeltaPosition: {x: 0, y: 0}
+  - v2DeltaPosition: {x: 1, y: 0}
     xSpawnObject: {fileID: 1521263716047048, guid: f5d8199a81a6c964c869424de56faddf,
       type: 2}
-  - v2DeltaPosition: {x: 0, y: 0}
+  - v2DeltaPosition: {x: 2, y: 0}
     xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
       type: 2}
