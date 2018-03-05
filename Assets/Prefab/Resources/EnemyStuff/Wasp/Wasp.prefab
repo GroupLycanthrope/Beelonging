@@ -71,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1590782139349122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.61, y: 2.09, z: -1}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 1}
   m_Children:
   - {fileID: 4266307966039880}
   m_Father: {fileID: 0}
@@ -617,12 +617,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e230496ea4c2047933cecfeabbf1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHitPoints: 8
+  fHitPoints: 7
   fHitFlashSpeed: 0.1
   iScoreValue: 500
   fDamageFireRateMultiplier: 0.75
-  wasp_hurt: {fileID: 8300000, guid: 8eaa13e3558505d459cd2619f5db8500, type: 3}
-  wasp_death: {fileID: 8300000, guid: 90ececad70ca85a4da551ee49c9164da, type: 3}
 --- !u!212 &212818902734356144
 SpriteRenderer:
   m_ObjectHideFlags: 1

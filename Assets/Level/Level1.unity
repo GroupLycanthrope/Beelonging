@@ -540,6 +540,20 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1667144326826666, guid: 499157e9208560c44997ba8fc5cea43f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224184178858305022, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 101.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 224778039149892286, guid: 499157e9208560c44997ba8fc5cea43f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -104.27
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 499157e9208560c44997ba8fc5cea43f, type: 2}
   m_IsPrefabParent: 0

@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 889d2b07840e8f8428283774f7b3ee80
-timeCreated: 1519830014
+guid: 2f63ba95192f6ff45adce32fea0aee17
+timeCreated: 1520246582
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SpiderProjectileAnimSheet_0
-    21300002: SpiderProjectileAnimSheet_1
-    21300004: SpiderProjectileAnimSheet_2
-    21300006: SpiderProjectileAnimSheet_3
-    21300008: SpiderProjectileAnimSheet_4
-    21300010: SpiderProjectileAnimSheet_5
+    21300000: SpiderProjectileAnimSheet (1)_0
+    21300002: SpiderProjectileAnimSheet (1)_1
+    21300004: SpiderProjectileAnimSheet (1)_2
+    21300006: SpiderProjectileAnimSheet (1)_3
+    21300008: SpiderProjectileAnimSheet (1)_4
+    21300010: SpiderProjectileAnimSheet (1)_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -106,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpiderProjectileAnimSheet_0
+      name: SpiderProjectileAnimSheet (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SpiderProjectileAnimSheet_1
+      name: SpiderProjectileAnimSheet (1)_1
       rect:
         serializedVersion: 2
         x: 512
@@ -134,11 +134,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SpiderProjectileAnimSheet_2
+      name: SpiderProjectileAnimSheet (1)_2
       rect:
         serializedVersion: 2
-        x: 1026
-        y: 510
+        x: 1024
+        y: 512
         width: 512
         height: 512
       alignment: 0
@@ -148,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SpiderProjectileAnimSheet_3
+      name: SpiderProjectileAnimSheet (1)_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SpiderProjectileAnimSheet_4
+      name: SpiderProjectileAnimSheet (1)_4
       rect:
         serializedVersion: 2
         x: 0
@@ -176,7 +176,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: SpiderProjectileAnimSheet_5
+      name: SpiderProjectileAnimSheet (1)_5
       rect:
         serializedVersion: 2
         x: 512
