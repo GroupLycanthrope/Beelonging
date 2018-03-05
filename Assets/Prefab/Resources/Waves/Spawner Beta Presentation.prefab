@@ -190,7 +190,7 @@ MonoBehaviour:
     bAllKilled: 0
     fSortID: 22
     fWaitTime: 0.5
-    xSpawnObject: {fileID: 1814455732582558, guid: b735f8db74ccbaf48bca74bf208c4395,
+    xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
       type: 2}
   - bAllDespawned: 0
     bAllKilled: 0
