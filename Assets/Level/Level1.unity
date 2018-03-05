@@ -282,6 +282,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114349437941466548, guid: e45bec408fe423c4db9b188cf8be9ec9,
+        type: 2}
+      propertyPath: xWinningScreen
+      value: 
+      objectReference: {fileID: 1064338799}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e45bec408fe423c4db9b188cf8be9ec9, type: 2}
   m_IsPrefabParent: 0
@@ -739,6 +744,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd8fa9e478c5230468c48bd7e10310fe, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1064338799 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1518948143681342, guid: cd8fa9e478c5230468c48bd7e10310fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1064338798}
 --- !u!1001 &1344989670
 Prefab:
   m_ObjectHideFlags: 0
