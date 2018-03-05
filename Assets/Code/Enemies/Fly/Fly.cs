@@ -65,7 +65,7 @@ public class Fly : MonoBehaviour
             Move();
         }
 
-        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1 || transform.position.x > BeeManager.GetMaxCameraBorder().x + 20 || transform.position.y < BeeManager.GetMinCameraBorder().y -3){
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1 || transform.position.y < BeeManager.GetMinCameraBorder().y -3){
             Destroy(gameObject);
         }
     }
