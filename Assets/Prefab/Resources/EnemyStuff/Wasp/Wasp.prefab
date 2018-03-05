@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1590782139349122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.61, y: 2.09, z: -1}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 1}
   m_Children:
   - {fileID: 4266307966039880}
   m_Father: {fileID: 0}
@@ -362,6 +362,7 @@ MonoBehaviour:
   fMoveSpeed: 1.8
   fRadius: 1.5
   fFireRate: 8
+  wasp_shoot: {fileID: 0}
 --- !u!114 &114365628903949122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,10 +374,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e230496ea4c2047933cecfeabbf1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHitPoints: 8
+  fHitPoints: 7
   fHitFlashSpeed: 0.1
   iScoreValue: 500
-  fDamageFireRateMultiplier: 0.75
+  fDamageFireRateMultiplier: 0.8
+  wasp_hurt: {fileID: 0}
+  wasp_death: {fileID: 0}
 --- !u!212 &212818902734356144
 SpriteRenderer:
   m_ObjectHideFlags: 1
