@@ -13,14 +13,24 @@ public class Honeycomb : MonoBehaviour
 
     bool bHasCollided;
     bool bCalculatedShrinkRate;
+    bool bHasGivenScore;
+
+    public AudioClip bar_feedback;
+    private AudioSource source;
 
     public Vector3 v3TargetPos;
     Vector3 v3ChangeScale;
 
-	// Use this for initialization
-	void Start (){
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();      
+    }
+
+    // Use this for initialization
+    void Start (){
         bHasCollided = false;
         bCalculatedShrinkRate = false;
+        bHasGivenScore = false;
     }
 	
 	// Update is called once per frame
@@ -57,10 +67,17 @@ public class Honeycomb : MonoBehaviour
         }
 
         if(transform.position.x == v3TargetPos.x) {
+
             if (BeeManager.fHoneyCount < FindObjectOfType<BeeManager>().fHoneyCountMax){
-                BeeManager.fHoneyCount += iHoneyValue;
-                ScoreManager.iScore += iScoreValue;
-                Destroy(gameObject);
+                if (!bHasGivenScore) {
+                    BeeManager.fHoneyCount += iHoneyValue;
+                    ScoreManager.iScore += iScoreValue;
+                    bHasGivenScore = true;
+                    source.PlayOneShot(bar_feedback, 1F);
+                }
+               
+                
+                Destroy(gameObject,2);
             }
         }
     }

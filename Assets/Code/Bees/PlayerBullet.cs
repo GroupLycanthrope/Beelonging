@@ -35,7 +35,7 @@ public class PlayerBullet : MonoBehaviour {
 
         transform.position = v2Position;
 
-        if (transform.position.x > BeeManager.GetMaxCameraBorder().x + 1){
+        if (transform.position.x > BeeManager.GetMaxCameraBorder().x + 0.1f){
             Destroy(gameObject);
         }
     }

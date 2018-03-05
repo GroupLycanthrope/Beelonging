@@ -28,7 +28,17 @@ public class WaspController : MonoBehaviour {
     bool bInitialPosDecided;
     float fInitialPos;
 
+    public AudioClip wasp_shoot;
+    
+    private AudioSource source;
+
+
     WaspCollision wasp;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     // Use this for initialization
     void Start () {
@@ -52,7 +62,7 @@ public class WaspController : MonoBehaviour {
                 GameObject WaspBullet = Instantiate(xProjectile);
                 WaspBullet.transform.position = xProjectileOrigin.transform.position;
                 fFireTimer = fFireRate;
-                
+                source.PlayOneShot(wasp_shoot, 1F);
             }
                       
             MoveWasp();
@@ -101,7 +111,7 @@ public class WaspController : MonoBehaviour {
             v3TargetPos.x = v3OriginalPosition.x + v3TargetPos.x;
             v3TargetPos.y = v3OriginalPosition.y + v3TargetPos.y;
 
-            if(v3TargetPos.y >= BeeManager.GetMaxCameraBorder().y- 0.5f) {
+            if(v3TargetPos.y >= BeeManager.GetMaxCameraBorder().y - 1) {
                 v3TargetPos.y = BeeManager.GetMaxCameraBorder().y - 0.5f;
             }
 
@@ -110,7 +120,7 @@ public class WaspController : MonoBehaviour {
                 v3TargetPos.x = BeeManager.GetMaxCameraBorder().x - 1;
             }
 
-            if (v3TargetPos.y <= BeeManager.GetMinCameraBorder().y + 0.5f) {
+            if (v3TargetPos.y <= BeeManager.GetMinCameraBorder().y + 1) {
                 v3TargetPos.y = BeeManager.GetMaxCameraBorder().y + 0.5f;
             }
 

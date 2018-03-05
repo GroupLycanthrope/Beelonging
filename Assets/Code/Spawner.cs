@@ -93,30 +93,36 @@ public class Spawner : MonoBehaviour{
                     }
 
                     if (aSpawnData[iSpawnerAt - 1].bAllKilled == true || aSpawnData[iSpawnerAt - 1].bAllDespawned == true){
-                        for(int i = 0; i < aAllEnemies.Length; i++) {
-                            if(aAllEnemies[i] != null && aAllEnemies[i].transform.position.x <= BeeManager.GetMinCameraBorder().x) {
-                                abAllEnemiesDespawned[i] = true;
+                        if(aAllEnemies != null) {
+                            for (int i = 0; i < aAllEnemies.Length; i++){
+                                if (aAllEnemies[i] != null && aAllEnemies[i].transform.position.x <= BeeManager.GetMinCameraBorder().x){
+                                    abAllEnemiesDespawned[i] = true;
+                                }
                             }
                         }
+                        
                         if (bNewWave) {
-                            foreach(bool despawned in abAllEnemiesDespawned) {
-                                if(despawned == true) {
-                                    bAllEnemiesDespawned = true;
+                            if(abAllEnemiesDespawned != null) {
+                                foreach (bool despawned in abAllEnemiesDespawned){
+                                    if (despawned == true){
+                                        bAllEnemiesDespawned = true;
+                                    }
+                                    else{
+                                        bAllEnemiesDespawned = false;
+                                        break;
+                                    }
                                 }
-                                else {
-                                    bAllEnemiesDespawned = false;
-                                    break;
+                                foreach (bool killed in abAllEnemiesDespawned){
+                                    if (killed == false){
+                                        bAllEnemiesDied = true;
+                                    }
+                                    else{
+                                        bAllEnemiesDied = false;
+                                        break;
+                                    }
                                 }
                             }
-                            foreach (bool killed in abAllEnemiesDespawned){
-                                if (killed == false){
-                                    bAllEnemiesDied = true;
-                                }
-                                else{
-                                    bAllEnemiesDied = false;
-                                    break;
-                                }
-                            }
+
                         }
                     }
                 }

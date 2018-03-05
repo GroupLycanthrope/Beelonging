@@ -14,7 +14,18 @@ public class WaspCollision : MonoBehaviour {
 
     private bool bIsDead = false;
 
+    public AudioClip wasp_hurt;
+    public AudioClip wasp_death;
+    private AudioSource source;
+
+
+
     WaspController wasp;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -31,6 +42,7 @@ public class WaspCollision : MonoBehaviour {
             GetComponent<PolygonCollider2D>().enabled = false;
             Destroy(gameObject, 1);
             bIsDead = true;
+            source.PlayOneShot(wasp_death, 1F);
             ScoreManager.iScore += iScoreValue;
         }
     }
@@ -38,10 +50,12 @@ public class WaspCollision : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D p_xOtherCollider){
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet")){
             TakeDamage(p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage);
+            source.PlayOneShot(wasp_hurt, 1F);
         }
 
         if (p_xOtherCollider.gameObject.CompareTag("Bee")){
             TakeDamage(1);
+            source.PlayOneShot(wasp_hurt, 1F);
         }
     }
 
