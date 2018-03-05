@@ -18,6 +18,10 @@ public class BeeManager : MonoBehaviour
 
     public static bool bFormationActive;
 
+    bool bProgress1;
+    bool bProgress2;
+    bool bProgress3;
+
     public GameObject goGameOverScreen;
     public GameObject goPauseMenu;
 
@@ -30,8 +34,18 @@ public class BeeManager : MonoBehaviour
     static private Vector3 v3MaxCameraBorders;
     static private Vector3 v3MinCameraBorder;
 
-	// Use this for initialization
-	void Start ()
+    public AudioClip prog1;
+    public AudioClip prog2;
+    public AudioClip prog3;
+    private AudioSource source;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    // Use this for initialization
+    void Start ()
 	{
         v3MaxCameraBorders = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         v3MinCameraBorder = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
@@ -45,12 +59,33 @@ public class BeeManager : MonoBehaviour
         //bIsInvincible = false;
         bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
-	}
+
+        bProgress1 = true;
+        bProgress2 = true;
+        bProgress3 = true;
+
+
+    }
 
     // Update is called once per frame
-    void Update ()
-	{
-	    if (fHoneyCount < 0)
+    void Update (){
+
+        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) <= 30 && Spawner.GetProcentOfWave(Spawner.GetWaveAt()) >= 20 && bProgress1) {
+            source.PlayOneShot(prog1, 1F);
+            bProgress1 = false;
+        }
+        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) <= 60 && Spawner.GetProcentOfWave(Spawner.GetWaveAt()) >= 40 && bProgress2)
+        {
+            source.PlayOneShot(prog2, 1F);
+            bProgress2 = false;
+        }
+        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) <= 100 && Spawner.GetProcentOfWave(Spawner.GetWaveAt()) >= 70 && bProgress3)
+        {
+            source.PlayOneShot(prog3, 1F);
+            bProgress3 = false;
+        }
+
+        if (fHoneyCount < 0)
 	    {
 	        bFormationActive = false;
 	    }

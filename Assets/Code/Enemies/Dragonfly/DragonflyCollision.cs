@@ -22,12 +22,21 @@ public class DragonflyCollision : MonoBehaviour
     public Sprite sHoneyDeadSprite;
     public Sprite sBeeCollisionSprite;
 
-    private bool bIsDead = false;
+    public AudioClip df_hurt;
+    public AudioClip df_death;
+    private AudioSource source;
 
-	// Use this for initialization
-	void Start ()
-	{
-		
+    private bool bIsDead = false;
+    private bool bHasPlayedSound;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    // Use this for initialization
+    void Start (){
+        bHasPlayedSound = false;
 	}
 	
 	// Update is called once per frame
@@ -39,9 +48,13 @@ public class DragonflyCollision : MonoBehaviour
 	        Destroy(gameObject);
 	    }
 
-        if (bIsDead)
-	    {
-	        CollisionDrop();
+        if (bIsDead){
+            if (!bHasPlayedSound) {
+                source.PlayOneShot(df_death, 1F);
+                bHasPlayedSound = true;
+            }
+            
+            CollisionDrop();
         }
 
     }
@@ -53,7 +66,7 @@ public class DragonflyCollision : MonoBehaviour
         {
             if (fHitPoints <= 1
                 && !bIsDead)
-            { 
+            {
                 GetComponent<PolygonCollider2D>().enabled = false;
                 //GetComponentInChildren<SpriteRenderer>().enabled = false;
                 bIsDead = true;
@@ -71,6 +84,7 @@ public class DragonflyCollision : MonoBehaviour
             }
             else
             {
+                source.PlayOneShot(df_hurt, 1F);
                 TakeDamage(1);
             }
         }
