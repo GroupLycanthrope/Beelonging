@@ -49,7 +49,6 @@ public class AIShooting : MonoBehaviour
 
     public void Shoot()
     {
-
         GameObject newBullet = Instantiate(Resources.Load("BeeStuff/Player/PlayerBullet")) as GameObject;
         newBullet.transform.position = goBulletStartPosition.transform.position;
         fNextShot = Time.time + fFireRate;

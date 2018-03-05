@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour{
     float fTimer;
 
     static public int iSpawnerAt;
+
     public int iSkipEntries;
 
     private bool bControllBool;
@@ -176,6 +177,6 @@ public class Spawner : MonoBehaviour{
     }
     
     static public float GetProcentOfWave(int p_iWave) {
-        return (p_iWave / aCopyofSpawnData.Count) * 100;
+        return ((float)p_iWave / (float)aCopyofSpawnData.Count) * 100;
     }
 }

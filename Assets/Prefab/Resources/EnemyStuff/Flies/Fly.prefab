@@ -267,7 +267,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f84d5ddf782085e4dbec597509cffe08, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c74d6f24a5c5284098ad65c0963fc7b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -373,9 +373,8 @@ MonoBehaviour:
   fDropMaxVelocity: 3
   fDropMaxY: -100
   fDeadScrollingSpeed: 2
-  fDespawnX: 20
   iScoreValue: 100
-  fly_dead: {fileID: 8300000, guid: f84d5ddf782085e4dbec597509cffe08, type: 3}
+  fly_dead: {fileID: 8300000, guid: 3c74d6f24a5c5284098ad65c0963fc7b, type: 3}
   sHoneyDeadSprite: {fileID: 21300000, guid: a1f2024cf3053cb4286299fac204e053, type: 3}
   sBeeCollisionSprite: {fileID: 21300000, guid: 24100c63ea3639a4886b578cf09e4502,
     type: 3}

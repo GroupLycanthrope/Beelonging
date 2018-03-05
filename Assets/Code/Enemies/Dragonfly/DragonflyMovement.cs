@@ -43,6 +43,16 @@ public class DragonflyMovement : MonoBehaviour
     // so it does not start to zoom while it moves normaly on to the screen
     bool bStartMoveToScreen;
 
+    bool bPlaySound;
+
+    public AudioClip df_zap;
+    private AudioSource source;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
 
     // Use this for initialization
     void Start(){
@@ -51,6 +61,7 @@ public class DragonflyMovement : MonoBehaviour
         fTimer = fZoomCooldown;
         bStartMoveToScreen = true;
         v3NormalMoveSpeed.x = -fFlyingSpeed;
+        bPlaySound = false;
     }
 
     // Update is called once per frame
@@ -71,12 +82,18 @@ public class DragonflyMovement : MonoBehaviour
         }
 
         if(!bStartMoveToScreen) {
-            if(fWaitTime <= 0) {
+            if (!bPlaySound && fTimer <= 0.35f && !bStartMoveToScreen){
+                source.PlayOneShot(df_zap, 1F);
+                bPlaySound = true;
+            }
+
+            if (fWaitTime <= 0) {
                 Zoom();
             }
         }
         if (bHasTarget) {
             MoveDragonFly();
+            
         }
 
 
@@ -140,6 +157,8 @@ public class DragonflyMovement : MonoBehaviour
         v2ZoomPos.x = fRandomX;
         v2ZoomPos.y = fRandomY;
 
+
+        
         return v2ZoomPos;
     }
 
@@ -159,7 +178,7 @@ public class DragonflyMovement : MonoBehaviour
             }
             bHasTarget = false;
             bIsAtTarget = true;
-
+            bPlaySound = false;
             if (iZoomCount == 3){
                 iZoomCount = 0;
             }
