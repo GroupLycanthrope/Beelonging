@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpawnData{
     public bool bAllDespawned;
     public bool bAllKilled;
+    public int iSkipEntries;
     public float fSortID;
     public float fWaitTime;
     public GameObject xSpawnObject;
@@ -17,8 +18,6 @@ public class Spawner : MonoBehaviour{
     float fTimer;
 
     static public int iSpawnerAt;
-
-    public int iSkipEntries;
 
     private bool bControllBool;
     public bool bHasList;
@@ -55,13 +54,15 @@ public class Spawner : MonoBehaviour{
                 if (bNewWave && bIsScreenEmpty) {
                     fTimer -= Time.deltaTime;
                     if (fTimer <= 0) {
-                        if (bAllEnemiesDespawned || bAllEnemiesDied) { 
-                            iSpawnerAt += iSkipEntries;
-                            bAllEnemiesDespawned = false;
-                            bAllEnemiesDied = false;
-                            abAllEnemiesDespawned = new bool[0];
-                            aAllEnemies = new GameObject[0];
+
+                        if(iSpawnerAt != 0 && aSpawnData[iSpawnerAt].xSpawnObject != null) {
+                            if (!bAllEnemiesDespawned && aSpawnData[iSpawnerAt-1].bAllDespawned || !bAllEnemiesDied && aSpawnData[iSpawnerAt-1].bAllKilled){
+                                iSpawnerAt += aSpawnData[iSpawnerAt-1].iSkipEntries;
+                                abAllEnemiesDespawned = new bool[0];
+                                aAllEnemies = new GameObject[0];
+                            }
                         }
+                        
 
                         if (aSpawnData[iSpawnerAt].xSpawnObject != null){
                             GameObject spawn = Instantiate(aSpawnData[iSpawnerAt].xSpawnObject, this.transform);
