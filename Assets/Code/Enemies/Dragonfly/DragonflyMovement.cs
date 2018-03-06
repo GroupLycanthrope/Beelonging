@@ -55,7 +55,8 @@ public class DragonflyMovement : MonoBehaviour
 
 
     // Use this for initialization
-    void Start(){
+    void Start()
+    {
         fWaitTime = Random.Range(0f, fMaxWaitTimeBeforeZooming);
         v3OriginalYPosition.y = transform.position.y;
         fTimer = fZoomCooldown;
@@ -68,72 +69,82 @@ public class DragonflyMovement : MonoBehaviour
     void Update()
     {
         fWaitTime -= Time.deltaTime;
-        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 3 ){
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 3)
+        {
             Destroy(gameObject);
         }
         // clocker
         fTimer -= Time.deltaTime;
         // normal flying
-        if(transform.position.x > 7) {
+        if (transform.position.x > BeeManager.GetMaxCameraBorder().x - 1)
+        {
             transform.position += v3NormalMoveSpeed;
         }
-        else { 
+        else
+        {
             bStartMoveToScreen = false;
         }
 
-        if(!bStartMoveToScreen) {
-            if (!bPlaySound && fTimer <= 0.35f && !bStartMoveToScreen){
+        if (!bStartMoveToScreen)
+        {
+            if (!bPlaySound && fTimer <= 0.35f && !bStartMoveToScreen)
+            {
                 source.PlayOneShot(df_zap, 1F);
                 bPlaySound = true;
             }
 
-            if (fWaitTime <= 0) {
+            if (fWaitTime <= 0)
+            {
                 Zoom();
             }
         }
-        if (bHasTarget) {
+        if (bHasTarget)
+        {
             MoveDragonFly();
-            
+
         }
 
 
-        if (fTimer <= 0){
+        if (fTimer <= 0)
+        {
             bRestartTimer = true;
         }
     }
-    
-    void Zoom() {
-        
-        if (iZoomCount == 0 && fTimer <= 0) {
+
+    void Zoom()
+    {
+
+        if (iZoomCount == 0 && fTimer <= 0)
+        {
             v3ZoomDestination = SetZoomPos();
 
-            // checks so it is not out of bounds
-            if(v3ZoomDestination.y >= 5.4F) {
-                v3ZoomDestination.y -= 1;
+            if (v3ZoomDestination.y >= BeeManager.GetMaxCameraBorder().y - 1)
+            {
+                v3ZoomDestination.y = BeeManager.GetMaxCameraBorder().y - 1;
             }
-            if(v3ZoomDestination.y <= -5.4) {
-                v3ZoomDestination.y += 1;
+            if (v3ZoomDestination.y <= BeeManager.GetMinCameraBorder().y + 1)
+            {
+                v3ZoomDestination.y = BeeManager.GetMinCameraBorder().y + 1;
             }
+
             // omg it has a target to zoom to
             bHasTarget = true;
             iZoomCount += 1;
         }
-        else if(iZoomCount == 1 && fTimer <= 0 && bIsAtTarget == true) {
+
+        else if (iZoomCount == 1 && fTimer <= 0 && bIsAtTarget == true)
+        {
             // right I only want to save the Y axis so I can add it with -1 to get it to move to the other way later in the script other wise it is copied from before
             Vector3 v3SaveDesti = v3ZoomDestination;
             v3ZoomDestination = SetZoomPos();
             // here
             v3ZoomDestination.y = v3SaveDesti.y * -1;
-            if (v3ZoomDestination.y >= 4.6F){
-                v3ZoomDestination.y -= 1;
-            }
-            if (v3ZoomDestination.y <= -4.6F){
-                v3ZoomDestination.y += 1;
-            }
+
             bHasTarget = true;
             iZoomCount += 1;
         }
-        else if (iZoomCount == 2 && fTimer <= 0 && bIsAtTarget == true) {
+        else if (iZoomCount == 2 && fTimer <= 0 && bIsAtTarget == true)
+        {
             // this is copied before
             v3ZoomDestination = SetZoomPos();
             // haha almost got you... it goes back to the original Y pos, because design fluff.
@@ -143,7 +154,8 @@ public class DragonflyMovement : MonoBehaviour
         }
     }
 
-    Vector2 SetZoomPos() {
+    Vector2 SetZoomPos()
+    {
         Vector2 v2ZoomPos;
 
         // fPoint decide how large each jump is;
@@ -158,28 +170,33 @@ public class DragonflyMovement : MonoBehaviour
         v2ZoomPos.y = fRandomY;
 
 
-        
+
         return v2ZoomPos;
     }
 
 
-    void MoveDragonFly() {
-        if(transform.position.x > v3ZoomDestination.x) {
+    void MoveDragonFly()
+    {
+        if (transform.position.x > v3ZoomDestination.x)
+        {
             // this code snippet is my darling I love it sooo much
             transform.position = Vector3.MoveTowards(transform.position, v3ZoomDestination, fZoomSpeed * Time.deltaTime);
             // had to add this part because unity is a bich and did not want to do as I wanted to at first
             bIsAtTarget = false;
         }
-        else if (transform.position.x <= v3ZoomDestination.x){
+        else if (transform.position.x <= v3ZoomDestination.x)
+        {
             // the reset logic so it zooms again later. It is like a cluster fuck but I do not have enough energy to fix it so joke on you :D
-            if(bRestartTimer == true) {
+            if (bRestartTimer == true)
+            {
                 fTimer = fZoomCooldown;
                 bRestartTimer = false;
             }
             bHasTarget = false;
             bIsAtTarget = true;
             bPlaySound = false;
-            if (iZoomCount == 3){
+            if (iZoomCount == 3)
+            {
                 iZoomCount = 0;
             }
         }
