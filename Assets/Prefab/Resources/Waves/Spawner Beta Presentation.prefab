@@ -232,14 +232,14 @@ MonoBehaviour:
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 25
-    fWaitTime: 0.5
-    xSpawnObject: {fileID: 1556012359526698, guid: 1fe567b8dd535c447bd46361362bae51,
+    fWaitTime: 1
+    xSpawnObject: {fileID: 1937658855738380, guid: 64749bf18daf3f24baa6b504eb8d9f12,
       type: 2}
   - bAllDespawned: 0
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 26
-    fWaitTime: 0.5
+    fWaitTime: 1
     xSpawnObject: {fileID: 1967409133611602, guid: d003239f040c5c740a5de7defddaf23c,
       type: 2}
   xWinningScreen: {fileID: 0}
