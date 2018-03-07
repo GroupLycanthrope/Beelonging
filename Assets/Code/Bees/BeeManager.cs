@@ -50,6 +50,8 @@ public class BeeManager : MonoBehaviour
         v3MaxCameraBorders = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         v3MinCameraBorder = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
 
+        Cursor.visible = false;
+
         iSwarmMaxCount = iSwarmMax;
 	    Time.timeScale = 1;
         fHoneyCount = fHoneyStartCount;
@@ -70,11 +72,11 @@ public class BeeManager : MonoBehaviour
     // Update is called once per frame
     void Update (){
 
-        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) <= 30 && Spawner.GetProcentOfWave(Spawner.GetWaveAt()) >= 20 && bProgress1) {
+        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) <= 39 && Spawner.GetProcentOfWave(Spawner.GetWaveAt()) >= 20 && bProgress1) {
             source.PlayOneShot(prog1, 1F);
             bProgress1 = false;
         }
-        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) <= 60 && Spawner.GetProcentOfWave(Spawner.GetWaveAt()) >= 40 && bProgress2)
+        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) <= 69 && Spawner.GetProcentOfWave(Spawner.GetWaveAt()) >= 40 && bProgress2)
         {
             source.PlayOneShot(prog2, 1F);
             bProgress2 = false;
@@ -83,6 +85,9 @@ public class BeeManager : MonoBehaviour
         {
             source.PlayOneShot(prog3, 1F);
             bProgress3 = false;
+        }
+        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) == 100){
+            Cursor.visible = true;
         }
 
         if (fHoneyCount < 0)
@@ -95,14 +100,17 @@ public class BeeManager : MonoBehaviour
 	    }
         if (Input.GetKeyDown(KeyCode.Escape))
 	    {
-	        if (!goPauseMenu.activeSelf)
+            
+            if (!goPauseMenu.activeSelf)
 	        {
-	            goPauseMenu.SetActive(true);
+                Cursor.visible = true;
+                goPauseMenu.SetActive(true);
 	            Time.timeScale = 0;
 	        }
 	        else
 	        {
-	            goPauseMenu.SetActive(false);
+                Cursor.visible = false ;
+                goPauseMenu.SetActive(false);
 	            Time.timeScale = 1;
 	        }
 	    }
@@ -127,6 +135,7 @@ public class BeeManager : MonoBehaviour
 	    if (aSwarm.Count == 0 
 	        && bPlayerDead)
 	    {
+            Cursor.visible = true;
             goGameOverScreen.SetActive(true);
         }
         else if (bPlayerDead == true)

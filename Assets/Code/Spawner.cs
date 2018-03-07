@@ -4,6 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class SpawnData{
+    public bool bIsTutorial;
     public bool bAllDespawned;
     public bool bAllKilled;
     public int iSkipEntries;
@@ -20,12 +21,14 @@ public class Spawner : MonoBehaviour{
     static public int iSpawnerAt;
 
     private bool bControllBool;
-    public bool bHasList;
+    bool bHasList;
 
     private bool bNewWave;
     private bool bIsScreenEmpty;
     private bool bHasSortList;
-    
+
+    static bool bSkipTutorial;
+
     bool bAllEnemiesDied;
     bool bAllEnemiesDespawned;
 
@@ -51,6 +54,13 @@ public class Spawner : MonoBehaviour{
         if (Application.isPlaying){
 
             if (iSpawnerAt < aSpawnData.Count){
+
+                if(bSkipTutorial && aSpawnData[iSpawnerAt].bIsTutorial) {
+                    print("test");
+                    iSpawnerAt += 1;
+                }
+
+
                 if (bNewWave && bIsScreenEmpty) {
                     fTimer -= Time.deltaTime;
                     if (fTimer <= 0) {
@@ -131,17 +141,12 @@ public class Spawner : MonoBehaviour{
 
             }
 
-            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("PickUp")){
+            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("PickUp") && !GameObject.FindGameObjectWithTag("Tutorial")){
                 bIsScreenEmpty = true;
             }
             else {
                 bIsScreenEmpty = false;
             }
-
-            
-
-
-
 
             if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("PickUp") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee") && !GameObject.FindGameObjectWithTag("Wasp"))
             {
@@ -179,5 +184,9 @@ public class Spawner : MonoBehaviour{
     
     static public float GetProcentOfWave(int p_iWave) {
         return ((float)p_iWave / (float)aCopyofSpawnData.Count) * 100;
+    }
+
+    static public void SetTutorial(bool p_Tutorial) {
+        bSkipTutorial = p_Tutorial;
     }
 }

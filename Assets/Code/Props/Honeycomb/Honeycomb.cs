@@ -86,7 +86,7 @@ public class Honeycomb : MonoBehaviour
     {
         if (p_xOtherCollider.gameObject.CompareTag("Bee"))
         {
-            
+            fFloatingSpeed = 2;
             bHasCollided = true;
             
             Debug.Log(BeeManager.fHoneyCount.ToString());

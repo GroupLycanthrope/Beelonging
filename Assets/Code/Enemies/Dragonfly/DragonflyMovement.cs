@@ -5,7 +5,7 @@ using UnityEngine;
 public class DragonflyMovement : MonoBehaviour
 {
     //Count on what zoom it is on
-    public int iZoomCount;
+    private int iZoomCount;
     // starting speed it moves on the screen with
     public float fFlyingSpeed;
     //ZOOOOOOOOOOOOOM SPEEED!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -21,14 +21,14 @@ public class DragonflyMovement : MonoBehaviour
 
     private float fWaitTime;
     //Clock to next zoom
-    public float fTimer;
+    private float fTimer;
     // get the random point to zoom to
     private float fRandomX;
     private float fRandomY;
     private float fPointX;
     private float fPointY;
     // The destination on the ZOOOOOOOOOOOOOOOOOOOOOOOOOOOM
-    public Vector3 v3ZoomDestination;
+    private Vector3 v3ZoomDestination;
     //the name says it all
     Vector3 v3OriginalYPosition;
     // had to add a vector so the damn thing could move
@@ -37,9 +37,9 @@ public class DragonflyMovement : MonoBehaviour
     // checks if the dragonfly is at the targeted destination so next zoom can be initated
     bool bIsAtTarget;
     // this becomes true when the dragonfly hits it target
-    public bool bRestartTimer;
+    private bool bRestartTimer;
     // if it has a target to move to (zooom)
-    public bool bHasTarget;
+    private bool bHasTarget;
     // so it does not start to zoom while it moves normaly on to the screen
     bool bStartMoveToScreen;
 

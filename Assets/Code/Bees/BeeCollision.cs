@@ -58,7 +58,8 @@ public class BeeCollision : MonoBehaviour
     {
         if (p_xOtherCollider.gameObject.CompareTag("Enemy") 
             ||p_xOtherCollider.gameObject.CompareTag("Web")
-            ||p_xOtherCollider.gameObject.CompareTag("Stinger"))
+            ||p_xOtherCollider.gameObject.CompareTag("Stinger")
+            ||p_xOtherCollider.gameObject.CompareTag("Wasp"))
         {
             GetComponent<Animator>().enabled = false;
             source.PlayOneShot(deathsound, 1F);
@@ -87,7 +88,7 @@ public class BeeCollision : MonoBehaviour
             gameObject.name = "DeadBee";
         }
 
-        if (p_xOtherCollider.gameObject.CompareTag("PickUp")) {
+        if (p_xOtherCollider.gameObject.CompareTag("PickUp") && p_xOtherCollider.gameObject.GetComponent<Honeycomb>()) {
 
             source.PlayOneShot(honeycomb_pickup, 1F);
         }
