@@ -11,7 +11,7 @@ public class Honeycomb : MonoBehaviour
     public int iHoneyValue;
     public int iScoreValue;
 
-    bool bHasCollided;
+    public bool bHasCollided;
     bool bCalculatedShrinkRate;
     bool bHasGivenScore;
 

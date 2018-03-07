@@ -16,7 +16,7 @@ public class StopMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(transform.position.x <= v3StopToMove.x && !bStopNow) {
-            if (gameObject.GetComponent<CircleCollider2D>()) {
+            if (gameObject.GetComponent<CircleCollider2D>() && !gameObject.GetComponent<Honeycomb>().bHasCollided) {
                 transform.gameObject.GetComponent<Honeycomb>().fFloatingSpeed = 0;
                 bStopNow = true;
             }

@@ -48,7 +48,7 @@ public class TutorialButtonMove : MonoBehaviour {
 	   
 
         foreach (GameObject obj in TutorialButtons) {
-            if(obj != null) {
+            if(obj != null ) {
                 if (!obj.GetComponent<TutorialButton>().GetIsPressed()){
                     bAllPressed = false;
                     break;
