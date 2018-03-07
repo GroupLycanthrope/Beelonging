@@ -57,7 +57,7 @@ MonoBehaviour:
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 1
-    fWaitTime: 2
+    fWaitTime: 1.5
     xSpawnObject: {fileID: 1517732432264054, guid: d50f9618442cec34bb2c9d23e355de83,
       type: 2}
   - bAllDespawned: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 12
-    fWaitTime: 0.25
+    fWaitTime: 0
     xSpawnObject: {fileID: 1321060393569556, guid: 601c33d1564608e4c9d61d8e6c491eab,
       type: 2}
   - bAllDespawned: 0
@@ -227,5 +227,19 @@ MonoBehaviour:
     fSortID: 24
     fWaitTime: 0.5
     xSpawnObject: {fileID: 1722609805579918, guid: acd794e4b8ce29845811de5db8f38d0b,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 25
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1556012359526698, guid: 1fe567b8dd535c447bd46361362bae51,
+      type: 2}
+  - bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 26
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1967409133611602, guid: d003239f040c5c740a5de7defddaf23c,
       type: 2}
   xWinningScreen: {fileID: 0}
