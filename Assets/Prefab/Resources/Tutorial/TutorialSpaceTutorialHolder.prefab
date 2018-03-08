@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1332809344077720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 4.792368, y: -0.73527396, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4978484094408488}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359222167779974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.038314488}
+  m_LocalPosition: {x: 0.28, y: 0.28, z: 0.038314488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4016147344511092}
@@ -113,9 +113,9 @@ MonoBehaviour:
   sButtonNOTPressed: {fileID: 21300000, guid: 0a33eb676694054408166b0c3834b0d8, type: 3}
   sButtonPressed: {fileID: 21300000, guid: 2208c8ca44c603e4d99e8625250e99cb, type: 3}
   iAmountOfTimePressed: 3
-  fKeyDownTimer: 2
-  bNeedAmountPress: 1
-  bNeedHoldDown: 0
+  fKeyDownTimer: 3
+  bNeedAmountPress: 0
+  bNeedHoldDown: 1
   bIsToggle: 0
   bIsPressed: 0
   sButtonToPress: space

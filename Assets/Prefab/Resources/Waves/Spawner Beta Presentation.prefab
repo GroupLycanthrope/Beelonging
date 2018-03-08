@@ -57,16 +57,16 @@ MonoBehaviour:
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 1
-    fWaitTime: 1.5
+    fWaitTime: 0
     xSpawnObject: {fileID: 1097316912400272, guid: 24f1fcb6645840f489cfcd445cc481d0,
       type: 2}
-  - bIsTutorial: 0
+  - bIsTutorial: 1
     bAllDespawned: 0
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 2
-    fWaitTime: 0.5
-    xSpawnObject: {fileID: 1923623389222226, guid: 4b5a2635d0300344eb2c3d3e4b310472,
+    fWaitTime: 0
+    xSpawnObject: {fileID: 1332809344077720, guid: 9d2b77e2be1b1644da310f29bbd0cc66,
       type: 2}
   - bIsTutorial: 0
     bAllDespawned: 0
@@ -76,37 +76,37 @@ MonoBehaviour:
     fWaitTime: 0
     xSpawnObject: {fileID: 1920382828593444, guid: 927477beb882db941bf18e93d983cae0,
       type: 2}
-  - bIsTutorial: 0
+  - bIsTutorial: 1
     bAllDespawned: 0
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 4
     fWaitTime: 0.5
-    xSpawnObject: {fileID: 1814455732582558, guid: b735f8db74ccbaf48bca74bf208c4395,
+    xSpawnObject: {fileID: 1158284545753792, guid: 8d94fe56ce5bbd94c9f333759d33d80d,
       type: 2}
-  - bIsTutorial: 0
+  - bIsTutorial: 1
     bAllDespawned: 0
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 5
     fWaitTime: 0
-    xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
+    xSpawnObject: {fileID: 1541538346341482, guid: c4c1bb0678d1df449abede9223df49e9,
       type: 2}
-  - bIsTutorial: 0
+  - bIsTutorial: 1
     bAllDespawned: 0
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 6
-    fWaitTime: 0.5
-    xSpawnObject: {fileID: 1386867940197332, guid: 217b738a512fc4745aa8e656736aa1f5,
+    fWaitTime: 0
+    xSpawnObject: {fileID: 1761513814360770, guid: 1d3fb582c6639b34f9c74045616398de,
       type: 2}
-  - bIsTutorial: 0
+  - bIsTutorial: 1
     bAllDespawned: 0
     bAllKilled: 0
     iSkipEntries: 0
     fSortID: 7
     fWaitTime: 0
-    xSpawnObject: {fileID: 1811095952162182, guid: e48523b9c2aa3f149972309b8ba237b8,
+    xSpawnObject: {fileID: 1146005551996012, guid: 134d1ce70313f5f45a49721be3c33681,
       type: 2}
   - bIsTutorial: 0
     bAllDespawned: 0

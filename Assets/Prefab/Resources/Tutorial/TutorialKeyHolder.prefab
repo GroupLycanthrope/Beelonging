@@ -315,9 +315,9 @@ MonoBehaviour:
   sButtonPressed: {fileID: 21300000, guid: df41794fceb060a4e8687a16b7fb8821, type: 3}
   iAmountOfTimePressed: 1
   fKeyDownTimer: 3
-  bNeedAmountPress: 0
+  bNeedAmountPress: 1
   bNeedHoldDown: 0
-  bIsToggle: 1
+  bIsToggle: 0
   bIsPressed: 0
   sButtonToPress: left
 --- !u!114 &114681562683374188
@@ -335,9 +335,9 @@ MonoBehaviour:
   sButtonPressed: {fileID: 21300000, guid: df41794fceb060a4e8687a16b7fb8821, type: 3}
   iAmountOfTimePressed: 1
   fKeyDownTimer: 3
-  bNeedAmountPress: 0
+  bNeedAmountPress: 1
   bNeedHoldDown: 0
-  bIsToggle: 1
+  bIsToggle: 0
   bIsPressed: 0
   sButtonToPress: up
 --- !u!114 &114727302314961306
@@ -355,9 +355,9 @@ MonoBehaviour:
   sButtonPressed: {fileID: 21300000, guid: df41794fceb060a4e8687a16b7fb8821, type: 3}
   iAmountOfTimePressed: 1
   fKeyDownTimer: 3
-  bNeedAmountPress: 0
+  bNeedAmountPress: 1
   bNeedHoldDown: 0
-  bIsToggle: 1
+  bIsToggle: 0
   bIsPressed: 0
   sButtonToPress: down
 --- !u!114 &114832100558081918
@@ -375,9 +375,9 @@ MonoBehaviour:
   sButtonPressed: {fileID: 21300000, guid: df41794fceb060a4e8687a16b7fb8821, type: 3}
   iAmountOfTimePressed: 1
   fKeyDownTimer: 3
-  bNeedAmountPress: 0
+  bNeedAmountPress: 1
   bNeedHoldDown: 0
-  bIsToggle: 1
+  bIsToggle: 0
   bIsPressed: 0
   sButtonToPress: right
 --- !u!212 &212092976685992038
