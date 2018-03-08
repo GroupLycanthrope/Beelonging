@@ -87,7 +87,7 @@ MonoBehaviour:
   v3OffScreen: {x: 0, y: 0, z: 0}
   TutorialButtons: []
   fMoveSpeed: 4
-  bDoNotStopMove: 1
+  bDoNotStopMove: 0
 --- !u!114 &114309693909895562
 MonoBehaviour:
   m_ObjectHideFlags: 1
