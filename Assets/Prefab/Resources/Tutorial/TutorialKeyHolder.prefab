@@ -247,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1097316912400272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.17, y: 2.14, z: -0.07090276}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4003315490514818}
@@ -299,6 +299,7 @@ MonoBehaviour:
   v3OffScreen: {x: 0, y: 0, z: 0}
   TutorialButtons: []
   fMoveSpeed: 4
+  bDoNotStopMove: 0
 --- !u!114 &114290047814424460
 MonoBehaviour:
   m_ObjectHideFlags: 1

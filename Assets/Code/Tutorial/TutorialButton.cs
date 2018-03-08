@@ -77,7 +77,7 @@ public class TutorialButton : MonoBehaviour {
     }
 
     void RemoveTheButton() {
-        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 3 || transform.position.x > BeeManager.GetMaxCameraBorder().x + 10){
+        if (transform.position.x < BeeManager.GetMinCameraBorder().x - 3){
             Destroy(gameObject);
         }
     }
