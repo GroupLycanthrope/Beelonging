@@ -24,7 +24,7 @@ public class GoldenBeePickUp : MonoBehaviour {
     void Start () {
         pcCollider = GetComponent<CapsuleCollider2D>();
         spRenderer = GetComponent<SpriteRenderer>();
-        fDelay = 10;
+        fDelay = 2;
         fDeathTimer = fDelay;
         //BeeSpawnPos = GameObject.Find("BeeSpawningPos");
         bSpawnBee = false;
