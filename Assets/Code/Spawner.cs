@@ -33,9 +33,9 @@ public class Spawner : MonoBehaviour{
     bool bAllEnemiesDespawned;
 
     bool[] abAllEnemiesDespawned;
-    GameObject[] aAllEnemies;
+    public GameObject[] aAllEnemies;
     GameObject[] aAllPowerUps;
-
+    public GameObject[] aAllTutorialObjects;
     public List<SpawnData> aSpawnData;
 
     static private List<SpawnData> aCopyofSpawnData;
@@ -46,7 +46,9 @@ public class Spawner : MonoBehaviour{
         iSpawnerAt = 0;
         fTimer = aSpawnData[iSpawnerAt].fWaitTime;
         bHasSortList = false;
-        
+
+        aAllTutorialObjects = GameObject.FindGameObjectsWithTag("Tutorial");
+
         aCopyofSpawnData = aSpawnData;
     }
 
@@ -56,7 +58,6 @@ public class Spawner : MonoBehaviour{
             if (iSpawnerAt < aSpawnData.Count){
 
                 if(bSkipTutorial && aSpawnData[iSpawnerAt].bIsTutorial) {
-                    print("test");
                     iSpawnerAt += 1;
                 }
 

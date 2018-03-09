@@ -33,6 +33,9 @@ public class Fly : MonoBehaviour
 
     private bool bHoneyed = false;
     private bool bCollided = false;
+    private bool bActiveTrail;
+    private bool bDoOnce;
+
     private void Awake()
     {
         source = GetComponent<AudioSource>();
@@ -45,16 +48,30 @@ public class Fly : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        bActiveTrail = false;
+        bDoOnce = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<TrailRenderer>() != null) {
+            if (!bActiveTrail && bDoOnce){
+                GetComponent<TrailRenderer>().enabled = false;
+                bDoOnce = false;
+            }
+            if (bActiveTrail && bDoOnce){
+                GetComponent<TrailRenderer>().enabled = true;
+                bDoOnce = false;
+            }
+        }
+       
         
         if (bHoneyed)
         {
             FlingOff();
+            bActiveTrail = true;
+            bDoOnce = true;
         }
         else if (bCollided)
         {

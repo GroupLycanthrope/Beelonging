@@ -19,11 +19,11 @@ public class TutorialButtonMove : MonoBehaviour {
     void Start () {
         v3TargetPos.x = 0;
         v3TargetPos.y = 2;
-        v3TargetPos.z = 0;
+        v3TargetPos.z = -11;
 
         v3OffScreen.x = -20;
         v3OffScreen.y = 2;
-        v3OffScreen.z = 0;
+        v3OffScreen.z = -11;
         TutorialButtons = GameObject.FindGameObjectsWithTag("Tutorial");
 
         bDoOnce = false;
