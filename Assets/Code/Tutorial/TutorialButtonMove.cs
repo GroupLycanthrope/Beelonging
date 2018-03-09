@@ -37,26 +37,7 @@ public class TutorialButtonMove : MonoBehaviour {
                 transform.position = Vector3.MoveTowards(transform.position, v3TargetPos, step);
                
             }
-            if( transform.position.x == 0) {
-                if (!bDoOnce) {
-                    foreach (GameObject obj in TutorialButtons){
-                        if(obj != null) {
-                            obj.GetComponent<TutorialButton>().SetIsAtPos(true);
-                        }
-                    }
-                    bDoOnce = true;
-                }
-            }
-            else {
-                if (bDoOnce) {
-                    foreach (GameObject obj in TutorialButtons){
-                        if(obj != null) {
-                            obj.GetComponent<TutorialButton>().SetIsAtPos(false);
-                        }
-                    }
-                }
-                
-            }
+           
             if (bAllPressed){
                 float step = fMoveSpeed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, v3OffScreen, step);
@@ -69,7 +50,37 @@ public class TutorialButtonMove : MonoBehaviour {
             float step = fMoveSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, v3OffScreen, step);
         }
-	   
+
+        if (transform.position.x == 0){
+            if (!bDoOnce){
+                foreach (GameObject obj in TutorialButtons){
+                    if (obj != null)
+                    {
+                        obj.GetComponent<TutorialButton>().SetIsAtPos(true);
+                    }
+                }
+                bDoOnce = true;
+            }
+        }
+        else
+        {
+            if (bDoOnce && !bDoNotStopMove){
+                foreach (GameObject obj in TutorialButtons){
+                    if (obj != null){
+                        obj.GetComponent<TutorialButton>().SetIsAtPos(false);
+                    }
+                }
+            }
+            if(bDoNotStopMove) {
+                foreach (GameObject obj in TutorialButtons){
+                    if (obj != null){
+                        obj.GetComponent<TutorialButton>().SetIsAtPos(true);
+                    }
+                }
+            }
+
+        }
+
 
         foreach (GameObject obj in TutorialButtons) {
             if(obj != null ) {
