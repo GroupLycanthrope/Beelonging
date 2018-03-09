@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466369437395504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.97483, y: 0.39960647, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -183,6 +183,7 @@ MonoBehaviour:
   fFloatingSpeed: 2
   iHoneyValue: 8
   iScoreValue: 50
+  bHasCollided: 0
   bar_feedback: {fileID: 8300000, guid: 3be69a1b53b280a449c7f0449d7c36e5, type: 3}
   v3TargetPos: {x: -1, y: -3.7, z: 0}
 --- !u!212 &212773431729363944

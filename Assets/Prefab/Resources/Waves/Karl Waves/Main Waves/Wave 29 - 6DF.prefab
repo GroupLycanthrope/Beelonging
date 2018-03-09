@@ -55,18 +55,18 @@ MonoBehaviour:
   - v2DeltaPosition: {x: 1, y: 2.5}
     xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
       type: 2}
-  - v2DeltaPosition: {x: 4, y: -2.5}
+  - v2DeltaPosition: {x: 6, y: -2.5}
     xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
       type: 2}
-  - v2DeltaPosition: {x: 7, y: 2.5}
-    xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
-      type: 2}
-  - v2DeltaPosition: {x: 10, y: -2.5}
-    xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
-      type: 2}
-  - v2DeltaPosition: {x: 13, y: 2.5}
+  - v2DeltaPosition: {x: 11, y: 2.5}
     xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
       type: 2}
   - v2DeltaPosition: {x: 16, y: -2.5}
+    xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
+      type: 2}
+  - v2DeltaPosition: {x: 21, y: 2.5}
+    xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
+      type: 2}
+  - v2DeltaPosition: {x: 26, y: -2.5}
     xSpawnObject: {fileID: 1596621256433566, guid: 364623153aee7364392ac4c31d380532,
       type: 2}

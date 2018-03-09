@@ -52,6 +52,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aWaveSpawnData:
+  - v2DeltaPosition: {x: 1, y: 1}
+    xSpawnObject: {fileID: 1466369437395504, guid: 04b258b462b911441889e997ec2bd2e6,
+      type: 2}
+  - v2DeltaPosition: {x: 2, y: 2}
+    xSpawnObject: {fileID: 1466369437395504, guid: 04b258b462b911441889e997ec2bd2e6,
+      type: 2}
   - v2DeltaPosition: {x: 0, y: 0}
-    xSpawnObject: {fileID: 1866655339274010, guid: 54e44e74fa6c3bd4e89ab512f073d8b6,
+    xSpawnObject: {fileID: 1466369437395504, guid: 04b258b462b911441889e997ec2bd2e6,
+      type: 2}
+  - v2DeltaPosition: {x: 1, y: -1}
+    xSpawnObject: {fileID: 1466369437395504, guid: 04b258b462b911441889e997ec2bd2e6,
+      type: 2}
+  - v2DeltaPosition: {x: 2, y: -2}
+    xSpawnObject: {fileID: 1466369437395504, guid: 04b258b462b911441889e997ec2bd2e6,
       type: 2}
