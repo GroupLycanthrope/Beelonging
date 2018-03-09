@@ -55,16 +55,12 @@ public class Fly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<TrailRenderer>() != null) {
-            if (!bActiveTrail && bDoOnce){
-                GetComponent<TrailRenderer>().enabled = false;
-                bDoOnce = false;
-            }
-            if (bActiveTrail && bDoOnce){
-                GetComponent<TrailRenderer>().enabled = true;
-                bDoOnce = false;
-            }
+
+        if (bActiveTrail && bDoOnce){
+            gameObject.GetComponent<TrailRenderer>().enabled = true;
+            bDoOnce = false;
         }
+            
        
         
         if (bHoneyed)
