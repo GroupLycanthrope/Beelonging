@@ -115,7 +115,7 @@ MonoBehaviour:
   v3TargetPos: {x: 0, y: 0, z: 0}
   v3OffScreen: {x: 0, y: 0, z: 0}
   TutorialButtons: []
-  fMoveSpeed: 4
+  fMoveSpeed: 8.5
   bDoNotStopMove: 0
 --- !u!114 &114970490360758102
 MonoBehaviour:
@@ -131,7 +131,7 @@ MonoBehaviour:
   sButtonNOTPressed: {fileID: 21300000, guid: 0a33eb676694054408166b0c3834b0d8, type: 3}
   sButtonPressed: {fileID: 21300000, guid: 2208c8ca44c603e4d99e8625250e99cb, type: 3}
   iAmountOfTimePressed: 3
-  fKeyDownTimer: 3
+  fKeyDownTimer: 2
   bNeedAmountPress: 0
   bNeedHoldDown: 1
   bIsToggle: 0

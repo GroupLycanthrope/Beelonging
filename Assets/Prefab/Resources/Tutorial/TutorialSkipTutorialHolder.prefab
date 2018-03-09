@@ -148,7 +148,7 @@ MonoBehaviour:
   bNeedHoldDown: 1
   bIsToggle: 0
   bIsPressed: 0
-  sButtonToPress: left alt
+  sButtonToPress: space
 --- !u!212 &212485137463413334
 SpriteRenderer:
   m_ObjectHideFlags: 1
