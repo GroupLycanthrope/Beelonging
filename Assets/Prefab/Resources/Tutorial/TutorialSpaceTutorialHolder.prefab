@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 4978484094408488}
   - component: {fileID: 212560516423634594}
   - component: {fileID: 114970490360758102}
-  - component: {fileID: 114309693909895562}
   m_Layer: 0
   m_Name: SpaceTutorial
   m_TagString: Tutorial
@@ -88,17 +87,6 @@ MonoBehaviour:
   TutorialButtons: []
   fMoveSpeed: 4
   bDoNotStopMove: 0
---- !u!114 &114309693909895562
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359222167779974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe151153178e4b4689e283252fc2a92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114970490360758102
 MonoBehaviour:
   m_ObjectHideFlags: 1
