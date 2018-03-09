@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
             ResetVelocity();
         }
 
-        if (Input.GetKeyDown("x")
+        if (Input.GetKeyDown("left shift")
         && BeeManager.fHoneyCount > fFormationStartCost
         && Time.timeScale > 0
         && BeeManager.aSwarm.Count > 1)
@@ -87,12 +87,12 @@ public class PlayerController : MonoBehaviour
             BeeManager.fHoneyCount -= fFormationStartCost;
             BeeManager.bFormationActive = true;
         }
-        else if (Input.GetKeyDown("x")
+        else if (Input.GetKeyDown("left shift")
                  && BeeManager.fHoneyCount < fFormationStartCost)
         {
             BeeManager.fHoneyCount = 0;
         }
-        else if (Input.GetKeyUp("x")
+        else if (Input.GetKeyUp("left shift")
         || BeeManager.fHoneyCount <= 0)
         {
             BeeManager.bFormationActive = false;
