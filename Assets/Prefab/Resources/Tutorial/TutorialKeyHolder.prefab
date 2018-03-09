@@ -298,7 +298,7 @@ MonoBehaviour:
   v3TargetPos: {x: 0, y: 0, z: 0}
   v3OffScreen: {x: 0, y: 0, z: 0}
   TutorialButtons: []
-  fMoveSpeed: 4
+  fMoveSpeed: 8.5
   bDoNotStopMove: 0
 --- !u!114 &114290047814424460
 MonoBehaviour:
