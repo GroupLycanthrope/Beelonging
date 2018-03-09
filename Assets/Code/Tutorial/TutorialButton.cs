@@ -18,7 +18,7 @@ public class TutorialButton : MonoBehaviour {
     public bool bNeedHoldDown;
     public bool bIsToggle;
     public bool bIsPressed;
-    
+    bool IsAtPosition;
 
     public string sButtonToPress;
 
@@ -31,37 +31,39 @@ public class TutorialButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (IsAtPosition) {
 
-        if (bNeedAmountPress) {
-            if (Input.GetKeyDown(sButtonToPress)){
-                ++iPressKey;
+            if (bNeedAmountPress) {
+                if (Input.GetKeyDown(sButtonToPress)){
+                    ++iPressKey;
+                }
+                if(iAmountOfTimePressed <= iPressKey) {
+                    bIsPressed = true;
+                }
             }
-            if(iAmountOfTimePressed <= iPressKey) {
-                bIsPressed = true;
+            if (bNeedHoldDown) {
+                if (Input.GetKey(sButtonToPress)) {
+                    fTimer -= Time.deltaTime;
+                }
+                if(fTimer <= 0) {
+                    bIsPressed = true;
+                }
+                else if(Input.GetKeyUp(sButtonToPress) && fTimer >= 0.1f){
+                    fTimer = fKeyDownTimer;
+                }
             }
-        }
-        if (bNeedHoldDown) {
-            if (Input.GetKey(sButtonToPress)) {
-                fTimer -= Time.deltaTime;
-            }
-            if(fTimer <= 0) {
-                bIsPressed = true;
-            }
-            else if(Input.GetKeyUp(sButtonToPress) && fTimer >= 0.1f){
-                fTimer = fKeyDownTimer;
-            }
-        }
 
-        if (bIsToggle) {
-            if (Input.GetKeyDown(sButtonToPress)){
-                bIsPressed = !bIsPressed;
+            if (bIsToggle) {
+                if (Input.GetKeyDown(sButtonToPress)){
+                    bIsPressed = !bIsPressed;
+                }
             }
-        }
-        if (bIsPressed) {
-            ChangeSprite(true);
-        }
-        else {
-            ChangeSprite(false);
+            if (bIsPressed) {
+                ChangeSprite(true);
+            }
+            else {
+                ChangeSprite(false);
+            }
         }
 
         RemoveTheButton();
@@ -84,5 +86,9 @@ public class TutorialButton : MonoBehaviour {
 
     public bool GetIsPressed() {
         return bIsPressed;
+    }
+
+    public void SetIsAtPos(bool p_value) {
+        IsAtPosition = p_value;
     }
 }

@@ -13,6 +13,7 @@ public class TutorialButtonMove : MonoBehaviour {
 
     public bool bDoNotStopMove;
     bool bAllPressed;
+    bool bDoOnce;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +25,8 @@ public class TutorialButtonMove : MonoBehaviour {
         v3OffScreen.y = 2;
         v3OffScreen.z = 0;
         TutorialButtons = GameObject.FindGameObjectsWithTag("Tutorial");
+
+        bDoOnce = false;
 	}
 	
 	// Update is called once per frame
@@ -32,6 +35,27 @@ public class TutorialButtonMove : MonoBehaviour {
             if (transform.position.x >= 0){
                 float step = fMoveSpeed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, v3TargetPos, step);
+               
+            }
+            if( transform.position.x == 0) {
+                if (!bDoOnce) {
+                    foreach (GameObject obj in TutorialButtons){
+                        if(obj != null) {
+                            obj.GetComponent<TutorialButton>().SetIsAtPos(true);
+                        }
+                    }
+                    bDoOnce = true;
+                }
+            }
+            else {
+                if (bDoOnce) {
+                    foreach (GameObject obj in TutorialButtons){
+                        if(obj != null) {
+                            obj.GetComponent<TutorialButton>().SetIsAtPos(false);
+                        }
+                    }
+                }
+                
             }
             if (bAllPressed){
                 float step = fMoveSpeed * Time.deltaTime;
