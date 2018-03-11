@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590782139349122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.61, y: 2.09, z: -1}
+  m_LocalPosition: {x: 9.34, y: 0, z: -1}
   m_LocalScale: {x: 0.33, y: 0.33, z: 1}
   m_Children:
   - {fileID: 4266307966039880}
@@ -621,6 +621,17 @@ MonoBehaviour:
   fHitFlashSpeed: 0.1
   iScoreValue: 500
   fDamageFireRateMultiplier: 0.75
+  wasp_hurt: {fileID: 8300000, guid: 8eaa13e3558505d459cd2619f5db8500, type: 3}
+  wasp_death: {fileID: 8300000, guid: 90ececad70ca85a4da551ee49c9164da, type: 3}
+  sHoneyDeadSprite: {fileID: 21300000, guid: b7d0dadc19ec62f4ca71001210b9b450, type: 3}
+  sBeeCollisionSprite: {fileID: 21300000, guid: f6a68e018aa7f91408cdbc6f1aa54c7d,
+    type: 3}
+  bHoneyed: 0
+  bCollided: 0
+  fDropAcceleration: 0.5
+  fDropMaxVelocity: 3
+  fDropMaxY: -100
+  fDeadScrollingSpeed: 2
 --- !u!212 &212818902734356144
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -655,7 +666,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d5b645cb983350a48afe7eeb5dab9a5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -663,5 +674,5 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0

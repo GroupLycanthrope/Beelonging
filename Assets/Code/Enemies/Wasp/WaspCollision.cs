@@ -5,21 +5,31 @@ using UnityEngine;
 public class WaspCollision : MonoBehaviour {
 
     public float fHitPoints;
-
     public float fHitFlashSpeed;
+    public float fDamageFireRateMultiplier;
+    public float fDropAcceleration;
+    public float fDropMaxVelocity;
+    public float fDropMaxY;
+    public float fDeadScrollingSpeed;
+
+    private float fDropVelocity;
 
     public int iScoreValue;
 
-    public float fDamageFireRateMultiplier;
-
     private bool bIsDead = false;
+    bool bHoneyed = false;
+    bool bCollided = false;
+
 
     public AudioClip wasp_hurt;
     public AudioClip wasp_death;
     private AudioSource source;
 
+    Animator aAnim;
 
-
+    public Sprite sHoneyDeadSprite;
+    public Sprite sBeeCollisionSprite;
+   
     WaspController wasp;
 
     private void Awake()
@@ -29,6 +39,7 @@ public class WaspCollision : MonoBehaviour {
 
     private void Start()
     {
+        aAnim = gameObject.GetComponent<Animator>();
         wasp = gameObject.GetComponent<WaspController>();
     }
 
@@ -38,12 +49,26 @@ public class WaspCollision : MonoBehaviour {
         }
 
         if (fHitPoints <= 0 && !bIsDead){
-            GetComponent<SpriteRenderer>().enabled = false;
+            //GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<PolygonCollider2D>().enabled = false;
-            Destroy(gameObject, 1);
             bIsDead = true;
+            aAnim.enabled = false;
+
+            if (bIsDead && bHoneyed){
+                GetComponent<SpriteRenderer>().sprite = sHoneyDeadSprite;
+            }
+
+            if (bIsDead && bCollided){
+                GetComponent<SpriteRenderer>().sprite = sBeeCollisionSprite;
+            }
+
+            Destroy(gameObject, 1);
             source.PlayOneShot(wasp_death, 1F);
             ScoreManager.iScore += iScoreValue;
+           
+        }
+        if (bIsDead) {
+            CollisionDrop();
         }
     }
 
@@ -51,11 +76,18 @@ public class WaspCollision : MonoBehaviour {
         if (p_xOtherCollider.gameObject.CompareTag("BeeBullet")){
             TakeDamage(p_xOtherCollider.gameObject.GetComponent<PlayerBullet>().fDamage);
             source.PlayOneShot(wasp_hurt, 1F);
+            if(fHitPoints <= 0) {
+                bHoneyed = true;
+            }
+            
         }
 
         if (p_xOtherCollider.gameObject.CompareTag("Bee")){
             TakeDamage(1);
             source.PlayOneShot(wasp_hurt, 1F);
+            if (fHitPoints <= 0){
+                bCollided = true;
+            }
         }
     }
 
@@ -67,6 +99,21 @@ public class WaspCollision : MonoBehaviour {
     
     public float GetHealth() {
         return fHitPoints;
+    }
+
+    void CollisionDrop(){
+        if (transform.position.y > fDropMaxY
+            && fDropVelocity > -fDropMaxVelocity)
+        {
+            fDropVelocity += fDropAcceleration;
+        }
+        else
+        {
+            fDropVelocity = 0;
+            gameObject.tag = "Dead";
+        }
+        transform.Translate(-fDeadScrollingSpeed * Time.deltaTime, -fDropVelocity * Time.deltaTime, 0);
+
     }
 
     IEnumerator SpriteFlasher(){

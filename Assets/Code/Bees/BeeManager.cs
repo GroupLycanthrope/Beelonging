@@ -28,6 +28,8 @@ public class BeeManager : MonoBehaviour
     private GameObject goPlayer;
     private GameObject goParticles;
 
+    GameObject goStorage;
+
     private static List<GameObject> aFormationPositions;
     public static List<GameObject> aSwarm;
 
@@ -37,6 +39,8 @@ public class BeeManager : MonoBehaviour
     public AudioClip prog1;
     public AudioClip prog2;
     public AudioClip prog3;
+    public AudioSource BackgroundSource;
+
     private AudioSource source;
 
     private void Awake()
@@ -58,9 +62,11 @@ public class BeeManager : MonoBehaviour
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
         aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         goParticles = (GameObject)Resources.Load("Props/ParticleSystem", typeof(GameObject));
+        goStorage = GameObject.FindGameObjectWithTag("Storage");
         //bIsInvincible = false;
         bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
+
 
         bProgress1 = true;
         bProgress2 = true;
@@ -87,6 +93,10 @@ public class BeeManager : MonoBehaviour
             bProgress3 = false;
         }
         if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) == 100){
+            if (goStorage != null){
+                goStorage.GetComponent<TutorialStorage>().SetTutorial(true);
+            }
+            BackgroundSource.Stop();
             Cursor.visible = true;
         }
 
@@ -103,12 +113,14 @@ public class BeeManager : MonoBehaviour
             
             if (!goPauseMenu.activeSelf)
 	        {
+                BackgroundSource.Pause();
                 Cursor.visible = true;
                 goPauseMenu.SetActive(true);
 	            Time.timeScale = 0;
 	        }
 	        else
 	        {
+                BackgroundSource.UnPause();
                 Cursor.visible = false ;
                 goPauseMenu.SetActive(false);
 	            Time.timeScale = 1;
@@ -135,6 +147,11 @@ public class BeeManager : MonoBehaviour
 	    if (aSwarm.Count == 0 
 	        && bPlayerDead)
 	    {
+            if(goStorage != null) {
+                goStorage.GetComponent<TutorialStorage>().SetTutorial(true);
+            }
+            
+            BackgroundSource.Stop();
             Cursor.visible = true;
             goGameOverScreen.SetActive(true);
         }

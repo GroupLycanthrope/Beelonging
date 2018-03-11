@@ -14,9 +14,9 @@ public class Fly : MonoBehaviour
     public float fDropMaxVelocity;
     public float fDropMaxY;
     public float fDeadScrollingSpeed;
-
+    public float fTrailClock;
     private float fDropVelocity;
-
+    private float fTrailTimer;
 
     public int iScoreValue;
 
@@ -30,6 +30,7 @@ public class Fly : MonoBehaviour
 
     public Sprite sHoneyDeadSprite;
     public Sprite sBeeCollisionSprite;
+    public Material mTrailMaterial;
 
     private bool bHoneyed = false;
     private bool bCollided = false;
@@ -57,7 +58,10 @@ public class Fly : MonoBehaviour
     {
 
         if (bActiveTrail && bDoOnce){
-            gameObject.GetComponent<TrailRenderer>().enabled = true;
+            gameObject.AddComponent<TrailRenderer>();
+            gameObject.GetComponent<TrailRenderer>().material = mTrailMaterial;
+            gameObject.GetComponent<TrailRenderer>().widthMultiplier = 0.1f;
+            gameObject.GetComponent<TrailRenderer>().time = 0.5f;
             bDoOnce = false;
         }
             

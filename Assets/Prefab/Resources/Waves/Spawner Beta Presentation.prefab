@@ -51,8 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fb25b0f1a1fd544942fe25f9de162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aAllEnemies: []
-  aAllTutorialObjects: []
   aSpawnData:
   - bIsTutorial: 1
     bAllDespawned: 0
@@ -279,3 +277,4 @@ MonoBehaviour:
     xSpawnObject: {fileID: 1967409133611602, guid: d003239f040c5c740a5de7defddaf23c,
       type: 2}
   xWinningScreen: {fileID: 0}
+  DataStorage: {fileID: 0}

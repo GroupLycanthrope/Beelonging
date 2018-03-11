@@ -5,6 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject[] storage;
+    [HideInInspector]
+    public static bool bClawActivation;
+    
+
+
+    private void Start(){
+        storage = GameObject.FindGameObjectsWithTag("Storage");
+        
+        foreach(GameObject obj in storage) {
+            if(obj != null) {
+                if (obj.GetComponent<TutorialStorage>().GetTutorialStatus() == true){
+                    Destroy(obj);
+                }
+            }   
+        }
+    }
+
     private void OnEnable()
     {
         Time.timeScale = 0;
@@ -31,10 +49,8 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
+        bClawActivation = true;
         Time.timeScale = 1;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("Level1");
-
     }
 
     public void GoToMainMenu()

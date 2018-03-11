@@ -33,19 +33,28 @@ public class Spawner : MonoBehaviour{
     bool bAllEnemiesDespawned;
 
     bool[] abAllEnemiesDespawned;
-    public GameObject[] aAllEnemies;
+    GameObject[] aAllEnemies;
     GameObject[] aAllPowerUps;
-    public GameObject[] aAllTutorialObjects;
+    GameObject[] aAllTutorialObjects;
     public List<SpawnData> aSpawnData;
 
     static private List<SpawnData> aCopyofSpawnData;
 
     public GameObject xWinningScreen;
 
+    GameObject DataStorage;
+
     void Start(){
         iSpawnerAt = 0;
         fTimer = aSpawnData[iSpawnerAt].fWaitTime;
         bHasSortList = false;
+
+        DataStorage = GameObject.Find("Storage");
+
+        if(DataStorage != null) {
+            bSkipTutorial = DataStorage.GetComponent<TutorialStorage>().GetTutorialStatus();
+        }
+        
 
         aAllTutorialObjects = GameObject.FindGameObjectsWithTag("Tutorial");
 

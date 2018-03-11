@@ -34,6 +34,10 @@ public class WaspController : MonoBehaviour {
     private AudioSource source;
 
 
+
+
+
+
     WaspCollision wasp;
 
     private void Awake()
@@ -72,9 +76,11 @@ public class WaspController : MonoBehaviour {
                 fFireTimer = fFireRate;
                 bFireSound = false;
             }
-                      
-            MoveWasp();
-            SetRandomDirection();
+            if(wasp.GetHealth() >0) {
+                MoveWasp();
+                SetRandomDirection();
+            }     
+            
 
             if (transform.position == v3TargetPos){
                 bIsAtPosition = true;

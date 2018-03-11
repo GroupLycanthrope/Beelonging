@@ -81,8 +81,10 @@ public class BeeCollision : MonoBehaviour
             }
             else
             {
-                GetComponent<AIMovement>().enabled = false;
-                GetComponent<AIShooting>().enabled = false;
+                if(GetComponent<AIMovement>() != null) { 
+                    GetComponent<AIMovement>().enabled = false;
+                     GetComponent<AIShooting>().enabled = false;
+                }
             }
 
             gameObject.name = "DeadBee";
