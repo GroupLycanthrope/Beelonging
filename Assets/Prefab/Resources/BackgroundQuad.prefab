@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33345903657555312}
   - component: {fileID: 64874657343063226}
   - component: {fileID: 23312073486718786}
-  - component: {fileID: 114532712168835140}
+  - component: {fileID: 114259420527771416}
   m_Layer: 0
   m_Name: Layer8
   m_TagString: Untagged
@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1784107779016850
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,6 +867,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fScrollingSpeed: 0.02
+--- !u!114 &114259420527771416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159077266791208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de64e95b50f25f4fafc4ba3194711dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fScrollingSpeed: 0
 --- !u!114 &114310121051368766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -903,18 +915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fScrollingSpeed: 0.007
---- !u!114 &114532712168835140
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1159077266791208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f262caedab657d44fa2e9e18918fc54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fScrollingSpeed: 0.0001
 --- !u!114 &114770714098931028
 MonoBehaviour:
   m_ObjectHideFlags: 1
