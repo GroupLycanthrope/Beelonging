@@ -17,9 +17,19 @@ public class GoldenBeePickUp : MonoBehaviour {
     bool bCollidedWithPlayer;
     bool bSpawnBee;
 
+    public AudioClip bee_pickup;
+  
+
+    private AudioSource source;
+
     //PolygonCollider2D pcCollider;
     private CapsuleCollider2D pcCollider;
     SpriteRenderer spRenderer;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     void Start () {
         pcCollider = GetComponent<CapsuleCollider2D>();
@@ -58,12 +68,14 @@ public class GoldenBeePickUp : MonoBehaviour {
             //spawn.transform.position = BeeSpawnPos.transform.position;
             if (BeeManager.aSwarm.Count < BeeManager.iSwarmMaxCount)
             {
+                source.PlayOneShot(bee_pickup, 1F);
                 spawn = Instantiate(Resources.Load("BeeStuff/AI/AI_Bee") as GameObject);
                 this.spawn.transform.position = new Vector3(-9, Random.Range(-fSpawnRangeY, fSpawnRangeY), -1); //-9 becauase it's just off the left border and -1 because all AI bees are on that z value
                 BeeManager.AddBee(spawn);
             }
             else
             {
+                source.PlayOneShot(bee_pickup, 1F);
                 ScoreManager.iScore += iBonusScore;
             }
 

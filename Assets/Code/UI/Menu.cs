@@ -8,8 +8,15 @@ public class Menu : MonoBehaviour
     public GameObject[] storage;
     [HideInInspector]
     public static bool bClawActivation;
-    
 
+    public AudioClip button_sound;
+
+    private AudioSource source;
+
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void Start(){
         storage = GameObject.FindGameObjectsWithTag("Storage");
@@ -61,5 +68,10 @@ public class Menu : MonoBehaviour
     public void SetVolume(float p_fVolume)
     {
         AudioListener.volume = p_fVolume;
+    }
+
+    public void PlaySound()
+    {
+        source.PlayOneShot(button_sound, 1F);
     }
 }
