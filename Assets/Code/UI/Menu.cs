@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject[] storage;
+    public bool bMenuPressed;
+    public float fClock;
+
+    GameObject[] storage;
     [HideInInspector]
     public static bool bClawActivation;
 
@@ -20,13 +23,28 @@ public class Menu : MonoBehaviour
 
     private void Start(){
         storage = GameObject.FindGameObjectsWithTag("Storage");
+        fClock = 1f;
         
+
+
         foreach(GameObject obj in storage) {
             if(obj != null) {
                 if (obj.GetComponent<TutorialStorage>().GetTutorialStatus() == true){
                     Destroy(obj);
                 }
             }   
+        }
+    }
+
+    private void Update()
+    {
+        if (bMenuPressed)
+        {
+            fClock -= Time.fixedDeltaTime;
+        }
+        if (fClock <= 0)
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -62,7 +80,8 @@ public class Menu : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        bMenuPressed = true;
+       
     }
 
     public void SetVolume(float p_fVolume)
