@@ -20,12 +20,12 @@ public class SkyScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) / 100 > 17)
-        //{
-            float repeat = Mathf.Repeat((Spawner.GetProcentOfWave(Spawner.GetWaveAt()) / 100), 1);
+        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) > 20)
+        {
+            float repeat = Mathf.Repeat((Spawner.GetProcentOfWave(Spawner.GetWaveAt()) / 100) -0.17f, 1);
             v2TextureOffset.x = repeat;
             mMeshRenderer.material.SetTextureOffset("_MainTex", v2TextureOffset);
-        //}
+        }
     }
 
     void OnDestroy()
