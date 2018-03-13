@@ -38,7 +38,7 @@ public class AIShooting : MonoBehaviour
         Debug.DrawRay(goBulletStartPosition.transform.position, v3DebugRay, Color.red);
 
         if (hit == true
-	        && hit.collider.gameObject.CompareTag("Enemy") || hit.collider.gameObject.CompareTag("Wasp")
+	        && (hit.collider.gameObject.CompareTag("Enemy") || hit.collider.gameObject.CompareTag("Wasp"))
 	        && !BeeManager.bFormationActive
             && Time.time > fNextShot
             && !sBeeCollision.bIsDead)

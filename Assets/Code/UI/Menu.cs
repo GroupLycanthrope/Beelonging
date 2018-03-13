@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public bool bMenuPressed;
-    public float fClock;
-
+    bool bMenuPressed;
+    float fMenuClock;
+    float fStartClock;
     GameObject[] storage;
     [HideInInspector]
     public static bool bClawActivation;
+
+    bool bDeactivate;
 
     public AudioClip button_sound;
 
@@ -23,9 +25,9 @@ public class Menu : MonoBehaviour
 
     private void Start(){
         storage = GameObject.FindGameObjectsWithTag("Storage");
-        fClock = 1f;
-        
-
+        fMenuClock = 1f;
+        fStartClock = 2f;
+        bDeactivate = false;
 
         foreach(GameObject obj in storage) {
             if(obj != null) {
@@ -40,11 +42,21 @@ public class Menu : MonoBehaviour
     {
         if (bMenuPressed)
         {
-            fClock -= Time.fixedDeltaTime;
+            fMenuClock -= Time.fixedDeltaTime;
         }
-        if (fClock <= 0)
+        if (fMenuClock <= 0)
         {
             SceneManager.LoadScene("MainMenu");
+        }
+        if (bDeactivate) {
+            fStartClock -= Time.fixedDeltaTime;
+            if(fStartClock <= 1) {
+                bClawActivation = true;
+            }
+            if(fStartClock <= 0) {
+                
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -74,7 +86,8 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        bClawActivation = true;
+        
+        bDeactivate = true;
         Time.timeScale = 1;
     }
 
@@ -93,4 +106,7 @@ public class Menu : MonoBehaviour
     {
         source.PlayOneShot(button_sound, 1F);
     }
+
+
+
 }
