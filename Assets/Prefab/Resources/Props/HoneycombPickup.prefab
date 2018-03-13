@@ -67,7 +67,8 @@ AudioSource:
   m_GameObject: {fileID: 1076224630543230}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243246995686009496, guid: 9e6227e2f8bef2348b81662ad7b63b77,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 3be69a1b53b280a449c7f0449d7c36e5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -169,7 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fFloatingSpeed: 2
   iHoneyValue: 8
-  iScoreValue: 50
+  iScoreValue: 10
+  bHasCollided: 0
   bar_feedback: {fileID: 8300000, guid: 3be69a1b53b280a449c7f0449d7c36e5, type: 3}
   v3TargetPos: {x: -1, y: -3.7, z: 0}
 --- !u!212 &212876539171397150

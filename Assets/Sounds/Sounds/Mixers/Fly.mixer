@@ -19,6 +19,7 @@ AudioMixerController:
   m_AudioMixerGroupViews:
   - guids:
     - 8f17e4166583b7e44a0dbfe2dc32f1c4
+    - 6610bd044976f2540a028b4be2d2ced9
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -30,7 +31,8 @@ AudioMixerGroupController:
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 8f17e4166583b7e44a0dbfe2dc32f1c4
-  m_Children: []
+  m_Children:
+  - {fileID: 243495254932289654}
   m_Volume: 08e0d4f1bf99b964d81355592e64337e
   m_Pitch: 81159b96d304d464099937359bb97365
   m_Effects:
@@ -62,3 +64,33 @@ AudioMixerSnapshotController:
   m_SnapshotID: 75cfdc447fb61b344aceb073b0e1828e
   m_FloatValues: {}
   m_TransitionOverrides: {}
+--- !u!243 &243495254932289654
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Fly_Death
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 6610bd044976f2540a028b4be2d2ced9
+  m_Children: []
+  m_Volume: 696748fa796145a47bf01af64781dd5c
+  m_Pitch: ca249897d8d656842ad9503c04baeef6
+  m_Effects:
+  - {fileID: 244309917938827578}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &244309917938827578
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: 351a007957685304193d453c3e1a611c
+  m_EffectName: Attenuation
+  m_MixLevel: 3db9ed2cc54aae24bb17650245988f00
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
