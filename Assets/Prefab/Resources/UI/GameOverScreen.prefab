@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daccf6ab0273a484c9b4c5e5b296f90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storage: []
 --- !u!114 &114600870439990668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,7 +317,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Main MEnu
 --- !u!114 &114718468021269072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,7 +350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: 'ScorE: 0'
 --- !u!114 &114834350891725028
 MonoBehaviour:
   m_ObjectHideFlags: 1
