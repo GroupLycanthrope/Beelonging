@@ -91,4 +91,8 @@ public class TutorialButton : MonoBehaviour {
     public void SetIsAtPos(bool p_value) {
         IsAtPosition = p_value;
     }
+
+    public float GetTimer() {
+        return fTimer;
+    }
 }
