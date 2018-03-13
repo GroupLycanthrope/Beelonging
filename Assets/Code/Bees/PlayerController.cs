@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
                 foreach (GameObject Bee in BeeManager.aSwarm)
                 {
                     Bee.SendMessage("Shoot");
-                    Shoot();
                 }
             }
             else
