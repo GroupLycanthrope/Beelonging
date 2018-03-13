@@ -25,6 +25,8 @@ public class WaspController : MonoBehaviour {
 // initial move
     bool bInitialMove;
     bool bInitialPosDecided;
+    public bool bDoOnce;
+
     float fInitialPos;
 
     bool bFireSound;
@@ -33,12 +35,9 @@ public class WaspController : MonoBehaviour {
     
     private AudioSource source;
 
-
-
-
-
-
     WaspCollision wasp;
+
+    Animator aAnimator;
 
     private void Awake()
     {
@@ -50,9 +49,12 @@ public class WaspController : MonoBehaviour {
         bInitialMove = true;
         bInitialPosDecided = false;
         wasp = GetComponent<WaspCollision>();
+        aAnimator = GetComponent<Animator>();
         bHasPosition = true;
         bIsAtPosition = true;
         bFireSound = false;
+        bDoOnce = false;
+        fFireTimer = fFireRate;
     }
 	
 	// Update is called once per frame
@@ -64,10 +66,16 @@ public class WaspController : MonoBehaviour {
                 fFireTimer = fFireRate;
                 
             }
+
+            if(fFireTimer <= 0.3 && !bDoOnce) {
+                aAnimator.SetTrigger("tShoot");
+                bDoOnce = true;
+            }
             // it fires
             if(fFireTimer <= 0.2 && !bFireSound) {
                 source.PlayOneShot(wasp_shoot, 1F);
                 bFireSound = true;
+               
             }
 
             if (wasp.GetHealth() > 0 && fFireTimer <= 0) {
@@ -75,6 +83,7 @@ public class WaspController : MonoBehaviour {
                 WaspBullet.transform.position = xProjectileOrigin.transform.position;
                 fFireTimer = fFireRate;
                 bFireSound = false;
+                bDoOnce = false;
             }
             if(wasp.GetHealth() >0) {
                 MoveWasp();
