@@ -5,12 +5,8 @@ using UnityEngine.Experimental.Playables;
 
 public class SkyScroller : MonoBehaviour
 {
-
-
     private MeshRenderer mMeshRenderer;
-
-    public float fScrollingSpeed;
-
+    
     private Vector2 v2TextureOffset;
 
     // Use this for initialization
@@ -24,12 +20,12 @@ public class SkyScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) / 100 > 17)
-        {
+        //if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) / 100 > 17)
+        //{
             float repeat = Mathf.Repeat((Spawner.GetProcentOfWave(Spawner.GetWaveAt()) / 100), 1);
             v2TextureOffset.x = repeat;
             mMeshRenderer.material.SetTextureOffset("_MainTex", v2TextureOffset);
-        }
+        //}
     }
 
     void OnDestroy()
