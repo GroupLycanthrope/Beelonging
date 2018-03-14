@@ -302,8 +302,8 @@ MonoBehaviour:
       type: 2}
   - bIsTutorial: 0
     bAllDespawned: 0
-    bAllKilled: 0
-    iSkipEntries: 0
+    bAllKilled: 1
+    iSkipEntries: 1
     fSortID: 29
     fWaitTime: 0.1
     xSpawnObject: {fileID: 1912664783099808, guid: 4bc154ce5b9e14747b95776a3292ae43,
@@ -315,5 +315,13 @@ MonoBehaviour:
     fSortID: 30
     fWaitTime: 0.1
     xSpawnObject: {fileID: 1044611802597070, guid: b461c2154a46f3849b6d157fb5f3eae5,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 31
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1321060393569556, guid: 601c33d1564608e4c9d61d8e6c491eab,
       type: 2}
   xWinningScreen: {fileID: 0}
