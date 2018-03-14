@@ -54,7 +54,7 @@ public class WaspController : MonoBehaviour {
         bIsAtPosition = true;
         bFireSound = false;
         bDoOnce = false;
-        fFireTimer = fFireRate;
+        fFireTimer = fFireRate / 8;
     }
 	
 	// Update is called once per frame
