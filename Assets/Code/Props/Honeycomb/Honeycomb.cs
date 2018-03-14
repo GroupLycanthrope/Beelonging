@@ -44,9 +44,12 @@ public class Honeycomb : MonoBehaviour
 	    
         if (bHasCollided) {
             GoToBar();
-            
-
         }
+
+        if(BeeManager.fHoneyCount >= 40 && bHasCollided) {
+            Destroy(gameObject,1);
+        }
+
         if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1){
             Destroy(gameObject);
         }
