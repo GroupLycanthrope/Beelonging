@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip changeform;
     private AudioSource source;
 
+    private float lowPitchRange = .90F;
+    private float highPitchRange = 1.10F;
+
     private Animator aAnimator;
 
     [HideInInspector]
@@ -82,6 +85,7 @@ public class PlayerController : MonoBehaviour
         && Time.timeScale > 0
         && BeeManager.aSwarm.Count > 1)
         {
+            source.pitch = 1;
             source.PlayOneShot(changeform, 1F);
             BeeManager.fHoneyCount -= fFormationStartCost;
             BeeManager.bFormationActive = true;
@@ -155,7 +159,8 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {     
          aAnimator.SetTrigger("tShot");
-         source.PlayOneShot(shootsound, 1F);
+        source.pitch = Random.Range(lowPitchRange, highPitchRange);
+        source.PlayOneShot(shootsound, 1F);
          fNextShot = Time.time + fFireRate;
          GameObject newBullet = Instantiate(Resources.Load("BeeStuff/Player/PlayerBullet")) as GameObject;
          newBullet.transform.position = goBulletStartPosition.transform.position; //Gets the first child of this gameobject and returns the position of its tranform (I know it looks weird but this way we don't have to link the bulletposition)

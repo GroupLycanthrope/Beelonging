@@ -620,7 +620,7 @@ MonoBehaviour:
     type: 2}
   xProjectileOrigin: {fileID: 1317297524708282}
   iScoreValue: 400
-  fMaxWaitTimeBeforeMovement: 0.5
+  fMaxWaitTimeBeforeMovement: 1.5
   fDropAcceleration: 0.5
   fDropMaxVelocity: 3
   fDropMaxY: -100
@@ -628,7 +628,7 @@ MonoBehaviour:
   fMoveUpAndDownSpeed: 1
   fHitPoints: 6
   fFireRate: 5
-  fAggroRange: 15
+  fAggroRange: 13
   fHitFlashSpeed: 0.1
   fStandStillBeforeFire: 1
   spider_dead: {fileID: 8300000, guid: 4b528444a29ab1f41b564c3cfa41fab7, type: 3}
