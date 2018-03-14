@@ -53,5 +53,8 @@ public class RotateHoneycomb : MonoBehaviour {
             bHasCollided = true;
         }
     }
-
+    private void OnLevelWasLoaded(int level)
+    {
+        bHasCollided = false;
+    }
 }

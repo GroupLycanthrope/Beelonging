@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
     GameObject[] storage;
     [HideInInspector]
     public static bool bClawActivation;
-
+    GameObject goStorage;
     bool bDeactivate;
 
     public AudioClip button_sound;
@@ -29,8 +29,9 @@ public class Menu : MonoBehaviour
         fMenuClock = 1f;
         fStartClock = 2f;
         bDeactivate = false;
+        goStorage = GameObject.FindGameObjectWithTag("Storage");
 
-        foreach(GameObject obj in storage) {
+        foreach (GameObject obj in storage) {
             if(obj != null) {
                 if (obj.GetComponent<TutorialStorage>().GetTutorialStatus() == true){
                     Destroy(obj);
@@ -95,6 +96,11 @@ public class Menu : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        if (goStorage != null)
+        {
+            goStorage.GetComponent<TutorialStorage>().SetTutorial(true);
+        }
+
         bMenuPressed = true;
        
     }

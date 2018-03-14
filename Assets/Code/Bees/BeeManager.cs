@@ -28,8 +28,6 @@ public class BeeManager : MonoBehaviour
     private GameObject goPlayer;
     private GameObject goParticles;
 
-    GameObject goStorage;
-
     private static List<GameObject> aFormationPositions;
     public static List<GameObject> aSwarm;
 
@@ -62,7 +60,6 @@ public class BeeManager : MonoBehaviour
         aSwarm = GameObject.FindGameObjectsWithTag("Bee").ToList();
         aFormationPositions = GameObject.FindGameObjectsWithTag("Formation").ToList();
         goParticles = (GameObject)Resources.Load("Props/ParticleSystem", typeof(GameObject));
-        goStorage = GameObject.FindGameObjectWithTag("Storage");
         //bIsInvincible = false;
         bPlayerDead = false;
 	    goPlayer = GameObject.Find("Player");
@@ -93,9 +90,6 @@ public class BeeManager : MonoBehaviour
             bProgress3 = false;
         }
         if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) == 100 && !GameObject.FindGameObjectWithTag("Wasp")){
-            if (goStorage != null){
-                goStorage.GetComponent<TutorialStorage>().SetTutorial(true);
-            }
             BackgroundSource.Stop();
             Cursor.visible = true;
         }
@@ -132,25 +126,10 @@ public class BeeManager : MonoBehaviour
 	        fHoneyCount = fHoneyCountMax;
 	    }
     
-        //   if (fHoneyCount == 3)
-	    //{
-	    //    bIsInvincible = true;
-	    //    HoneyCounter.fInvincibilityTimer -= Time.deltaTime;
-	    //}
-	    //if (HoneyCounter.fInvincibilityTimer <= 0)
-	    //{
-	    //    bIsInvincible = false;
-	    //    HoneyCounter.fInvincibilityTimer = 5.0f;
-	    //    fHoneyCount = 0;
-	    //}
 
 	    if (aSwarm.Count == 0 
 	        && bPlayerDead)
 	    {
-            if(goStorage != null) {
-                goStorage.GetComponent<TutorialStorage>().SetTutorial(true);
-            }
-            
             BackgroundSource.Stop();
             Cursor.visible = true;
             goGameOverScreen.SetActive(true);
