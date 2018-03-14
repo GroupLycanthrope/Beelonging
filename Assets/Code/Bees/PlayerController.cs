@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip changeform;
     private AudioSource source;
 
-    private float lowPitchRange = .85F;
-    private float highPitchRange = 1.9F;
+    private float lowPitchRange = .90F;
+    private float highPitchRange = 1.10F;
 
     private Animator aAnimator;
 
@@ -85,6 +85,7 @@ public class PlayerController : MonoBehaviour
         && Time.timeScale > 0
         && BeeManager.aSwarm.Count > 1)
         {
+            source.pitch = 1;
             source.PlayOneShot(changeform, 1F);
             BeeManager.fHoneyCount -= fFormationStartCost;
             BeeManager.bFormationActive = true;
