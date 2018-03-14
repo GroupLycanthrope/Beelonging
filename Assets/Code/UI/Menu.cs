@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
@@ -44,6 +45,7 @@ public class Menu : MonoBehaviour
         {
             fMenuClock -= Time.fixedDeltaTime;
         }
+        
         if (fMenuClock <= 0)
         {
             SceneManager.LoadScene("MainMenu");
@@ -107,6 +109,37 @@ public class Menu : MonoBehaviour
         source.PlayOneShot(button_sound, 1F);
     }
 
+    IEnumerator FadeIn()
+    {
+        for (float f = 0f; f < 1; f += 0.1f)
+        {
+            GameObject fadePanel = GameObject.FindGameObjectWithTag("FadePanel");
+            fadePanel.GetComponent<CanvasRenderer>().SetAlpha(f);
+            yield return null;
+        }
 
+        gameObject.SetActive(true);
+    }
 
+    IEnumerator FadeOut()
+    {
+        for (float f = 1f; f >= 0; f -= 0.1f)
+        {
+            GameObject fadePanel = GameObject.FindGameObjectWithTag("FadePanel");
+            fadePanel.GetComponent<CanvasRenderer>().SetAlpha(f);
+            yield return null;
+        }
+
+        gameObject.SetActive(false);
+    }
+
+    public void StartFadeIn()
+    {
+        StartCoroutine(FadeIn());
+    }
+
+    public void StartFadeOut()
+    {
+        StartCoroutine(FadeOut());
+    }
 }

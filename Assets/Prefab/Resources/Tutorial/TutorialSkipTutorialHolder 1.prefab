@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4238387820223622}
   - component: {fileID: 114464491978782006}
   m_Layer: 0
-  m_Name: TutorialSkipTutorialHolder
+  m_Name: TutorialSkipTutorialHolder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

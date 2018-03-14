@@ -23,6 +23,7 @@ TagManager:
   - PickUp
   - Tutorial
   - Storage
+  - FadePanel
   layers:
   - Default
   - TransparentFX
