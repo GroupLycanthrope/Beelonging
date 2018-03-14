@@ -12,7 +12,7 @@ public class EndScoreText : MonoBehaviour
     void Start()
     {
         tScoreText = GetComponent<Text>();
-        tScoreText.text = "Your Final Score: " + ScoreManager.iScore;
+        tScoreText.text = "Your Final ScorE: " + ScoreManager.iScore;
     }
 	
 	// Update is called once per frame

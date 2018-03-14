@@ -9,12 +9,17 @@ public class RotateHoneycomb : MonoBehaviour {
 
     bool bTurnOnPendilum;
     bool bTurnOffPendilum;
-    bool bHasCollided;
+    static public bool bHasCollided;
 
     float fTimer;
     float fClock;
+
+    public AudioClip acNomNomNom;
+
+    private AudioSource asSource;
 	// Use this for initialization
 	void Start () {
+        asSource = GetComponent<AudioSource>();
         Pendilum = gameObject.GetComponent<HingeJoint2D>();
         bTurnOnPendilum = false;
         bTurnOffPendilum = false;
@@ -44,6 +49,7 @@ public class RotateHoneycomb : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D p_xOther){
         if (p_xOther.CompareTag("Dead")) {
+            asSource.PlayOneShot(acNomNomNom);
             bHasCollided = true;
         }
     }

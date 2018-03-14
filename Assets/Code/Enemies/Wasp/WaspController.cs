@@ -17,7 +17,8 @@ public class WaspController : MonoBehaviour {
 
     // Fire floats
     public float fFireRate;
-    float fFireTimer;
+    [HideInInspector]
+    public float fFireTimer;
 // Move Bools
     private bool bIsAtPosition;
     private bool bHasPosition;
@@ -25,7 +26,7 @@ public class WaspController : MonoBehaviour {
 // initial move
     bool bInitialMove;
     bool bInitialPosDecided;
-    public bool bDoOnce;
+    bool bDoOnce;
 
     float fInitialPos;
 
@@ -54,7 +55,7 @@ public class WaspController : MonoBehaviour {
         bIsAtPosition = true;
         bFireSound = false;
         bDoOnce = false;
-        fFireTimer = fFireRate;
+        fFireTimer = fFireRate / 8;
     }
 	
 	// Update is called once per frame
@@ -67,7 +68,7 @@ public class WaspController : MonoBehaviour {
                 
             }
 
-            if(fFireTimer <= 0.3 && !bDoOnce) {
+            if(fFireTimer <= 0.58 && !bDoOnce) {
                 aAnimator.SetTrigger("tShoot");
                 bDoOnce = true;
             }

@@ -142,7 +142,7 @@ public class Spider : MonoBehaviour
             iDirection = 1;
         }
 
-        if (iDirection == 0 && !(transform.position.y >= 4.2)) {
+        if (iDirection == 0 && !(transform.position.y >= BeeManager.GetMaxCameraBorder().y - 1)) {
             transform.Translate(Vector2.up * fMoveUpAndDownSpeed * Time.deltaTime);
         }
         if(iDirection == 1 && !(transform.position.y <= 0.2)) {

@@ -1,0 +1,319 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1437341817476924}
+  m_IsPrefabParent: 1
+--- !u!1 &1437341817476924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4490681706624362}
+  - component: {fileID: 114607246710012176}
+  m_Layer: 0
+  m_Name: Spawner FInal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4490681706624362
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437341817476924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114607246710012176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437341817476924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fb25b0f1a1fd544942fe25f9de162e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aSpawnData:
+  - bIsTutorial: 1
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 0.5
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1950850568820928, guid: 5aacaadd94a98184eb8d9e1fd7a5aeac,
+      type: 2}
+  - bIsTutorial: 1
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 1
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1097316912400272, guid: 24f1fcb6645840f489cfcd445cc481d0,
+      type: 2}
+  - bIsTutorial: 1
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 2
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1332809344077720, guid: 9d2b77e2be1b1644da310f29bbd0cc66,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 3
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1158284545753792, guid: 8d94fe56ce5bbd94c9f333759d33d80d,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 4
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1541538346341482, guid: c4c1bb0678d1df449abede9223df49e9,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 5
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1761513814360770, guid: 1d3fb582c6639b34f9c74045616398de,
+      type: 2}
+  - bIsTutorial: 1
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 6
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1146005551996012, guid: 134d1ce70313f5f45a49721be3c33681,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 1
+    iSkipEntries: 1
+    fSortID: 7
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1321810159552146, guid: 3e3eaec19e8bf0344b48d10114f2aed2,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 7.5
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1076224630543230, guid: 371c07b5adbeef84e8c48442d7d17e01,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 8
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1386867940197332, guid: 217b738a512fc4745aa8e656736aa1f5,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 10
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1811095952162182, guid: e48523b9c2aa3f149972309b8ba237b8,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 11
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1109238499892852, guid: 6134d3ac100d4fc4e95768cf029d1980,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 12
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1068289641140114, guid: 1b23fd2c4af439743afacfa248902e3d,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 13
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1386190999996704, guid: dc631d90e53e97a44b296814618e4b74,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 14
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1321060393569556, guid: 601c33d1564608e4c9d61d8e6c491eab,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 15
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1966800412998806, guid: c751bf3a28adc3145b245a025186847a,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 15.5
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1654053837824864, guid: 584f885d4349de84ca17aac972f8e5ff,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 15.55
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 16
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1401268145791652, guid: c9dca8f920b2ca442b46890c663a0a19,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 17
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1966800412998806, guid: c751bf3a28adc3145b245a025186847a,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 18
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 1
+    iSkipEntries: 1
+    fSortID: 19
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1161439434280932, guid: 0737d8da73844ee41968e6410ae7c16e,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 20
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1920382828593444, guid: 927477beb882db941bf18e93d983cae0,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 1
+    iSkipEntries: 1
+    fSortID: 20.5
+    fWaitTime: 0.5
+    xSpawnObject: {fileID: 1321810159552146, guid: 3e3eaec19e8bf0344b48d10114f2aed2,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 21
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1840568076200998, guid: f34dc03717166644e9766c7792e8604c,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 22
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1386190999996704, guid: dc631d90e53e97a44b296814618e4b74,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 23
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1920382828593444, guid: 927477beb882db941bf18e93d983cae0,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 1
+    iSkipEntries: 3
+    fSortID: 24
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1837295469572182, guid: c5dc112bd4a67f646b8c371f7038270c,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 25
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1761513814360770, guid: 1d3fb582c6639b34f9c74045616398de,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 26
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1158284545753792, guid: 8d94fe56ce5bbd94c9f333759d33d80d,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 27
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1321810159552146, guid: 3e3eaec19e8bf0344b48d10114f2aed2,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 29
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1912664783099808, guid: 4bc154ce5b9e14747b95776a3292ae43,
+      type: 2}
+  - bIsTutorial: 0
+    bAllDespawned: 0
+    bAllKilled: 0
+    iSkipEntries: 0
+    fSortID: 30
+    fWaitTime: 0.1
+    xSpawnObject: {fileID: 1044611802597070, guid: b461c2154a46f3849b6d157fb5f3eae5,
+      type: 2}
+  xWinningScreen: {fileID: 0}

@@ -21,6 +21,8 @@ public class Honeycomb : MonoBehaviour
     public Vector3 v3TargetPos;
     Vector3 v3ChangeScale;
 
+    CircleCollider2D ccCollider;
+
     private void Awake()
     {
         source = GetComponent<AudioSource>();      
@@ -31,6 +33,7 @@ public class Honeycomb : MonoBehaviour
         bHasCollided = false;
         bCalculatedShrinkRate = false;
         bHasGivenScore = false;
+        ccCollider = gameObject.GetComponent<CircleCollider2D>();
     }
 	
 	// Update is called once per frame
@@ -42,6 +45,11 @@ public class Honeycomb : MonoBehaviour
         if (bHasCollided) {
             GoToBar();
         }
+
+        if(BeeManager.fHoneyCount >= 40 && bHasCollided) {
+            Destroy(gameObject,1);
+        }
+
         if (transform.position.x < BeeManager.GetMinCameraBorder().x - 1){
             Destroy(gameObject);
         }
@@ -66,9 +74,9 @@ public class Honeycomb : MonoBehaviour
             transform.localScale -= v3ChangeScale;
         }
 
-        if(transform.position.x == v3TargetPos.x) {
+        if(transform.position.x <= v3TargetPos.x) {
 
-            if (BeeManager.fHoneyCount < FindObjectOfType<BeeManager>().fHoneyCountMax){
+            if (BeeManager.fHoneyCount <= FindObjectOfType<BeeManager>().fHoneyCountMax){
                 if (!bHasGivenScore) {
                     BeeManager.fHoneyCount += iHoneyValue;
                     ScoreManager.iScore += iScoreValue;
@@ -88,7 +96,7 @@ public class Honeycomb : MonoBehaviour
         {
             fFloatingSpeed = 2;
             bHasCollided = true;
-            
+            ccCollider.enabled = false;
             Debug.Log(BeeManager.fHoneyCount.ToString());
             
         }

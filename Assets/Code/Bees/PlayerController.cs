@@ -19,12 +19,15 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 v2PlayerBoundariesMin;
     public Vector2 v2PlayerBoundariesMax;
-
+    Vector3 v3MOVEBACKDAMMIT;
     public float fShotSlowDown;
 
     public AudioClip shootsound;
     public AudioClip changeform;
     private AudioSource source;
+
+    private float lowPitchRange = .90F;
+    private float highPitchRange = 1.10F;
 
     private Animator aAnimator;
 
@@ -82,6 +85,7 @@ public class PlayerController : MonoBehaviour
         && Time.timeScale > 0
         && BeeManager.aSwarm.Count > 1)
         {
+            source.pitch = 1;
             source.PlayOneShot(changeform, 1F);
             BeeManager.fHoneyCount -= fFormationStartCost;
             BeeManager.bFormationActive = true;
@@ -138,8 +142,8 @@ public class PlayerController : MonoBehaviour
         }
     
         Vector3 v3NewPosition;
-        v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, v2PlayerBoundariesMin.x, v2PlayerBoundariesMax.x);
-        v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, v2PlayerBoundariesMin.y, v2PlayerBoundariesMax.y);
+        v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, BeeManager.GetMinCameraBorder().x + 0.5f, BeeManager.GetMaxCameraBorder().x-0.5f);
+        v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, BeeManager.GetMinCameraBorder().y + 0.5f, BeeManager.GetMaxCameraBorder().y - 0.5f);
         v3NewPosition.z = -2;
         transform.position = v3NewPosition;
         v3Direction.x = fVelocityX;
@@ -155,7 +159,8 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {     
          aAnimator.SetTrigger("tShot");
-         source.PlayOneShot(shootsound, 1F);
+        source.pitch = Random.Range(lowPitchRange, highPitchRange);
+        source.PlayOneShot(shootsound, 1F);
          fNextShot = Time.time + fFireRate;
          GameObject newBullet = Instantiate(Resources.Load("BeeStuff/Player/PlayerBullet")) as GameObject;
          newBullet.transform.position = goBulletStartPosition.transform.position; //Gets the first child of this gameobject and returns the position of its tranform (I know it looks weird but this way we don't have to link the bulletposition)

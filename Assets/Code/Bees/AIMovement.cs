@@ -68,8 +68,8 @@ public class AIMovement : MonoBehaviour
                 }
 
                 Vector3 tmp;
-	            tmp.x = Mathf.Clamp(goFormationPosition.transform.position.x, v2AIBoundariesMin.x, v2AIBoundariesMax.x);
-	            tmp.y = Mathf.Clamp(goFormationPosition.transform.position.y, v2AIBoundariesMin.y, v2AIBoundariesMax.y);
+	            tmp.x = Mathf.Clamp(goFormationPosition.transform.position.x,BeeManager.GetMinCameraBorder().x + 0.5f, BeeManager.GetMaxCameraBorder().x-0.5f);
+	            tmp.y = Mathf.Clamp(goFormationPosition.transform.position.y, BeeManager.GetMinCameraBorder().y + 0.5f, BeeManager.GetMaxCameraBorder().y - 0.5f);
 	            tmp.z = 0;
 	            ChangeDestination(tmp);
             }
