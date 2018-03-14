@@ -298,7 +298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &663423356
 Prefab:
@@ -395,6 +395,10 @@ Prefab:
     - target: {fileID: 224006864858973458, guid: 499157e9208560c44997ba8fc5cea43f,
         type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667144326826666, guid: 499157e9208560c44997ba8fc5cea43f, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -652,6 +656,10 @@ Prefab:
     - target: {fileID: 224687895224365650, guid: cd8fa9e478c5230468c48bd7e10310fe,
         type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1518948143681342, guid: cd8fa9e478c5230468c48bd7e10310fe, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -941,7 +949,7 @@ Prefab:
     - target: {fileID: 114042496177578064, guid: cacba71c1d3219f49bd89879f44ace68,
         type: 2}
       propertyPath: fHoneyStartCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cacba71c1d3219f49bd89879f44ace68, type: 2}
@@ -983,7 +991,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4756356502699036, guid: e45bec408fe423c4db9b188cf8be9ec9, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e45bec408fe423c4db9b188cf8be9ec9, type: 2}
