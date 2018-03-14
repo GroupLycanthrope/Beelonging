@@ -249,4 +249,7 @@ public class BeeManager : MonoBehaviour
     public static Vector3 GetMinCameraBorder(){
         return v3MinCameraBorder;
     }
+    public void StartMusicAgain() {
+        BackgroundSource.UnPause();
+    }
 }
