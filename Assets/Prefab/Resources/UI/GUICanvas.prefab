@@ -250,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1933584750362096
 GameObject:
   m_ObjectHideFlags: 1
@@ -627,7 +627,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit to Main Menu
+  m_Text: Exit to Main MEnu
 --- !u!114 &114535777726866756
 MonoBehaviour:
   m_ObjectHideFlags: 1
