@@ -25,7 +25,7 @@ public class WaspController : MonoBehaviour {
 // initial move
     bool bInitialMove;
     bool bInitialPosDecided;
-    public bool bDoOnce;
+    bool bDoOnce;
 
     float fInitialPos;
 

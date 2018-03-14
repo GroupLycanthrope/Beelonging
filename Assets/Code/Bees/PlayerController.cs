@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 v2PlayerBoundariesMin;
     public Vector2 v2PlayerBoundariesMax;
-
+    Vector3 v3MOVEBACKDAMMIT;
     public float fShotSlowDown;
 
     public AudioClip shootsound;
@@ -138,8 +138,8 @@ public class PlayerController : MonoBehaviour
         }
     
         Vector3 v3NewPosition;
-        v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, v2PlayerBoundariesMin.x, v2PlayerBoundariesMax.x);
-        v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, v2PlayerBoundariesMin.y, v2PlayerBoundariesMax.y);
+        v3NewPosition.x = Mathf.Clamp(transform.position.x + fVelocityX * Time.deltaTime, BeeManager.GetMinCameraBorder().x + 0.5f, BeeManager.GetMaxCameraBorder().x-0.5f);
+        v3NewPosition.y = Mathf.Clamp(transform.position.y + fVelocityY * Time.deltaTime, BeeManager.GetMinCameraBorder().y + 0.5f, BeeManager.GetMaxCameraBorder().y - 0.5f);
         v3NewPosition.z = -2;
         transform.position = v3NewPosition;
         v3Direction.x = fVelocityX;

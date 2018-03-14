@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class BearPaw : MonoBehaviour {
 
+    bool bDoOnce;
 
     public Vector3 v3TargetPos;
+    Vector3 v3BeGoneThoot;
     float fSpeed = 6;
 
     float fTimer;
     float fClock;
 
     private Animator aAnimator;
+
+    float fSoundClock;
+
+    private AudioSource source;
 
     GameObject Hit;
 
@@ -21,33 +27,37 @@ public class BearPaw : MonoBehaviour {
     void Start () {
         aAnimator = GetComponent<Animator>();
         Hit = GameObject.FindGameObjectWithTag("Dead");
-
+        v3BeGoneThoot = gameObject.transform.position;
+        source = gameObject.GetComponent<AudioSource>();
+        v3BeGoneThoot.y = -20;
         fClock = 0.3f;
         fTimer = fClock;
 
+        fSoundClock = 2.48f;
+        bDoOnce = false;
         Storage = GameObject.FindGameObjectsWithTag("Storage");
 
     }
 
     // Update is called once per frame
     void Update () {
-        //if(Storage.Length > 1) {
-            
-        //    if (Storage[0] != null && Storage[0].GetComponent<TutorialStorage>().GetTutorialStatus()) {
-        //        Destroy(Storage[0]);
-        //        Storage = GameObject.FindGameObjectsWithTag("Storage");
-        //    }
-        //    else {
-        //        if(Storage[1] != null) {
-        //            Destroy(Storage[1]);
-        //            Storage = GameObject.FindGameObjectsWithTag("Storage");
-        //        }
-        //    }
-        //}
-
-
         if (Menu.bClawActivation) {
-            transform.position = Vector3.MoveTowards(transform.position, v3TargetPos, fSpeed * Time.fixedDeltaTime);
+            if(Hit!= null){
+                transform.position = Vector3.MoveTowards(transform.position, v3TargetPos, fSpeed * Time.fixedDeltaTime);
+            }
+
+            if (RotateHoneycomb.bHasCollided) {
+
+                if(fSoundClock > 0 && !bDoOnce) {
+                    source.Play();
+                    bDoOnce = true;
+                }
+
+                if(fSoundClock <= 0) {
+                    source.Stop();
+                }
+                fSoundClock -= Time.deltaTime;
+            }
 
             if(transform.position == v3TargetPos) {
                 aAnimator.SetTrigger("tIsAtPosition");
@@ -62,10 +72,15 @@ public class BearPaw : MonoBehaviour {
                     Hit.transform.Translate(0, 0, 0);
                     fTimer -= Time.fixedDeltaTime; 
                 }
-                if(Hit != null && Hit.transform.position.x <= -10) {
+                if(Hit != null && Hit.transform.position.x <= -7) {
                     Destroy(Hit);
                 }
             }
+            if (Hit == null){
+
+                transform.position = Vector3.MoveTowards(transform.position, v3BeGoneThoot, (fSpeed * Time.fixedDeltaTime) / 2);
+            }
+
         }
 	}
 }
