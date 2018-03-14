@@ -67,7 +67,7 @@ public class WaspController : MonoBehaviour {
                 
             }
 
-            if(fFireTimer <= 0.3 && !bDoOnce) {
+            if(fFireTimer <= 0.58 && !bDoOnce) {
                 aAnimator.SetTrigger("tShoot");
                 bDoOnce = true;
             }
