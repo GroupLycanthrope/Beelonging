@@ -44,10 +44,7 @@ public class WaspCollision : MonoBehaviour {
     }
 
     void Update () {
-        if (transform.position.x < -20){
-            Destroy(gameObject);
-        }
-
+ 
         if (fHitPoints <= 0 && !bIsDead){
             //GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<PolygonCollider2D>().enabled = false;
@@ -94,6 +91,7 @@ public class WaspCollision : MonoBehaviour {
     void TakeDamage(float p_fDamage){
         fHitPoints -= p_fDamage;
         wasp.fFireRate *= fDamageFireRateMultiplier;
+        wasp.fFireTimer *= fDamageFireRateMultiplier / 1.5f;
         StartCoroutine(SpriteFlasher());
     }
     

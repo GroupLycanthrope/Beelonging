@@ -76,7 +76,7 @@ public class Honeycomb : MonoBehaviour
 
         if(transform.position.x <= v3TargetPos.x) {
 
-            if (BeeManager.fHoneyCount < FindObjectOfType<BeeManager>().fHoneyCountMax){
+            if (BeeManager.fHoneyCount <= FindObjectOfType<BeeManager>().fHoneyCountMax){
                 if (!bHasGivenScore) {
                     BeeManager.fHoneyCount += iHoneyValue;
                     ScoreManager.iScore += iScoreValue;

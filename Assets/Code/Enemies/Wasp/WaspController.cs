@@ -17,7 +17,8 @@ public class WaspController : MonoBehaviour {
 
     // Fire floats
     public float fFireRate;
-    float fFireTimer;
+    [HideInInspector]
+    public float fFireTimer;
 // Move Bools
     private bool bIsAtPosition;
     private bool bHasPosition;
