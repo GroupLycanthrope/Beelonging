@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class TutorialButtonMask : MonoBehaviour
 {
+    public GameObject goTutorialButton;
+
     private TutorialButton TutorialButton;
 
     // Use this for initialization
 	void Start ()
 	{
-	    TutorialButton = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<TutorialButton>();
+        TutorialButton = goTutorialButton.GetComponent<TutorialButton>();
+	    //TutorialButton = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<TutorialButton>();
 	}
 	
 	// Update is called once per frame

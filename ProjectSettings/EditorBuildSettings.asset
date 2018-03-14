@@ -11,6 +11,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Level1.unity
     guid: fc93905c63e993943af74d2b0e1ab826
-  - enabled: 0
-    path: "Assets/Level/L\xF6vliesSandbox.unity"
-    guid: 806a1be282ba04549a5a1751d0293926
