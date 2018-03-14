@@ -6,6 +6,8 @@ public class CreditsScroller : MonoBehaviour
 {
     public GameObject goCreditsPanel;
 
+    public GameObject goMainMenu;
+
     public float fScrollingSpeed;
 
     public float fExitTime;
@@ -13,9 +15,14 @@ public class CreditsScroller : MonoBehaviour
 
     private float fTimer;
 
+    private float fExitTimer;
+
+    private bool bHasReachedEnd = false;
+
     // Use this for initialization
     void Start()
     {
+        bHasReachedEnd = false;
         Time.timeScale = 1;
         Vector3 tmp;
         tmp.x = 960;
@@ -40,11 +47,22 @@ public class CreditsScroller : MonoBehaviour
             }
             else
             {
-                Invoke("GoToMainMenu", fExitTime);
+                fExitTimer = fExitTime;
+                bHasReachedEnd = true;
+                //Invoke("GoToMainMenu", fExitTime);
             }
         }
 
-        if (Input.anyKey)
+        if(fExitTimer > 0)
+        {
+            fExitTimer -= Time.deltaTime;
+        }
+        else if (bHasReachedEnd)
+        {
+            GoToMainMenu();
+        }
+
+        if (Input.anyKeyDown)
         {
             GoToMainMenu();
         }
@@ -52,12 +70,17 @@ public class CreditsScroller : MonoBehaviour
 
     void GoToMainMenu()
     {
-        GameObject.Find("CreditsPanel").SetActive(false);
-        Time.timeScale = 0;
+        if (GameObject.Find("CreditsPanel") != null)
+        {
+            GameObject.Find("CreditsPanel").SetActive(false);
+            Time.timeScale = 0;
+            goMainMenu.SetActive(true);
+        }
     }
 
     void OnDestroy()
     {
+        bHasReachedEnd = false;
         Vector3 tmp;
         tmp.x = 960;
         tmp.y = -1920;
@@ -67,6 +90,7 @@ public class CreditsScroller : MonoBehaviour
 
     private void OnDisable()
     {
+        fTimer = fStartTime;
         Time.timeScale = 0;
         Vector3 tmp;
         tmp.x = 960;
@@ -77,12 +101,14 @@ public class CreditsScroller : MonoBehaviour
 
     private void OnEnable()
     {
+        bHasReachedEnd = false;
+        fTimer = fStartTime;
         Time.timeScale = 1;
         Vector3 tmp;
         tmp.x = 960;
         tmp.y = -1920;
         tmp.z = 0;
         goCreditsPanel.transform.position = tmp;
-        fTimer = fStartTime;
+
     }
 }

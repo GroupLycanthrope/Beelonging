@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 509025438}
   - component: {fileID: 509025437}
   m_Layer: 0
-  m_Name: CreditButtonText
+  m_Name: CreditsButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Credit
+  m_Text: CREDITS
 --- !u!222 &509025438
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1089,9 +1089,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1816634931}
   - {fileID: 2109857909}
   - {fileID: 1671798495}
-  - {fileID: 1816634931}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1112,7 +1112,7 @@ GameObject:
   - component: {fileID: 919633460}
   - component: {fileID: 919633459}
   m_Layer: 0
-  m_Name: CreditButton
+  m_Name: CreditsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1198,16 +1198,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
-      - m_Target: {fileID: 2109857910}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2109857908}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -1539,7 +1539,7 @@ Prefab:
     - target: {fileID: 224289956688134112, guid: debcffba28e3eda41a9c71bc2c6528ba,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224289956688134112, guid: debcffba28e3eda41a9c71bc2c6528ba,
         type: 2}
@@ -2315,7 +2315,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 887139100}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2334,6 +2334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goCreditsPanel: {fileID: 1816634930}
+  goMainMenu: {fileID: 2109857908}
   fScrollingSpeed: 5
   fExitTime: 2
   fStartTime: 1
@@ -2650,7 +2651,7 @@ Transform:
   - {fileID: 566577721}
   - {fileID: 1402566478}
   m_Father: {fileID: 887139100}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2109857910
 MonoBehaviour:
