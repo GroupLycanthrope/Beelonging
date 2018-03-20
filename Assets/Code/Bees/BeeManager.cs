@@ -89,7 +89,8 @@ public class BeeManager : MonoBehaviour
             source.PlayOneShot(prog3, 1F);
             bProgress3 = false;
         }
-        if (Spawner.GetProcentOfWave(Spawner.GetWaveAt()) == 100 && !GameObject.FindGameObjectWithTag("Wasp")){
+        if (Spawner.GetHasWon())
+        {
             BackgroundSource.Stop();
             Cursor.visible = true;
         }

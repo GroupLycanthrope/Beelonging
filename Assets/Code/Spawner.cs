@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour{
     float fTimer;
 
     static public int iSpawnerAt;
+    public int iWave;
 
     private bool bControllBool;
     bool bHasList;
@@ -26,6 +27,7 @@ public class Spawner : MonoBehaviour{
     private bool bNewWave;
     private bool bIsScreenEmpty;
     private bool bHasSortList;
+    static private bool bHasWon;
 
     static bool bSkipTutorial;
 
@@ -54,8 +56,8 @@ public class Spawner : MonoBehaviour{
         if(DataStorage != null) {
             bSkipTutorial = DataStorage.GetComponent<TutorialStorage>().GetTutorialStatus();
         }
-        
 
+        bHasWon = false;
         aAllTutorialObjects = GameObject.FindGameObjectsWithTag("Tutorial");
 
         aCopyofSpawnData = aSpawnData;
@@ -91,6 +93,7 @@ public class Spawner : MonoBehaviour{
                             bHasList = false;
                         }
                          iSpawnerAt++;
+                        iWave = iSpawnerAt;
                         // had to add this in because random error dont know why but this fixes the error
                         if (iSpawnerAt != aSpawnData.Count){
                             fTimer = aSpawnData[iSpawnerAt].fWaitTime;
@@ -98,7 +101,8 @@ public class Spawner : MonoBehaviour{
                     }
                 }
 
-                if (!bNewWave && bIsScreenEmpty){
+                if (!bNewWave && bIsScreenEmpty)
+                {
                     bNewWave = true;
                 }
 
@@ -158,9 +162,14 @@ public class Spawner : MonoBehaviour{
                 bIsScreenEmpty = false;
             }
 
-            if (!GameObject.FindGameObjectWithTag("Enemy") && !GameObject.FindGameObjectWithTag("PickUp") && iSpawnerAt >= aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee") && !GameObject.FindGameObjectWithTag("Wasp"))
+            if (bIsScreenEmpty == true && iSpawnerAt > aSpawnData.Count && GameObject.FindGameObjectWithTag("Bee") && !GameObject.FindGameObjectWithTag("Wasp"))
             {
+                bHasWon = true;
                 xWinningScreen.SetActive(true);
+            }
+
+            if(iSpawnerAt == aSpawnData.Count) {
+                iSpawnerAt++;
             }
     }
         // this only happens in the Editor not when the game is played minimizes lag
@@ -198,5 +207,8 @@ public class Spawner : MonoBehaviour{
 
     static public void SetTutorial(bool p_Tutorial) {
         bSkipTutorial = p_Tutorial;
+    }
+    static public bool GetHasWon() {
+        return bHasWon;
     }
 }
