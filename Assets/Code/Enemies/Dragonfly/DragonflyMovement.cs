@@ -61,7 +61,7 @@ public class DragonflyMovement : MonoBehaviour
         v3OriginalYPosition.y = transform.position.y;
         fTimer = fZoomCooldown;
         bStartMoveToScreen = true;
-        v3NormalMoveSpeed.x = -fFlyingSpeed;
+       // v3NormalMoveSpeed.x = -fFlyingSpeed;
         bPlaySound = false;
 
         transform.parent = null;
@@ -78,7 +78,8 @@ public class DragonflyMovement : MonoBehaviour
         fTimer -= Time.deltaTime;
         // normal flying
         if (transform.position.x > BeeManager.GetMaxCameraBorder().x - 1){
-            transform.position += v3NormalMoveSpeed;
+            bStartMoveToScreen = true;
+            transform.Translate(-fFlyingSpeed * Time.deltaTime, 0, 0);
         }
         else{
             bStartMoveToScreen = false;
@@ -90,17 +91,14 @@ public class DragonflyMovement : MonoBehaviour
                 bPlaySound = true;
             }
 
-            if (fWaitTime <= 0){
+            if (bHasTarget){
+                MoveDragonFly();
+            }
+            else{
                 Zoom();
             }
         }
-        if (bHasTarget){
-            MoveDragonFly();
-        }
-        else {
-            Zoom();
-        }
-
+        
         if (fTimer <= 0){
             bRestartTimer = true;
         }
