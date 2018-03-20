@@ -132,10 +132,10 @@ TextureImporter:
       name: flying_dragonfly_1
       rect:
         serializedVersion: 2
-        x: 544
-        y: 617
-        width: 480
-        height: 383
+        x: 512
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +146,10 @@ TextureImporter:
       name: flying_dragonfly_2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 100
-        width: 511
-        height: 388
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,24 +160,10 @@ TextureImporter:
       name: flying_dragonfly_3
       rect:
         serializedVersion: 2
-        x: 28
-        y: 385
-        width: 8
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: flying_dragonfly_4
-      rect:
-        serializedVersion: 2
-        x: 557
-        y: 105
-        width: 467
-        height: 383
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
