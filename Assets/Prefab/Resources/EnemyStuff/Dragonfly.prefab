@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09b135fafe79504e833e2cb173ec175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fFlyingSpeed: 0.5
+  fFlyingSpeed: 3
   fZoomSpeed: 20
   fZoomCooldown: 2
   fRangeX: 4
@@ -730,5 +730,5 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
